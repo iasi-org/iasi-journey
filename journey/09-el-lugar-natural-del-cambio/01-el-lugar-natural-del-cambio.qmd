@@ -1,0 +1,100 @@
+---
+title: "El lugar natural del cambio"
+date: 2026-08-16
+---
+
+La discusión empezó con una nueva necesidad.
+
+Una de esas frases inocentes que, en software, pueden terminar creando una capa, un parámetro, una excepción y tres años de mantenimiento.
+
+La reacción habitual es preguntar:
+
+> ¿Dónde metemos esto?
+
+Pero después de años diseñando y revisando sistemas, Javier planteó otra vara de medir:
+
+> **Cuando aparece una nueva necesidad, debe ir a su sitio natural, que además es intuitivo. Si no es así, tu sistema está mal.**
+
+La frase tenía más profundidad de la que aparentaba.
+
+Un sistema no es extensible porque tenga muchos puntos de extensión. Es extensible cuando las nuevas variantes encuentran un lugar que parece haber estado esperándolas, aunque nadie conociera esa variante cuando se diseñó la arquitectura.
+
+El ejemplo bancario lo hizo concreto.
+
+En un sistema de préstamos y créditos existían numerosos productos numéricos. Para incorporar una nueva forma no era necesario modificar el núcleo y añadir condiciones.
+
+Se creaba un módulo con una nomenclatura asociada al producto.
+
+El sistema lo descubría.
+
+Nada más.
+
+Eso llevó a una formulación mucho más precisa:
+
+> **No diseñaste los productos futuros. Diseñaste el lugar natural donde los productos futuros podrían existir.**
+
+No se trata, por tanto, de predecir todas las necesidades.
+
+Se trata de identificar correctamente los ejes de variación.
+
+La conversación había empezado por otra observación: muchas arquitecturas envejecen acumulando excepciones.
+
+Cada una puede haber sido razonable.
+
+El problema está en la serie:
+
+```text
+nueva necesidad
+   ↓
+pequeña excepción
+   ↓
+otra necesidad
+   ↓
+otra excepción
+   ↓
+otra capa
+```
+
+Al final, parte de lo que llamamos complejidad *legacy* no representa la complejidad del dominio.
+
+Representa el coste histórico de no haber podido rehacer soluciones anteriores.
+
+Y aquí entraron los Sistemas Inteligentes.
+
+Históricamente, un arquitecto podía detectar que una abstracción ya no era correcta y aun así decidir no tocarla. Comprender todas las dependencias, decisiones antiguas, efectos laterales y riesgos podía costar demasiado.
+
+Si un Sistema Inteligente reduce radicalmente el coste de comprender un sistema, cambia la economía de la refactorización.
+
+La pregunta deja de ser:
+
+> ¿Cómo añadimos la sexta excepción sin romper nada?
+
+y puede convertirse en:
+
+> ¿Sigue siendo correcta esta abstracción? ¿Dónde estaría ahora el lugar natural de esta necesidad?
+
+Esto encajó con otra tesis central de IASI:
+
+> Si la implementación cada vez cuesta menos, el pensamiento cada vez vale más.
+
+La IA no cambia la ingeniería únicamente porque escriba código más deprisa.
+
+Puede cambiarla porque hace económicamente posible **volver a pensar** sistemas que antes solo podíamos seguir parcheando.
+
+### Lo que quedó
+
+Una buena arquitectura no adivina el futuro.
+
+Hace espacio para el cambio.
+
+Y cuando lo nuevo deja de encontrar su sitio natural, la primera reacción no debería ser inventarle uno.
+
+Debería ser cuestionar el modelo.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260816001600-tenemos-una-nueva-necesidad-refactorizacion.md`.
+- `chatgpt-20260816003400-arquitectura-refactorizacion-lugar-natural-del-cambio.md`.
+- Memoria de IASI sobre el principio «Todo se debe cuestionar».

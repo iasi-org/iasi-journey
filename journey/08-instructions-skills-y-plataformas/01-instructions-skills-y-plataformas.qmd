@@ -1,0 +1,101 @@
+---
+title: "Instructions, skills y plataformas"
+date: 2026-08-15
+---
+
+La palabra *agentic* empezó a quedarse pequeña casi en cuanto intentamos usarla.
+
+Sabíamos que había algo que describía cómo debía trabajar un agente. También había operaciones que el humano podía solicitar, procedimientos especializados y herramientas externas.
+
+Meterlo todo bajo una sola carpeta habría funcionado durante unos días.
+
+Después habría empezado la confusión.
+
+La discusión con Codex y Copilot ayudó a separar las piezas:
+
+```text
+Instructions → cómo debe comportarse el agente
+Skills       → cómo se hace bien una clase de tarea
+Commands     → qué tarea se solicita ahora
+Tools        → qué capacidad ejecutable puede utilizar
+MCP          → cómo accede a capacidades externas
+Agent        → quién razona y ejecuta
+```
+
+La distinción más importante no era terminológica.
+
+Era de propiedad.
+
+Cuando preguntamos si Codex soportaba skills, apareció una tentación evidente: diseñar las skills directamente para Codex.
+
+Pero eso habría invertido la arquitectura.
+
+La conclusión fue:
+
+> Una skill IASI no es una skill de Codex.
+
+Codex puede tener un adaptador capaz de representar una skill IASI en su formato. Copilot puede necesitar otro. Otra plataforma futura podrá utilizar una tercera forma.
+
+```text
+IASI skill
+   ├── adapter Codex
+   ├── adapter Copilot
+   └── ...
+```
+
+La skill es producto.
+
+La plataforma es entorno de ejecución.
+
+Poco después afinamos otra categoría.
+
+No era `agentics/` lo que buscábamos para las reglas generales.
+
+Era:
+
+```text
+instructions/
+```
+
+Ahí debían vivir cosas como:
+
+- no inventar información ausente;
+- validar antes de modificar;
+- respetar el alcance;
+- tratar explícitamente la incertidumbre;
+- normas de escritura cuando se generan documentos;
+- límites de decisión del agente.
+
+Eso permitió evitar un error habitual: esconder reglas globales dentro de cada prompt.
+
+Si una norma forma parte de IASI, debe existir una vez en IASI.
+
+Después vendría el problema de instalación.
+
+Una metodología operativa necesita llegar al proyecto donde se utiliza.
+
+La comparación con OpenSpec ayudó:
+
+```text
+iasi
+   ↓ install
+proyecto / workspace
+```
+
+Pero también aquí apareció una diferencia útil.
+
+En un proyecto concreto podía instalarse únicamente lo necesario. En un workspace genérico, donde todavía no sabemos qué trabajo aparecerá, tenía sentido instalar el conjunto completo.
+
+Todavía estábamos resolviendo mecánica, CLI y rutas.
+
+Pero la arquitectura conceptual ya había quedado bastante limpia:
+
+> IASI define el comportamiento y las capacidades.  
+> Las plataformas se adaptan a IASI, no IASI a las plataformas.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260815133533-iasi-agentics-skills-codex.md`.
+- `chatgpt-20260815135800-iasi-agentics-instructions-cli.md`.

@@ -5,10 +5,12 @@ profile:
   default: html
   group:
     - [html, pdf]
+    
+metadata-files:
+  - _book-structure.yml
+
+lang: es
 
 book:
   title: "IASI Journey"
   author: "Javier G. Grandez"
-  chapters:
-    - index.qmd
-    - journey/index.qmd

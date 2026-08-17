@@ -1,0 +1,5 @@
+---
+title: "Un gráfico que no quería ser un diagrama"
+---
+
+Este capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.

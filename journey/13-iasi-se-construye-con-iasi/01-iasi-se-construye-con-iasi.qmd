@@ -1,0 +1,84 @@
+---
+title: "IASI decide construirse con IASI"
+date: 2026-08-17
+---
+
+La frase apareció antes de que estuviéramos preparados para todas sus consecuencias:
+
+> **IASI se construye con IASI.**
+
+Hasta entonces IASI era la metodología que estábamos creando para trabajar sobre otros proyectos.
+
+`iasi-graphics` había sido su primera PoC.
+
+Pero llegó un punto en que mantener una excepción para el propio IASI empezaba a ser absurdo.
+
+Si `inputs/`, `definitions/`, skills, commands, validaciones y gates eran una mejor forma de construir software, el primer proyecto que debía someterse a ellas era el propio sistema que las implementaba.
+
+Eso introducía un problema clásico de bootstrapping.
+
+El IASI existente había sido construido, en gran parte, antes de disponer del IASI que ahora queríamos utilizar.
+
+No tenía sentido fingir lo contrario.
+
+La solución conceptual fue separar dos estados.
+
+El código actual podía actuar como **bootstrap**.
+
+El siguiente IASI debía empezar a desarrollarse siguiendo IASI.
+
+Para no perder el punto de partida, congelamos el estado existente con un tag.
+
+Después apareció una rama:
+
+```text
+self-hosting
+```
+
+La intención era clara:
+
+```text
+IASI existente
+    ↓
+bootstrap
+    ↓
+IASI aplicado sobre sí mismo
+    ↓
+IASI siguiente
+```
+
+El código anterior no se convertía en basura.
+
+Seguía siendo implementación, referencia, evidencia y fuente de conocimiento.
+
+Pero dejaba de ser automáticamente la especificación del futuro.
+
+Eso es una distinción importante.
+
+Cuando un sistema se reconstruye a sí mismo existe una tentación enorme de describir como requisito todo aquello que ya hace.
+
+Pero IASI había nacido, precisamente, para cuestionar las soluciones actuales.
+
+La implementación bootstrap podía enseñar.
+
+No podía mandar.
+
+Los primeros inputs del self-hosting empezaron a describir el propio mecanismo de definitions y `define`.
+
+La idea era atractiva porque convertía el desarrollo en una prueba continua:
+
+> Si IASI no puede construir IASI, tenemos un problema bastante más interesante que un test fallido.
+
+Sin embargo, casi inmediatamente descubrimos otra cosa.
+
+La recursión conceptual era correcta.
+
+Nuestra capacidad para mantenerla entera en la cabeza no lo era.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260817130542-iasi-workflow-inputs-definitions.md`.
+- Conversación de 2026-08-17 sobre el tag de bootstrap y la rama `self-hosting`.
+- Memoria de trabajo de IASI.

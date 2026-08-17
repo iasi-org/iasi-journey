@@ -1,0 +1,87 @@
+---
+title: "Guardar antes de interpretar"
+date: 2026-08-13
+---
+
+La primera necesidad práctica del Journey no fue escribir.
+
+Fue **guardar**.
+
+Mientras trabajábamos con ChatGPT, Codex y otras herramientas, las conversaciones empezaban a contener demasiadas decisiones como para confiar en que siempre podríamos reconstruirlas después. Había chats de móvil, chats de ordenador, tareas de Codex y conversaciones que atravesaban varios problemas a la vez.
+
+La reacción inicial fue muy simple:
+
+> Quiero bajarme todas las conversaciones.
+
+Parecía una tarea de archivo. Terminó definiendo una arquitectura de conocimiento.
+
+Porque enseguida apareció una distinción:
+
+```text
+raw
+treated
+```
+
+El material `raw` debía conservarse tal como había ocurrido. Sin reescribir frases, sin ordenar retrospectivamente la discusión, sin quitar contradicciones porque ahora resultaran incómodas.
+
+El material `treated`, en cambio, podía evolucionar. Podíamos resumirlo, relacionarlo con otras conversaciones, extraer decisiones, escribir una entrada de Journey o convertir una conclusión en una definition.
+
+La regla emergió casi sola:
+
+> **Raw nunca cambia. Treated puede evolucionar todas las veces que sea necesario.**
+
+Eso resolvía un problema que todavía no habíamos formulado explícitamente: cómo permitir interpretación sin perder evidencia.
+
+Si solo guardábamos los documentos tratados, cualquier narración futura dependería de la última interpretación. Si solo guardábamos los chats, tendríamos un archivo enorme pero poco navegable.
+
+Necesitábamos ambas cosas.
+
+```text
+conversación original
+        ↓
+      raw
+        ↓
+interpretación
+        ↓
+journey / decisions / definitions / books
+```
+
+Esta separación resultó especialmente importante cuando Codex entró de lleno en el trabajo. Sus tareas no eran simplemente otra ventana de ChatGPT. Tenían su propio contexto, sus actualizaciones intermedias y una relación directa con el workspace y los cambios del código.
+
+De pronto el desarrollo de IASI estaba repartido entre personas, agentes y repositorios.
+
+El Journey no podía depender de recordar después qué había dicho quién.
+
+Por eso los chats se convirtieron en una forma de evidencia.
+
+No porque cada línea sea importante. Muchísimas no lo son. Pero la conversación conserva algo que los artefactos finales pierden: **la causalidad**.
+
+Un fichero puede mostrar que añadimos `inputs/`.
+
+El chat puede mostrar por qué, qué alternativas descartamos, qué entendíamos por input en ese momento y qué pregunta provocó el cambio.
+
+Ese es el material que necesita el Journey.
+
+### Una consecuencia inesperada
+
+Guardar conversaciones parecía una tarea administrativa.
+
+En realidad estaba definiendo un principio de IASI:
+
+> Antes de transformar conocimiento, conserva la fuente.
+
+Más tarde aparecerían `inputs/`, `definitions/`, reconciliación semántica y trazabilidad. En ese momento todavía no teníamos todos esos nombres.
+
+Pero la intuición ya estaba ahí.
+
+Primero conservar.
+
+Después interpretar.
+
+---
+
+## Fuentes
+
+- `2026-08-13-iasi-graphics-chat.md`.
+- `trabajar-en-todo-iasi-org.md`.
+- Conversaciones de 2026-08-13 sobre exportación de ChatGPT y Codex.

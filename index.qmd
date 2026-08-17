@@ -1,3 +1,25 @@
-# IASI Journey {.unnumbered}
+---
+title: "Journey"
+---
 
-El recorrido de IASI contado mientras ocurre.
+IASI no nació de un diseño cerrado ni de una metodología escrita de principio a fin. Fue apareciendo mientras intentábamos resolver problemas concretos, discutir decisiones, probar herramientas, equivocarnos, corregirnos y descubrir que algunas de las piezas que parecían auxiliares eran, en realidad, parte de la metodología.
+
+Este Journey conserva ese recorrido.
+
+No pretende sustituir a los libros, a las `definitions/`, a los ADR/EDR ni al código. Cada uno de esos artefactos responde a otra pregunta.
+
+- Los **libros** cuentan el conocimiento ya consolidado.
+- Las **definitions** expresan lo que IASI entiende y mantiene como estado canónico.
+- Las **decisiones** fijan lo que se decidió.
+- El **código** muestra lo que se construyó.
+- El **Journey** conserva cómo llegamos hasta allí.
+
+Por eso aquí aparecerán ideas que después fueron descartadas, nombres que cambiaron, arquitecturas provisionales, preguntas sin respuesta y momentos en los que hubo que parar.
+
+No corregiremos retrospectivamente una entrada para hacer que el pasado parezca más inteligente de lo que fue. Si algo cambia, la historia continuará en otra entrada.
+
+## El recorrido
+
+Los capítulos aparecen en el orden en que el proyecto fue cambiando.
+
+No están agrupados en partes ni reorganizados retrospectivamente por temas. La secuencia es deliberada: cada capítulo hereda las preguntas del anterior y deja abiertas las que empujarán al siguiente.

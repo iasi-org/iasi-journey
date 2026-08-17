@@ -1,0 +1,79 @@
+---
+title: "Un gráfico que no quería ser un diagrama"
+date: 2026-08-13
+---
+
+`iasi-graphics` no empezó como un proyecto de lenguaje ni como un experimento metodológico.
+
+Empezó con una molestia visual.
+
+Ya teníamos PlantUML para diagramas técnicos. Funcionaba bien para lo que era. Pero había figuras que pedían otra cosa: composiciones más editoriales, más cercanas a una presentación. Cajas, círculos, relaciones simples, una idea explicada visualmente. No un UML disfrazado.
+
+La primera búsqueda fue instrumental:
+
+> ¿Con qué hacemos esos dibujos?
+
+Aparecieron Inkscape, Figma, PowerPoint, generación de PPTX, JavaScript. Todos podían resolver una parte, pero chocaban con algo que todavía no habíamos convertido en principio.
+
+Podíamos generar una presentación por código, sí.
+
+Pero entonces el usuario tendría que pensar en el mecanismo gráfico.
+
+Y eso era exactamente lo que no queríamos.
+
+La frase que cambió el problema fue aproximadamente esta:
+
+> La trampa la has puesto en el JavaScript.
+
+Habíamos conseguido una imagen declarando algo en apariencia sencillo, pero la complejidad real seguía escondida en un código específico preparado para esa composición. No habíamos creado un sistema. Habíamos movido la dificultad de sitio.
+
+Entonces apareció otra posibilidad:
+
+> ¿Y si escribimos **qué** queremos representar y el motor decide **cómo** dibujarlo?
+
+Eso abrió un mundo distinto.
+
+Ya no hablábamos de automatizar PowerPoint. Hablábamos de un lenguaje declarativo.
+
+```text
+intención visual
+      ↓
+DSL
+      ↓
+motor
+      ↓
+SVG / PNG
+```
+
+El usuario no debía especificar coordenadas, tamaños, CSS ni primitivas gráficas. Debía expresar conceptos: flujo, comparación, ecosistema, elementos, relaciones, énfasis.
+
+La complejidad gráfica pertenecía al motor.
+
+Esto encajaba con una idea que IASI repetiría después en otros contextos: una buena ingeniería puede ser muy compleja por dentro sin trasladar esa complejidad al consumidor.
+
+La discusión sobre YAML duró poco porque el punto no era YAML. El punto era encontrar una sintaxis que pudiera escribirse, versionarse y, sobre todo, insertarse naturalmente en un documento Quarto.
+
+Incluso la forma de invocarlo importaba:
+
+no queríamos un bloque extraño pegado desde fuera, sino algo que pareciera parte natural del ecosistema de bloques ejecutables.
+
+`iasi-graphics` comenzó así a adquirir una identidad propia:
+
+- entrada textual;
+- lenguaje declarativo;
+- motor independiente;
+- salida gráfica;
+- integración con Quarto;
+- implementación preferentemente en Go;
+- nada de obligar al usuario a escribir JavaScript.
+
+Lo curioso es que todavía creíamos que estábamos diseñando un pequeño artefacto gráfico.
+
+En realidad, acabábamos de crear el problema perfecto para descubrir cómo debía funcionar IASI.
+
+---
+
+## Fuentes
+
+- `2026-08-13-iasi-graphics-chat.md`.
+- `chatgpt-20260813215000-iasi-graphics-codex.md`.

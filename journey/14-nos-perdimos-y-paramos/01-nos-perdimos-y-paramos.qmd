@@ -1,0 +1,118 @@
+---
+title: "Nos perdimos y paramos"
+date: 2026-08-17
+---
+
+El self-hosting produjo entusiasmo durante unos minutos.
+
+También produjo confusión.
+
+Habíamos congelado el IASI existente con un tag. Habíamos creado la idea de una rama `self-hosting`. Teníamos inputs sobre `definitions` y el skill `define`. Empezamos a hablar de procesarlos, generar definitions, reconstruir el programa y usar el viejo IASI como bootstrap.
+
+Todo era razonable por separado.
+
+Junto, dejó de ser comprensible.
+
+La frase que cortó la secuencia fue:
+
+> **Me estoy perdiendo.**
+
+Intentamos simplificar.
+
+Enumeramos dónde estábamos.
+
+Volvimos a explicar que todavía no habíamos recreado IASI.
+
+Apareció la rama.
+
+Volvimos a preguntar qué debía hacer Copilot.
+
+Y finalmente:
+
+> **Vamos a parar aquí.**
+
+Ese momento merece una entrada del Journey precisamente porque no produjo código.
+
+Produjo información sobre la metodología.
+
+Los Sistemas Inteligentes eliminan muchísimas fricciones que antes actuaban como pausas naturales.
+
+Una pregunta obtiene respuesta inmediatamente. Una arquitectura puede extenderse en segundos. Mientras un agente implementa una cosa, podemos abrir otra línea de pensamiento. Los bloqueos desaparecen y con ellos desaparecen también intervalos en los que el humano solía recuperar contexto.
+
+La velocidad técnica aumenta.
+
+La capacidad humana para comprender, decidir y asimilar no aumenta en la misma proporción.
+
+Ese desfase ya había aparecido como principio metodológico de IASI:
+
+> **No confundir disponibilidad de la IA con disponibilidad humana.**
+
+El episodio de self-hosting lo convirtió en experiencia directa.
+
+No había un error técnico.
+
+Había demasiados cambios de nivel conceptual seguidos:
+
+```text
+bootstrap
+→ tag
+→ branch
+→ inputs
+→ definitions
+→ skill
+→ command
+→ reconstrucción
+→ Copilot
+```
+
+El sistema de ideas seguía avanzando.
+
+El modelo mental humano empezaba a quedarse atrás.
+
+La respuesta correcta no era pedir a la IA que explicara todavía más deprisa.
+
+Era parar.
+
+Esto introduce una clase de gate que no habíamos modelado en el workflow.
+
+Tenemos gates técnicos:
+
+```text
+validated
+planned
+verified
+```
+
+Pero puede existir otro límite:
+
+```text
+¿el humano sigue entendiendo lo suficiente
+como para tomar la siguiente decisión?
+```
+
+No es fácilmente automatizable y quizá nunca deba serlo.
+
+Pero sí debe formar parte de la metodología.
+
+La velocidad sostenible de un sistema humano-IA no es la velocidad máxima de los agentes.
+
+Es la velocidad a la que el humano puede mantener comprensión suficiente para seguir siendo responsable de las decisiones.
+
+### Lo que quedó
+
+Parar no interrumpió el proceso.
+
+**Fue parte del proceso.**
+
+Y el hecho de que esta entrada exista es exactamente la razón por la que necesitábamos un Journey.
+
+El book futuro podrá explicar limpiamente el self-hosting.
+
+El Journey debe conservar que, cuando llegamos por primera vez allí, nos hicimos un lío.
+
+---
+
+## Fuentes
+
+- Conversación de 2026-08-17 sobre self-hosting de IASI.
+- Memoria de IASI sobre límites humanos, fatiga cognitiva y velocidad sostenible.

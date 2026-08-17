@@ -1,0 +1,69 @@
+---
+title: "Cuando el proceso empezó a importar"
+date: 2026-08-13
+---
+
+Al principio, casi todo lo que producíamos tenía una forma conocida: repositorios, libros, documentación, código, decisiones. Eran resultados. Cosas que podían quedar limpias, ordenadas y explicadas después.
+
+Pero el trabajo real no se parecía demasiado a esos resultados.
+
+Las ideas aparecían en una conversación. Una propuesta parecía buena durante diez minutos y luego dejaba de serlo. Un nombre llevaba a otro. Una solución técnica abría una pregunta metodológica que no estaba en el problema original. A veces una frase informal contenía más información sobre la decisión que el documento final que escribíamos después.
+
+Empezó a aparecer una incomodidad: si conservábamos únicamente el resultado, estábamos perdiendo la parte más interesante.
+
+No era un problema de auditoría. Git ya podía decir qué fichero había cambiado. Tampoco era un problema de documentación. Los libros podían explicar perfectamente el estado final.
+
+El problema era otro:
+
+> ¿Cómo se había llegado hasta allí?
+
+Esa pregunta resultó ser mucho más importante de lo que parecía.
+
+Una metodología suele escribirse desde el final. Cuando todo ha encajado, se eliminan las dudas, se suavizan los giros y se presenta una secuencia limpia. El lector recibe una ruta recta aunque el descubrimiento real haya sido un laberinto.
+
+IASI estaba naciendo precisamente en ese laberinto.
+
+Por eso empezó a tomar forma una separación que después sería fundamental:
+
+```text
+Journey      → cómo pensamos, discutimos y descubrimos
+Decisiones   → qué decidimos
+Books        → qué conocimiento consolidamos
+Artefactos   → qué construimos
+```
+
+No eran cuatro formas de documentar lo mismo. Eran cuatro clases distintas de evidencia.
+
+El Journey tenía además una propiedad que los demás no necesitaban: debía poder estar equivocado.
+
+Si en un momento pensábamos que una arquitectura era correcta, la entrada debía conservarlo. Si dos días después descubríamos que no funcionaba, no se reescribía el pasado. Se añadía el siguiente episodio.
+
+Eso cambia completamente la naturaleza del documento.
+
+El Journey no es una especificación mutable que siempre representa la verdad actual. Es una secuencia de estados de comprensión. Cada entrada dice, en esencia:
+
+> Con lo que sabíamos entonces, esto fue lo que vimos.
+
+Y ahí apareció otra idea que terminaría siendo central: las conversaciones debían conservarse como fuente inmutable. La narración podía interpretar. El chat bruto no.
+
+Así, por primera vez, el proceso dejó de ser el residuo de construir IASI y empezó a convertirse en uno de sus productos.
+
+No porque cada discusión merezca ser publicada. Muchas no lo merecen. Sino porque, cuando una idea cambia la arquitectura, la metodología o nuestra manera de trabajar, el camino que la produjo contiene conocimiento que el resultado final ya no puede mostrar.
+
+### Lo que quedó
+
+El Journey no documentaría el estado de IASI.
+
+Documentaría **su evolución**.
+
+Y no intentaría demostrar que habíamos tenido razón desde el principio.
+
+Precisamente lo contrario.
+
+---
+
+## Fuentes
+
+- Memoria de trabajo de IASI, 2026-08-13.
+- `2026-08-13-iasi-graphics-chat.md`.
+- Conversaciones sobre la separación entre Journey, decisiones, libros y artefactos.

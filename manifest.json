@@ -1,0 +1,113 @@
+{
+  "created": "2026-08-17",
+  "strategy": "regular",
+  "content_dir": "journey",
+  "structure": "numbered chapter folders with 00-index.qmd plus numbered source documents",
+  "chapters": [
+    {
+      "chapter": "01-cuando-el-proceso-empezo-a-importar",
+      "index": "journey/01-cuando-el-proceso-empezo-a-importar/00-index.qmd",
+      "sources": [
+        "journey/01-cuando-el-proceso-empezo-a-importar/01-cuando-el-proceso-empezo-a-importar.qmd"
+      ]
+    },
+    {
+      "chapter": "02-guardar-antes-de-interpretar",
+      "index": "journey/02-guardar-antes-de-interpretar/00-index.qmd",
+      "sources": [
+        "journey/02-guardar-antes-de-interpretar/01-guardar-antes-de-interpretar.qmd"
+      ]
+    },
+    {
+      "chapter": "03-un-grafico-que-no-queria-ser-un-diagrama",
+      "index": "journey/03-un-grafico-que-no-queria-ser-un-diagrama/00-index.qmd",
+      "sources": [
+        "journey/03-un-grafico-que-no-queria-ser-un-diagrama/01-un-grafico-que-no-queria-ser-un-diagrama.qmd"
+      ]
+    },
+    {
+      "chapter": "04-primero-la-especificacion",
+      "index": "journey/04-primero-la-especificacion/00-index.qmd",
+      "sources": [
+        "journey/04-primero-la-especificacion/01-primero-la-especificacion.qmd"
+      ]
+    },
+    {
+      "chapter": "05-iasi-graphics-destapa-la-metodologia",
+      "index": "journey/05-iasi-graphics-destapa-la-metodologia/00-index.qmd",
+      "sources": [
+        "journey/05-iasi-graphics-destapa-la-metodologia/01-iasi-graphics-destapa-la-metodologia.qmd"
+      ]
+    },
+    {
+      "chapter": "06-todo-se-reduce-a-inputs",
+      "index": "journey/06-todo-se-reduce-a-inputs/00-index.qmd",
+      "sources": [
+        "journey/06-todo-se-reduce-a-inputs/01-todo-se-reduce-a-inputs.qmd"
+      ]
+    },
+    {
+      "chapter": "07-de-metodologia-a-sistema-ejecutable",
+      "index": "journey/07-de-metodologia-a-sistema-ejecutable/00-index.qmd",
+      "sources": [
+        "journey/07-de-metodologia-a-sistema-ejecutable/01-de-metodologia-a-sistema-ejecutable.qmd"
+      ]
+    },
+    {
+      "chapter": "08-instructions-skills-y-plataformas",
+      "index": "journey/08-instructions-skills-y-plataformas/00-index.qmd",
+      "sources": [
+        "journey/08-instructions-skills-y-plataformas/01-instructions-skills-y-plataformas.qmd"
+      ]
+    },
+    {
+      "chapter": "09-el-lugar-natural-del-cambio",
+      "index": "journey/09-el-lugar-natural-del-cambio/00-index.qmd",
+      "sources": [
+        "journey/09-el-lugar-natural-del-cambio/01-el-lugar-natural-del-cambio.qmd"
+      ]
+    },
+    {
+      "chapter": "10-cuando-openspec-dejo-de-ser-necesario",
+      "index": "journey/10-cuando-openspec-dejo-de-ser-necesario/00-index.qmd",
+      "sources": [
+        "journey/10-cuando-openspec-dejo-de-ser-necesario/01-cuando-openspec-dejo-de-ser-necesario.qmd"
+      ]
+    },
+    {
+      "chapter": "11-inputs-no-es-entender",
+      "index": "journey/11-inputs-no-es-entender/00-index.qmd",
+      "sources": [
+        "journey/11-inputs-no-es-entender/01-inputs-no-es-entender.qmd"
+      ]
+    },
+    {
+      "chapter": "12-define-no-genera-reconcilia",
+      "index": "journey/12-define-no-genera-reconcilia/00-index.qmd",
+      "sources": [
+        "journey/12-define-no-genera-reconcilia/01-define-no-genera-reconcilia.qmd"
+      ]
+    },
+    {
+      "chapter": "13-iasi-se-construye-con-iasi",
+      "index": "journey/13-iasi-se-construye-con-iasi/00-index.qmd",
+      "sources": [
+        "journey/13-iasi-se-construye-con-iasi/01-iasi-se-construye-con-iasi.qmd"
+      ]
+    },
+    {
+      "chapter": "14-nos-perdimos-y-paramos",
+      "index": "journey/14-nos-perdimos-y-paramos/00-index.qmd",
+      "sources": [
+        "journey/14-nos-perdimos-y-paramos/01-nos-perdimos-y-paramos.qmd"
+      ]
+    },
+    {
+      "chapter": "15-el-journey-empieza-a-escribirse",
+      "index": "journey/15-el-journey-empieza-a-escribirse/00-index.qmd",
+      "sources": [
+        "journey/15-el-journey-empieza-a-escribirse/01-el-journey-empieza-a-escribirse.qmd"
+      ]
+    }
+  ]
+}

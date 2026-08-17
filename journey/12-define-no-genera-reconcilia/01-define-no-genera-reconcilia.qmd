@@ -1,0 +1,138 @@
+---
+title: "`define` no genera: reconcilia"
+date: 2026-08-17
+---
+
+Una vez que aparecieron `definitions/`, parecía natural crear una operación capaz de producirlas.
+
+La palabra fue:
+
+```text
+define
+```
+
+Al principio podía imaginarse como un generador:
+
+```text
+inputs
+  ↓
+define
+  ↓
+definitions
+```
+
+Pero esa imagen duró poco.
+
+Las definitions no eran un artefacto derivado que pudiera borrarse y regenerarse cada vez.
+
+Eran **estado canónico editable**.
+
+Una persona podía revisar una definition, afinar una explicación, aclarar una relación o mejorar su representación. Si la siguiente ejecución de `define` machacaba esos cambios porque no estaban literalmente en el input, el sistema estaría destruyendo conocimiento.
+
+Así que la responsabilidad cambió.
+
+`define` debía **reconciliar**.
+
+Su contexto real era algo parecido a:
+
+```text
+inputs actuales
++
+definitions existentes
++
+refinamientos humanos
++
+templates
+        ↓
+      define
+        ↓
+estado canónico coherente
+```
+
+Esto obligó a separar razonamiento y mecánica.
+
+El skill debía entender:
+
+- relaciones entre fuentes;
+- conceptos equivalentes;
+- contradicciones;
+- información ausente;
+- cuándo algo es requisito o restricción;
+- cuándo una pregunta ha quedado resuelta;
+- cuándo una definition debe dividirse o consolidarse.
+
+El runtime debía ocuparse de lo determinista:
+
+- descubrir ficheros;
+- fingerprints;
+- gates;
+- históricos;
+- aplicar operaciones;
+- proteger escrituras;
+- registrar estado.
+
+La frontera terminó resumiéndose así:
+
+```text
+skill      → entiende y clasifica
+templates  → dan forma
+runtime    → valida y ejecuta
+```
+
+También apareció una fase explícita que resultó muy útil:
+
+```text
+Analyse
+   ↓
+Classify
+   ↓
+Reconcile
+   ↓
+Draft
+```
+
+`Classify` no clasifica inputs.
+
+Clasifica el conocimiento que ya se ha comprendido.
+
+Por ejemplo:
+
+```text
+"El sistema debe generar HTML y PDF"
+    → requirement
+
+"Para websites solo se genera HTML"
+    → constraint
+
+"Hemos decidido usar Quarto"
+    → decision
+
+"No sabemos cómo resolver EPUB"
+    → question
+```
+
+Después llegaron las templates.
+
+No debían convertirse en formularios que forzaran la realidad a entrar en cinco cajas. Debían ofrecer formas canónicas cuando la naturaleza semántica del conocimiento encajara.
+
+Y ahí apareció otra propiedad esencial de `define`: **idempotencia semántica**.
+
+Si nada relevante ha cambiado, volver a ejecutar `define` no debería reorganizar el mundo por capricho.
+
+Si una persona ha refinado una definition y los inputs no invalidan ese refinamiento, debe conservarse.
+
+Si nueva evidencia resuelve una `question`, puede reclasificarse.
+
+Si dos definitions resultan ser el mismo concepto, pueden consolidarse.
+
+La operación ya no era “generar documentación”.
+
+Era mantener una base de conocimiento coherente a medida que cambia la evidencia.
+
+Eso es una cosa bastante distinta.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260817135400-skill-define.md`.

@@ -1,3 +1,18 @@
 book:
   chapters:
     - "index.qmd"
+    - "journey/01-cuando-el-proceso-empezo-a-importar/index.qmd"
+    - "journey/02-guardar-antes-de-interpretar/index.qmd"
+    - "journey/03-un-grafico-que-no-queria-ser-un-diagrama/index.qmd"
+    - "journey/04-primero-la-especificacion/index.qmd"
+    - "journey/05-iasi-graphics-destapa-la-metodologia/index.qmd"
+    - "journey/06-todo-se-reduce-a-inputs/index.qmd"
+    - "journey/07-de-metodologia-a-sistema-ejecutable/index.qmd"
+    - "journey/08-instructions-skills-y-plataformas/index.qmd"
+    - "journey/09-el-lugar-natural-del-cambio/index.qmd"
+    - "journey/10-cuando-openspec-dejo-de-ser-necesario/index.qmd"
+    - "journey/11-inputs-no-es-entender/index.qmd"
+    - "journey/12-define-no-genera-reconcilia/index.qmd"
+    - "journey/13-iasi-se-construye-con-iasi/index.qmd"
+    - "journey/14-nos-perdimos-y-paramos/index.qmd"
+    - "journey/15-el-journey-empieza-a-escribirse/index.qmd"

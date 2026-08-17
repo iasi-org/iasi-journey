@@ -1,0 +1,84 @@
+---
+title: "El Journey empieza a escribirse"
+date: 2026-08-17
+---
+
+El Journey llevaba varios días existiendo como idea antes de tener documentos.
+
+Eso también era coherente con su naturaleza.
+
+Primero apareció la necesidad de conservar conversaciones. Después la distinción entre raw y treated. Luego la separación entre Journey, decisiones, libros y artefactos. Más tarde empezamos a señalar explícitamente frases y episodios como “esto es Journey”.
+
+Pero todavía no lo habíamos escrito.
+
+La pregunta que finalmente puso el repositorio en movimiento fue sencilla:
+
+> ¿Te apetece empezar con el Journey?
+
+La primera discusión no fue sobre Quarto.
+
+Fue sobre el enfoque.
+
+No queríamos un diario:
+
+```text
+17 de agosto
+hoy hicimos...
+después hicimos...
+```
+
+La fecha importaba, pero no debía ser la unidad narrativa.
+
+La unidad debía ser **el episodio que cambia algo**.
+
+Una idea aparece, se discute, tropieza con la realidad y deja una consecuencia.
+
+Eso permite que una entrada dure una hora o atraviese varios días.
+
+También decidimos algo más importante que la estructura:
+
+> No reescribir la historia para que parezca que sabíamos desde el principio dónde íbamos.
+
+Si `definitions/` surgió después de varios intentos, el Journey debía contarlo así.
+
+Si OpenSpec parecía necesario y después dejó de serlo, ambas cosas debían coexistir.
+
+Si una propuesta vino primero de la IA y Javier la corrigió, eso también forma parte del proceso.
+
+Si nos perdimos, se escribe que nos perdimos.
+
+Después sí llegó Quarto.
+
+El Journey seguirá siendo un proyecto capaz de producir HTML y PDF. La lectura principal puede ser viva y web, pero periódicamente podrá cristalizar en una edición imprimible.
+
+Eso introduce una tensión interesante.
+
+El contenido debe seguir siendo histórico e inmutable en su sentido.
+
+La publicación, en cambio, puede evolucionar: estilo, navegación, índices, enlaces, selección editorial.
+
+Como ocurría con raw y treated, volvemos a separar fuente y representación.
+
+Y finalmente llegó el gesto que convierte la idea en proyecto:
+
+entregar los chats acumulados y decir:
+
+> Empieza a crear documentos de Journey. Todos los que quieras.
+
+Esta primera tanda no pretende cerrar la historia.
+
+Hace algo más útil.
+
+Crea un primer mapa narrativo de lo que ya ocurrió y deja un formato con el que podamos seguir trabajando.
+
+A partir de aquí, el Journey ya no es una promesa en otro repositorio.
+
+Ha empezado.
+
+---
+
+## Fuentes
+
+- Conversación de 2026-08-17 sobre el enfoque y estructura de `iasi-journey`.
+- Chats entregados para la primera construcción del Journey.
+- Memoria de trabajo de IASI.
