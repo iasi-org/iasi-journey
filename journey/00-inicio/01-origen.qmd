@@ -1,0 +1,67 @@
+# El origen
+
+IASI no nace con la intención de crear una metodología. Tampoco empieza con un repositorio, un conjunto de herramientas o una arquitectura concreta. Durante bastante tiempo ni siquiera existe como proyecto. Lo que hay es una sensación cada vez más difícil de ignorar: estamos empezando a utilizar la inteligencia artificial de una forma que no encaja demasiado bien con la manera en que habitualmente se habla de ella.
+
+Por todas partes se habla de IA. Aparecen nuevos modelos, asistentes integrados en los entornos de desarrollo, generadores de código y una cantidad creciente de cursos, artículos y demostraciones. Sin embargo, buena parte de la conversación sigue girando alrededor del prompt. Cómo escribirlo mejor, cómo conseguir una respuesta más precisa, qué palabras utilizar o cómo construir una biblioteca de prompts reutilizables.
+
+Es útil, por supuesto, pero empieza a resultar insuficiente.
+
+Un prompt permite pedir algo a un modelo. El problema es que trabajar no consiste únicamente en pedir cosas. Un ingeniero trabaja dentro de un contexto, utiliza herramientas, consulta información, toma decisiones, sigue determinadas reglas y produce artefactos que deben mantenerse coherentes con todo lo anterior. Cada nueva conversación con un modelo obliga, de una forma u otra, a reconstruir parte de ese mundo.
+
+Mientras tanto empiezan a aparecer mecanismos que apuntan en otra dirección. Los agentes pueden realizar tareas que requieren varios pasos. Los MCP permiten conectar los modelos con información, herramientas y sistemas externos. Las skills permiten encapsular formas de realizar determinados trabajos. Las instructions pueden establecer cómo debe comportarse un agente más allá de una petición concreta. Los entornos de desarrollo empiezan a integrar todas esas capacidades alrededor del código y del propio workspace.
+
+La diferencia es importante. Ya no estamos únicamente ante un sistema al que formulamos una pregunta y del que esperamos una respuesta. Empezamos a tener sistemas capaces de participar en un proceso de trabajo.
+
+Y eso plantea un problema bastante más interesante que aprender a escribir buenos prompts.
+
+Hay que aprender a trabajar con ellos.
+
+En nuestro caso, el terreno natural es la ingeniería de software. Es donde podemos probar las ideas de verdad y donde resultan más visibles tanto las posibilidades como los problemas. Un Sistema Inteligente puede generar código, analizar un repositorio, proponer una arquitectura, escribir tests o investigar una tecnología en una fracción del tiempo que requiere tradicionalmente ese trabajo. Pero precisamente por eso empiezan a cambiar algunas de las condiciones sobre las que se construye nuestra manera habitual de hacer ingeniería.
+
+Durante décadas, implementar es caro. Explorar varias soluciones tiene un coste. Rehacer código tiene un coste. Investigar alternativas tiene un coste. Incluso cuando sabemos que una solución puede diseñarse mejor, muchas veces hay que decidir si merece la pena asumir el esfuerzo y el riesgo de tocar lo que ya funciona.
+
+Con Sistemas Inteligentes parte de ese coste empieza a reducirse de forma muy significativa.
+
+No desaparece la complejidad del problema, pero sí puede disminuir mucho el esfuerzo necesario para materializar, comparar o modificar soluciones. Y si cambia ese coste, también empieza a cambiar el lugar donde se concentra el valor del trabajo de ingeniería.
+
+Cada vez resulta menos interesante preguntarse cuánto código puede producir un modelo y más interesante preguntarse qué código debe producir, por qué, con qué información, bajo qué restricciones y cómo comprobamos que lo producido sigue representando correctamente la intención original.
+
+La implementación sigue importando, pero deja de ocupar necesariamente el centro de todo.
+
+El pensamiento adquiere más peso.
+
+Eso nos lleva también a mirar con cierta desconfianza la idea de utilizar los Sistemas Inteligentes simplemente como una nueva herramienta dentro de los procesos existentes. Añadir un asistente de código a una metodología diseñada para un mundo en el que escribir código es una de las actividades más costosas puede mejorar la productividad, pero no responde a la pregunta que empieza a interesarnos.
+
+La cuestión es si el propio proceso de ingeniería debe cambiar.
+
+No sabemos todavía cuánto ni en qué dirección. De hecho, buena parte de IASI empieza a surgir precisamente al intentar responder a esa pregunta mediante proyectos reales. Pero cada vez parece más claro que no basta con colocar IA encima de la forma anterior de trabajar.
+
+También aparece otro problema. La enorme capacidad de estas herramientas puede producir exactamente el efecto contrario al deseado. Es muy fácil generar más código, más documentos, más alternativas y más actividad. La productividad puede confundirse con producción. Si no existe una forma de mantener contexto, intención y control, la velocidad de los agentes puede multiplicar el ruido con la misma facilidad con la que multiplica el trabajo útil.
+
+Por eso empieza a interesarnos menos enseñar a utilizar una determinada herramienta y más encontrar una forma de enseñar a utilizar Sistemas Inteligentes.
+
+La distinción importa. Las herramientas cambian. Los modelos cambian. Los productos que hoy parecen centrales pueden desaparecer o ser sustituidos rápidamente. Una metodología construida alrededor de los detalles de Copilot, Codex, Claude o cualquier otro producto tendría una vida bastante corta.
+
+Lo que buscamos tiene que estar un nivel por encima.
+
+Queremos entender cómo proporcionar contexto de forma adecuada, cómo incorporar conocimiento al proceso sin tener que repetirlo constantemente, cómo separar una petición concreta de las reglas generales de trabajo, cómo utilizar herramientas externas desde un agente, cómo conservar decisiones, cómo permitir que varios Sistemas Inteligentes participen sin convertir cada uno de ellos en una isla y cómo mantener al humano en el lugar donde sigue siendo imprescindible: comprender, cuestionar, decidir y validar.
+
+Los MCP, las skills, las instructions, los agentes o las herramientas no son la metodología. Son piezas que empiezan a hacer posible otra manera de trabajar. Tenemos que entender qué papel desempeña cada una y, sobre todo, evitar que la metodología dependa de la forma concreta que esas piezas adoptan en una plataforma determinada.
+
+Al mismo tiempo seguimos construyendo cosas.
+
+Y probablemente es eso lo que termina empujándonos hacia IASI. Las preguntas no aparecen mientras intentamos escribir una teoría sobre inteligencia artificial. Aparecen mientras intentamos trabajar con ella. Cada proyecto obliga a resolver un problema que inicialmente parece local y que después resulta tener consecuencias mucho más amplias.
+
+Cómo conservar el conocimiento que recibimos. Cómo distinguir lo que viene de fuera de lo que nosotros añadimos. Cómo saber si hay información suficiente para que un agente continúe. Cómo evitar que rellene los huecos inventando decisiones. Cómo expresar una intención sin obligar a quien la implementa a seguir una solución prescrita de antemano. Cómo conseguir que una regla metodológica funcione igual aunque cambiemos de agente. Cómo conservar el proceso que lleva hasta una decisión y no únicamente la decisión final.
+
+Todavía no tenemos respuestas para muchas de esas preguntas y, sobre todo, todavía no sabemos que terminarán formando parte de una misma cosa.
+
+IASI empieza a aparecer poco a poco alrededor de ellas.
+
+El nombre llega después. También los repositorios, los libros, los inputs, las definitions, las skills y todo lo que empieza a crecer a su alrededor. Al principio solo está la intuición de que los Sistemas Inteligentes pueden cambiar mucho más que la velocidad con la que escribimos software, y que aprender a utilizarlos de verdad exige algo más que aprender a conversar con ellos.
+
+Hay que descubrir cómo integrarlos en la ingeniería sin perder precisamente aquello que hace que siga siendo ingeniería.
+
+Ese es el problema en el que nos estamos metiendo.
+
+Y a partir de ahí empieza el viaje.

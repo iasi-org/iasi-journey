@@ -1,0 +1,147 @@
+---
+
+## title: "Por qué contamos el viaje"
+
+A medida que IASI empieza a tomar forma aparece un problema que al principio no parece especialmente importante: estamos produciendo resultados, pero estamos perdiendo buena parte de lo que ocurre para llegar hasta ellos.
+
+Una decisión termina en un documento. Una arquitectura termina reflejada en el código. Una idea suficientemente madura puede acabar en uno de los libros. Git conserva perfectamente qué fichero cambia y cuándo cambia. Desde ese punto de vista parece que tenemos todo lo necesario para reconstruir el proyecto.
+
+Pero no es verdad.
+
+Entre el problema inicial y el resultado final ocurre casi todo lo que realmente nos interesa.
+
+Una idea aparece durante una conversación y parece razonable. La discutimos. Encontramos una excepción. Probamos otra posibilidad. Esa alternativa resuelve una cosa y rompe otra. Volvemos atrás. Una pregunta aparentemente secundaria cambia la forma en que entendemos el problema. A veces empezamos intentando resolver una cuestión puramente técnica y terminamos descubriendo algo que afecta a la metodología completa.
+
+Cuando finalmente llegamos a una solución, todo ese recorrido desaparece con enorme facilidad.
+
+La documentación tradicional tiende a contar las cosas desde el final. Una vez conocida la solución resulta natural explicar el problema, presentar la arquitectura elegida y justificar por qué es adecuada. El resultado suele ser limpio, comprensible y útil.
+
+También es inevitablemente engañoso.
+
+No porque lo que cuenta sea falso, sino porque elimina el proceso que conduce hasta allí. Las dudas desaparecen, las alternativas descartadas dejan de existir y las decisiones parecen mucho más evidentes de lo que son mientras las estamos tomando.
+
+Una metodología puede terminar sufriendo exactamente el mismo problema.
+
+Podemos escribir qué debe hacerse, en qué orden, qué artefactos existen y cuáles son sus responsabilidades. Podemos describir el resultado correcto de aplicar IASI. Pero eso no enseña necesariamente cómo se trabaja cuando las cosas todavía no están claras.
+
+Y eso es precisamente lo que queremos entender.
+
+IASI no se está diseñando primero para aplicarlo después. Se está descubriendo mientras trabajamos. Muchas de sus ideas aparecen porque un proyecto real nos obliga a enfrentarnos a un problema que no habíamos previsto. `iasi-graphics`, por ejemplo, empieza siendo una necesidad bastante concreta y termina poniendo sobre la mesa preguntas sobre especificaciones, inputs, agentes, herramientas y la propia forma en que queremos construir software.
+
+Si contamos únicamente el resultado final, esa relación desaparece.
+
+Podremos decir algún día que IASI utiliza `inputs`, `definitions`, skills o determinadas reglas de trabajo. Lo que no podremos ver es por qué aparecen, qué problema intenta resolver cada una, qué alternativas consideramos antes y qué parte de la idea original cambia durante el proceso.
+
+Eso empieza a parecernos una pérdida importante.
+
+Hay además otra diferencia respecto a la forma tradicional de trabajar. Gran parte de este proceso ocurre conversando con Sistemas Inteligentes.
+
+La conversación no es simplemente una interfaz para pedir un resultado. Se convierte en parte del trabajo intelectual. Nosotros planteamos una idea, el sistema propone posibilidades, las cuestionamos, aparecen relaciones que no habíamos visto, descartamos soluciones y volvemos a formular el problema. En otras ocasiones ocurre al revés: el Sistema Inteligente propone una interpretación que parece razonable y somos nosotros quienes detectamos que parte de una premisa equivocada.
+
+Lo interesante no está únicamente en quién tiene la idea correcta.
+
+Está en cómo cambia la comprensión del problema durante esa interacción.
+
+Eso hace que conservar solamente el documento final resulte todavía más pobre. El documento puede mostrar la decisión, pero no muestra la secuencia de razonamiento que permite comprender por qué esa decisión termina existiendo.
+
+Empieza entonces a aparecer la necesidad de conservar dos cosas distintas.
+
+Por un lado está la conversación original. Debe mantenerse como ocurrió. Puede contener repeticiones, errores, enfados, propuestas que duran cinco minutos y frases que fuera de contexto no parecen especialmente relevantes. No importa. Es la fuente. Si la modificamos después para hacerla más limpia, dejamos de conservar lo que realmente ocurrió.
+
+Por otro lado está la narración.
+
+La narración no pretende reproducir cada conversación. Tampoco pretende resumirlas todas. Intenta identificar aquellos momentos en los que cambia algo: nuestra comprensión de un problema, una decisión de arquitectura, una regla metodológica, la relación entre dos componentes o incluso nuestra propia manera de trabajar con los Sistemas Inteligentes.
+
+Pero al intentar conservar el recorrido aparece otra necesidad que, en realidad, no es nueva. Muchas metodologías y prácticas de ingeniería la resuelven de distintas maneras y con distintos nombres: **registrar las decisiones que se van tomando**.
+
+Porque conservar cómo llegamos a una decisión no resuelve por sí solo un problema muy cotidiano.
+
+Semanas después alguien puede volver a plantear exactamente la misma cuestión.
+
+¿Por qué hacemos esto así? ¿Por qué usamos esta tecnología? ¿Por qué descartamos aquella alternativa? ¿Por qué esta responsabilidad está aquí y no allí?
+
+Si la respuesta está únicamente repartida entre conversaciones, documentos y recuerdos de quienes participaron, el equipo vuelve a empezar la discusión. A veces incluso llega exactamente a la misma conclusión después de invertir de nuevo varias horas. Otras veces toma una decisión distinta simplemente porque ya nadie recuerda las razones que justificaron la anterior.
+
+Con Sistemas Inteligentes este problema puede incluso amplificarse. Un agente que entra hoy en un proyecto no ha participado necesariamente en las conversaciones de ayer. Si no existe un lugar donde pueda comprobar qué decisiones están vigentes, puede volver a cuestionar asuntos ya resueltos, proponer alternativas descartadas o reconstruir desde cero un razonamiento que el proyecto ya ha realizado.
+
+No queremos impedir que una decisión pueda cuestionarse.
+
+Todo lo contrario.
+
+Una decisión debe poder revisarse cuando aparece nueva información, cambian las condiciones o descubrimos que las premisas originales ya no son válidas. Lo que no tiene sentido es **reinventar continuamente la rueda porque hemos perdido la memoria de que esa discusión ya ocurrió**.
+
+Ahí empieza a hacerse evidente que el registro de decisiones no es simplemente una buena práctica documental.
+
+Es parte del sistema de conocimiento de una metodología.
+
+Necesitamos poder saber qué se decide, cuándo se decide, por qué se decide, qué alternativas se consideran y, cuando sea necesario, qué decisión posterior sustituye a la anterior.
+
+El Journey y el registro de decisiones se parecen porque ambos nacen del mismo proceso, pero cumplen funciones diferentes.
+
+El Journey puede contar una discusión completa, los rodeos, las dudas y el momento en el que cambia nuestra comprensión.
+
+El registro de decisiones necesita ser mucho más directo.
+
+Dice qué queda decidido.
+
+Uno conserva el viaje.
+
+El otro establece el punto al que hemos llegado.
+
+Esta separación empieza a parecernos importante porque permite mantener dos propiedades que, mezcladas en un único artefacto, resultarían difíciles de conseguir.
+
+El Journey puede permitirse ser narrativo, incompleto, provisional e incluso estar equivocado desde la perspectiva del futuro.
+
+Una decisión registrada debe ser inequívoca respecto al estado que representa. Si después cambia, no necesitamos fingir que nunca existió. Registramos el cambio y mantenemos la trazabilidad entre ambas.
+
+De ahí empieza a surgir una conclusión más amplia para IASI: **toda metodología necesita algún mecanismo explícito para registrar sus decisiones**.
+
+Puede llamarse ADR, registro de decisiones, log, record o adoptar cualquier otra forma. El nombre y el formato son secundarios. Lo importante es que exista como artefacto reconocible de la metodología y que no dependa únicamente de la memoria de las personas, de una conversación perdida o de interpretar retrospectivamente el código.
+
+Es una de esas cosas que parecen administrativas hasta que se piensa en su función real.
+
+Una decisión registrada reduce trabajo futuro.
+
+Evita discusiones repetidas. Permite incorporar a nuevas personas y nuevos agentes. Conserva el contexto que el código no puede expresar. Hace posible revisar una decisión sin tener que reconstruir primero por qué existe. Y, sobre todo, permite distinguir entre cuestionar conscientemente una decisión y simplemente ignorar que ya fue tomada.
+
+El propio desarrollo de IASI nos lleva así a identificar dos artefactos diferentes que nacen casi al mismo tiempo.
+
+Uno existe para que no perdamos **cómo pensamos**.
+
+El otro existe para que no perdamos **qué decidimos**.
+
+Ahí empieza a tener sentido el Journey.
+
+No como un diario en el que anotamos lo que hacemos cada día. Tampoco como una segunda versión de los libros. Y mucho menos como una colección de actas de reuniones.
+
+El Journey cuenta transformaciones.
+
+Un capítulo puede empezar con una necesidad aparentemente pequeña y terminar con una idea que modifica una parte importante de IASI. Otro puede contar una solución que creemos correcta durante un tiempo y que después abandonamos. Otro puede no terminar con ninguna respuesta, simplemente con una pregunta que tarda varias etapas del viaje en resolverse.
+
+Eso implica aceptar algo que no suele resultar cómodo en la documentación técnica: el Journey puede contener cosas que más adelante dejan de ser ciertas.
+
+Si en un momento creemos que necesitamos una determinada herramienta, eso forma parte del viaje. Si después descubrimos que no la necesitamos, no volvemos al capítulo anterior para corregirlo y hacer que parezca que siempre lo supimos. Continuamos la historia desde el nuevo punto.
+
+De esa forma cada capítulo conserva no solo información sobre IASI, sino también el estado de nuestra comprensión en ese momento.
+
+La fecha importa, pero no organiza el relato. No queremos escribir una secuencia de “hoy hicimos esto” y “mañana aquello”. La unidad narrativa es el episodio, el momento en el que una idea se mueve.
+
+A veces ese episodio ocurre en una tarde. Otras veces atraviesa varias conversaciones o varios proyectos.
+
+Lo que importa es que entre el principio y el final del capítulo algo haya cambiado.
+
+Esta forma de conservar el viaje tiene además una utilidad que empieza a resultar evidente mientras IASI crece.
+
+Las decisiones registradas nos permiten saber qué hemos decidido. Los artefactos nos muestran qué hemos construido. Los libros pueden explicar aquello que ya consideramos conocimiento consolidado.
+
+El Journey conserva otra cosa.
+
+Conserva el camino que conecta todo lo anterior.
+
+Y esa diferencia es especialmente importante si lo que intentamos construir es una metodología.
+
+No queremos presentar IASI como una colección de reglas que aparecen terminadas de algún sitio. Queremos poder seguir el camino que lleva hasta ellas, ver qué problemas intentan resolver, dónde nos equivocamos y qué ocurre cuando las ponemos delante de un proyecto real.
+
+Porque la forma en que estamos trabajando también forma parte de lo que estamos intentando aprender.
+
+Por eso contamos el viaje mientras todavía estamos dentro de él.

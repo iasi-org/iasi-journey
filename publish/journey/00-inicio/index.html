@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-08-13">
 
-<title>Un gráfico que no quería ser un diagrama – IASI Journey</title>
+<title>title: “El origen” – IASI Journey</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../journey/04-primero-la-especificacion/index.html" rel="next">
-<link href="../../journey/02-guardar-antes-de-interpretar/index.html" rel="prev">
+<link href="../../journey/01-cuando-el-proceso-empezo-a-importar/index.html" rel="next">
+<link href="../../index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../journey/03-un-grafico-que-no-queria-ser-un-diagrama/index.html"><span class="chapter-title">Un gráfico que no quería ser un diagrama</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../journey/00-inicio/index.html"><span class="chapter-title">El origen</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -118,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../journey/00-inicio/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El origen</span></a>
+  <a href="../../journey/00-inicio/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">El origen</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -133,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../journey/03-un-grafico-que-no-queria-ser-un-diagrama/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Un gráfico que no quería ser un diagrama</span></a>
+  <a href="../../journey/03-un-grafico-que-no-queria-ser-un-diagrama/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Un gráfico que no quería ser un diagrama</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -206,7 +205,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#fuentes" id="toc-fuentes" class="nav-link active" data-scroll-target="#fuentes">Fuentes</a></li>
+  <li><a href="#el-origen" id="toc-el-origen" class="nav-link active" data-scroll-target="#el-origen">El origen</a>
+  <ul class="collapse">
+  <li><a href="#title-por-qué-contamos-el-viaje" id="toc-title-por-qué-contamos-el-viaje" class="nav-link" data-scroll-target="#title-por-qué-contamos-el-viaje">title: “Por qué contamos el viaje”</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Un gráfico que no quería ser un diagrama</h1>
+<h1 class="title"><span class="chapter-title">title: “El origen”</span></h1>
 </div>
 
 
@@ -228,12 +230,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026-08-13</p>
-    </div>
-  </div>
   
     
   </div>
@@ -246,62 +242,119 @@ ul.task-list li input[type="checkbox"] {
 <!-- Generated by iasi.quarto. Do not edit. -->
 <hr>
 <p>Este capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.</p>
-<p><code>iasi-graphics</code> no empezó como un proyecto de lenguaje ni como un experimento metodológico.</p>
-<p>Empezó con una molestia visual.</p>
-<p>Ya teníamos PlantUML para diagramas técnicos. Funcionaba bien para lo que era. Pero había figuras que pedían otra cosa: composiciones más editoriales, más cercanas a una presentación. Cajas, círculos, relaciones simples, una idea explicada visualmente. No un UML disfrazado.</p>
-<p>La primera búsqueda fue instrumental:</p>
-<blockquote class="blockquote">
-<p>¿Con qué hacemos esos dibujos?</p>
-</blockquote>
-<p>Aparecieron Inkscape, Figma, PowerPoint, generación de PPTX, JavaScript. Todos podían resolver una parte, pero chocaban con algo que todavía no habíamos convertido en principio.</p>
-<p>Podíamos generar una presentación por código, sí.</p>
-<p>Pero entonces el usuario tendría que pensar en el mecanismo gráfico.</p>
-<p>Y eso era exactamente lo que no queríamos.</p>
-<p>La frase que cambió el problema fue aproximadamente esta:</p>
-<blockquote class="blockquote">
-<p>La trampa la has puesto en el JavaScript.</p>
-</blockquote>
-<p>Habíamos conseguido una imagen declarando algo en apariencia sencillo, pero la complejidad real seguía escondida en un código específico preparado para esa composición. No habíamos creado un sistema. Habíamos movido la dificultad de sitio.</p>
-<p>Entonces apareció otra posibilidad:</p>
-<blockquote class="blockquote">
-<p>¿Y si escribimos <strong>qué</strong> queremos representar y el motor decide <strong>cómo</strong> dibujarlo?</p>
-</blockquote>
-<p>Eso abrió un mundo distinto.</p>
-<p>Ya no hablábamos de automatizar PowerPoint. Hablábamos de un lenguaje declarativo.</p>
-<pre class="text"><code>intención visual
-      ↓
-DSL
-      ↓
-motor
-      ↓
-SVG / PNG</code></pre>
-<p>El usuario no debía especificar coordenadas, tamaños, CSS ni primitivas gráficas. Debía expresar conceptos: flujo, comparación, ecosistema, elementos, relaciones, énfasis.</p>
-<p>La complejidad gráfica pertenecía al motor.</p>
-<p>Esto encajaba con una idea que IASI repetiría después en otros contextos: una buena ingeniería puede ser muy compleja por dentro sin trasladar esa complejidad al consumidor.</p>
-<p>La discusión sobre YAML duró poco porque el punto no era YAML. El punto era encontrar una sintaxis que pudiera escribirse, versionarse y, sobre todo, insertarse naturalmente en un documento Quarto.</p>
-<p>Incluso la forma de invocarlo importaba:</p>
-<p>no queríamos un bloque extraño pegado desde fuera, sino algo que pareciera parte natural del ecosistema de bloques ejecutables.</p>
-<p><code>iasi-graphics</code> comenzó así a adquirir una identidad propia:</p>
-<ul>
-<li>entrada textual;</li>
-<li>lenguaje declarativo;</li>
-<li>motor independiente;</li>
-<li>salida gráfica;</li>
-<li>integración con Quarto;</li>
-<li>implementación preferentemente en Go;</li>
-<li>nada de obligar al usuario a escribir JavaScript.</li>
-</ul>
-<p>Lo curioso es que todavía creíamos que estábamos diseñando un pequeño artefacto gráfico.</p>
-<p>En realidad, acabábamos de crear el problema perfecto para descubrir cómo debía funcionar IASI.</p>
+<section id="el-origen" class="level1">
+<h1>El origen</h1>
+<p>IASI no nace con la intención de crear una metodología. Tampoco empieza con un repositorio, un conjunto de herramientas o una arquitectura concreta. Durante bastante tiempo ni siquiera existe como proyecto. Lo que hay es una sensación cada vez más difícil de ignorar: estamos empezando a utilizar la inteligencia artificial de una forma que no encaja demasiado bien con la manera en que habitualmente se habla de ella.</p>
+<p>Por todas partes se habla de IA. Aparecen nuevos modelos, asistentes integrados en los entornos de desarrollo, generadores de código y una cantidad creciente de cursos, artículos y demostraciones. Sin embargo, buena parte de la conversación sigue girando alrededor del prompt. Cómo escribirlo mejor, cómo conseguir una respuesta más precisa, qué palabras utilizar o cómo construir una biblioteca de prompts reutilizables.</p>
+<p>Es útil, por supuesto, pero empieza a resultar insuficiente.</p>
+<p>Un prompt permite pedir algo a un modelo. El problema es que trabajar no consiste únicamente en pedir cosas. Un ingeniero trabaja dentro de un contexto, utiliza herramientas, consulta información, toma decisiones, sigue determinadas reglas y produce artefactos que deben mantenerse coherentes con todo lo anterior. Cada nueva conversación con un modelo obliga, de una forma u otra, a reconstruir parte de ese mundo.</p>
+<p>Mientras tanto empiezan a aparecer mecanismos que apuntan en otra dirección. Los agentes pueden realizar tareas que requieren varios pasos. Los MCP permiten conectar los modelos con información, herramientas y sistemas externos. Las skills permiten encapsular formas de realizar determinados trabajos. Las instructions pueden establecer cómo debe comportarse un agente más allá de una petición concreta. Los entornos de desarrollo empiezan a integrar todas esas capacidades alrededor del código y del propio workspace.</p>
+<p>La diferencia es importante. Ya no estamos únicamente ante un sistema al que formulamos una pregunta y del que esperamos una respuesta. Empezamos a tener sistemas capaces de participar en un proceso de trabajo.</p>
+<p>Y eso plantea un problema bastante más interesante que aprender a escribir buenos prompts.</p>
+<p>Hay que aprender a trabajar con ellos.</p>
+<p>En nuestro caso, el terreno natural es la ingeniería de software. Es donde podemos probar las ideas de verdad y donde resultan más visibles tanto las posibilidades como los problemas. Un Sistema Inteligente puede generar código, analizar un repositorio, proponer una arquitectura, escribir tests o investigar una tecnología en una fracción del tiempo que requiere tradicionalmente ese trabajo. Pero precisamente por eso empiezan a cambiar algunas de las condiciones sobre las que se construye nuestra manera habitual de hacer ingeniería.</p>
+<p>Durante décadas, implementar es caro. Explorar varias soluciones tiene un coste. Rehacer código tiene un coste. Investigar alternativas tiene un coste. Incluso cuando sabemos que una solución puede diseñarse mejor, muchas veces hay que decidir si merece la pena asumir el esfuerzo y el riesgo de tocar lo que ya funciona.</p>
+<p>Con Sistemas Inteligentes parte de ese coste empieza a reducirse de forma muy significativa.</p>
+<p>No desaparece la complejidad del problema, pero sí puede disminuir mucho el esfuerzo necesario para materializar, comparar o modificar soluciones. Y si cambia ese coste, también empieza a cambiar el lugar donde se concentra el valor del trabajo de ingeniería.</p>
+<p>Cada vez resulta menos interesante preguntarse cuánto código puede producir un modelo y más interesante preguntarse qué código debe producir, por qué, con qué información, bajo qué restricciones y cómo comprobamos que lo producido sigue representando correctamente la intención original.</p>
+<p>La implementación sigue importando, pero deja de ocupar necesariamente el centro de todo.</p>
+<p>El pensamiento adquiere más peso.</p>
+<p>Eso nos lleva también a mirar con cierta desconfianza la idea de utilizar los Sistemas Inteligentes simplemente como una nueva herramienta dentro de los procesos existentes. Añadir un asistente de código a una metodología diseñada para un mundo en el que escribir código es una de las actividades más costosas puede mejorar la productividad, pero no responde a la pregunta que empieza a interesarnos.</p>
+<p>La cuestión es si el propio proceso de ingeniería debe cambiar.</p>
+<p>No sabemos todavía cuánto ni en qué dirección. De hecho, buena parte de IASI empieza a surgir precisamente al intentar responder a esa pregunta mediante proyectos reales. Pero cada vez parece más claro que no basta con colocar IA encima de la forma anterior de trabajar.</p>
+<p>También aparece otro problema. La enorme capacidad de estas herramientas puede producir exactamente el efecto contrario al deseado. Es muy fácil generar más código, más documentos, más alternativas y más actividad. La productividad puede confundirse con producción. Si no existe una forma de mantener contexto, intención y control, la velocidad de los agentes puede multiplicar el ruido con la misma facilidad con la que multiplica el trabajo útil.</p>
+<p>Por eso empieza a interesarnos menos enseñar a utilizar una determinada herramienta y más encontrar una forma de enseñar a utilizar Sistemas Inteligentes.</p>
+<p>La distinción importa. Las herramientas cambian. Los modelos cambian. Los productos que hoy parecen centrales pueden desaparecer o ser sustituidos rápidamente. Una metodología construida alrededor de los detalles de Copilot, Codex, Claude o cualquier otro producto tendría una vida bastante corta.</p>
+<p>Lo que buscamos tiene que estar un nivel por encima.</p>
+<p>Queremos entender cómo proporcionar contexto de forma adecuada, cómo incorporar conocimiento al proceso sin tener que repetirlo constantemente, cómo separar una petición concreta de las reglas generales de trabajo, cómo utilizar herramientas externas desde un agente, cómo conservar decisiones, cómo permitir que varios Sistemas Inteligentes participen sin convertir cada uno de ellos en una isla y cómo mantener al humano en el lugar donde sigue siendo imprescindible: comprender, cuestionar, decidir y validar.</p>
+<p>Los MCP, las skills, las instructions, los agentes o las herramientas no son la metodología. Son piezas que empiezan a hacer posible otra manera de trabajar. Tenemos que entender qué papel desempeña cada una y, sobre todo, evitar que la metodología dependa de la forma concreta que esas piezas adoptan en una plataforma determinada.</p>
+<p>Al mismo tiempo seguimos construyendo cosas.</p>
+<p>Y probablemente es eso lo que termina empujándonos hacia IASI. Las preguntas no aparecen mientras intentamos escribir una teoría sobre inteligencia artificial. Aparecen mientras intentamos trabajar con ella. Cada proyecto obliga a resolver un problema que inicialmente parece local y que después resulta tener consecuencias mucho más amplias.</p>
+<p>Cómo conservar el conocimiento que recibimos. Cómo distinguir lo que viene de fuera de lo que nosotros añadimos. Cómo saber si hay información suficiente para que un agente continúe. Cómo evitar que rellene los huecos inventando decisiones. Cómo expresar una intención sin obligar a quien la implementa a seguir una solución prescrita de antemano. Cómo conseguir que una regla metodológica funcione igual aunque cambiemos de agente. Cómo conservar el proceso que lleva hasta una decisión y no únicamente la decisión final.</p>
+<p>Todavía no tenemos respuestas para muchas de esas preguntas y, sobre todo, todavía no sabemos que terminarán formando parte de una misma cosa.</p>
+<p>IASI empieza a aparecer poco a poco alrededor de ellas.</p>
+<p>El nombre llega después. También los repositorios, los libros, los inputs, las definitions, las skills y todo lo que empieza a crecer a su alrededor. Al principio solo está la intuición de que los Sistemas Inteligentes pueden cambiar mucho más que la velocidad con la que escribimos software, y que aprender a utilizarlos de verdad exige algo más que aprender a conversar con ellos.</p>
+<p>Hay que descubrir cómo integrarlos en la ingeniería sin perder precisamente aquello que hace que siga siendo ingeniería.</p>
+<p>Ese es el problema en el que nos estamos metiendo.</p>
+<p>Y a partir de ahí empieza el viaje.</p>
 <hr>
-<section id="fuentes" class="level2">
-<h2 class="anchored" data-anchor-id="fuentes">Fuentes</h2>
-<ul>
-<li><code>2026-08-13-iasi-graphics-chat.md</code>.</li>
-<li><code>chatgpt-20260813215000-iasi-graphics-codex.md</code>.</li>
-</ul>
+<section id="title-por-qué-contamos-el-viaje" class="level2">
+<h2 class="anchored" data-anchor-id="title-por-qué-contamos-el-viaje">title: “Por qué contamos el viaje”</h2>
+<p>A medida que IASI empieza a tomar forma aparece un problema que al principio no parece especialmente importante: estamos produciendo resultados, pero estamos perdiendo buena parte de lo que ocurre para llegar hasta ellos.</p>
+<p>Una decisión termina en un documento. Una arquitectura termina reflejada en el código. Una idea suficientemente madura puede acabar en uno de los libros. Git conserva perfectamente qué fichero cambia y cuándo cambia. Desde ese punto de vista parece que tenemos todo lo necesario para reconstruir el proyecto.</p>
+<p>Pero no es verdad.</p>
+<p>Entre el problema inicial y el resultado final ocurre casi todo lo que realmente nos interesa.</p>
+<p>Una idea aparece durante una conversación y parece razonable. La discutimos. Encontramos una excepción. Probamos otra posibilidad. Esa alternativa resuelve una cosa y rompe otra. Volvemos atrás. Una pregunta aparentemente secundaria cambia la forma en que entendemos el problema. A veces empezamos intentando resolver una cuestión puramente técnica y terminamos descubriendo algo que afecta a la metodología completa.</p>
+<p>Cuando finalmente llegamos a una solución, todo ese recorrido desaparece con enorme facilidad.</p>
+<p>La documentación tradicional tiende a contar las cosas desde el final. Una vez conocida la solución resulta natural explicar el problema, presentar la arquitectura elegida y justificar por qué es adecuada. El resultado suele ser limpio, comprensible y útil.</p>
+<p>También es inevitablemente engañoso.</p>
+<p>No porque lo que cuenta sea falso, sino porque elimina el proceso que conduce hasta allí. Las dudas desaparecen, las alternativas descartadas dejan de existir y las decisiones parecen mucho más evidentes de lo que son mientras las estamos tomando.</p>
+<p>Una metodología puede terminar sufriendo exactamente el mismo problema.</p>
+<p>Podemos escribir qué debe hacerse, en qué orden, qué artefactos existen y cuáles son sus responsabilidades. Podemos describir el resultado correcto de aplicar IASI. Pero eso no enseña necesariamente cómo se trabaja cuando las cosas todavía no están claras.</p>
+<p>Y eso es precisamente lo que queremos entender.</p>
+<p>IASI no se está diseñando primero para aplicarlo después. Se está descubriendo mientras trabajamos. Muchas de sus ideas aparecen porque un proyecto real nos obliga a enfrentarnos a un problema que no habíamos previsto. <code>iasi-graphics</code>, por ejemplo, empieza siendo una necesidad bastante concreta y termina poniendo sobre la mesa preguntas sobre especificaciones, inputs, agentes, herramientas y la propia forma en que queremos construir software.</p>
+<p>Si contamos únicamente el resultado final, esa relación desaparece.</p>
+<p>Podremos decir algún día que IASI utiliza <code>inputs</code>, <code>definitions</code>, skills o determinadas reglas de trabajo. Lo que no podremos ver es por qué aparecen, qué problema intenta resolver cada una, qué alternativas consideramos antes y qué parte de la idea original cambia durante el proceso.</p>
+<p>Eso empieza a parecernos una pérdida importante.</p>
+<p>Hay además otra diferencia respecto a la forma tradicional de trabajar. Gran parte de este proceso ocurre conversando con Sistemas Inteligentes.</p>
+<p>La conversación no es simplemente una interfaz para pedir un resultado. Se convierte en parte del trabajo intelectual. Nosotros planteamos una idea, el sistema propone posibilidades, las cuestionamos, aparecen relaciones que no habíamos visto, descartamos soluciones y volvemos a formular el problema. En otras ocasiones ocurre al revés: el Sistema Inteligente propone una interpretación que parece razonable y somos nosotros quienes detectamos que parte de una premisa equivocada.</p>
+<p>Lo interesante no está únicamente en quién tiene la idea correcta.</p>
+<p>Está en cómo cambia la comprensión del problema durante esa interacción.</p>
+<p>Eso hace que conservar solamente el documento final resulte todavía más pobre. El documento puede mostrar la decisión, pero no muestra la secuencia de razonamiento que permite comprender por qué esa decisión termina existiendo.</p>
+<p>Empieza entonces a aparecer la necesidad de conservar dos cosas distintas.</p>
+<p>Por un lado está la conversación original. Debe mantenerse como ocurrió. Puede contener repeticiones, errores, enfados, propuestas que duran cinco minutos y frases que fuera de contexto no parecen especialmente relevantes. No importa. Es la fuente. Si la modificamos después para hacerla más limpia, dejamos de conservar lo que realmente ocurrió.</p>
+<p>Por otro lado está la narración.</p>
+<p>La narración no pretende reproducir cada conversación. Tampoco pretende resumirlas todas. Intenta identificar aquellos momentos en los que cambia algo: nuestra comprensión de un problema, una decisión de arquitectura, una regla metodológica, la relación entre dos componentes o incluso nuestra propia manera de trabajar con los Sistemas Inteligentes.</p>
+<p>Pero al intentar conservar el recorrido aparece otra necesidad que, en realidad, no es nueva. Muchas metodologías y prácticas de ingeniería la resuelven de distintas maneras y con distintos nombres: <strong>registrar las decisiones que se van tomando</strong>.</p>
+<p>Porque conservar cómo llegamos a una decisión no resuelve por sí solo un problema muy cotidiano.</p>
+<p>Semanas después alguien puede volver a plantear exactamente la misma cuestión.</p>
+<p>¿Por qué hacemos esto así? ¿Por qué usamos esta tecnología? ¿Por qué descartamos aquella alternativa? ¿Por qué esta responsabilidad está aquí y no allí?</p>
+<p>Si la respuesta está únicamente repartida entre conversaciones, documentos y recuerdos de quienes participaron, el equipo vuelve a empezar la discusión. A veces incluso llega exactamente a la misma conclusión después de invertir de nuevo varias horas. Otras veces toma una decisión distinta simplemente porque ya nadie recuerda las razones que justificaron la anterior.</p>
+<p>Con Sistemas Inteligentes este problema puede incluso amplificarse. Un agente que entra hoy en un proyecto no ha participado necesariamente en las conversaciones de ayer. Si no existe un lugar donde pueda comprobar qué decisiones están vigentes, puede volver a cuestionar asuntos ya resueltos, proponer alternativas descartadas o reconstruir desde cero un razonamiento que el proyecto ya ha realizado.</p>
+<p>No queremos impedir que una decisión pueda cuestionarse.</p>
+<p>Todo lo contrario.</p>
+<p>Una decisión debe poder revisarse cuando aparece nueva información, cambian las condiciones o descubrimos que las premisas originales ya no son válidas. Lo que no tiene sentido es <strong>reinventar continuamente la rueda porque hemos perdido la memoria de que esa discusión ya ocurrió</strong>.</p>
+<p>Ahí empieza a hacerse evidente que el registro de decisiones no es simplemente una buena práctica documental.</p>
+<p>Es parte del sistema de conocimiento de una metodología.</p>
+<p>Necesitamos poder saber qué se decide, cuándo se decide, por qué se decide, qué alternativas se consideran y, cuando sea necesario, qué decisión posterior sustituye a la anterior.</p>
+<p>El Journey y el registro de decisiones se parecen porque ambos nacen del mismo proceso, pero cumplen funciones diferentes.</p>
+<p>El Journey puede contar una discusión completa, los rodeos, las dudas y el momento en el que cambia nuestra comprensión.</p>
+<p>El registro de decisiones necesita ser mucho más directo.</p>
+<p>Dice qué queda decidido.</p>
+<p>Uno conserva el viaje.</p>
+<p>El otro establece el punto al que hemos llegado.</p>
+<p>Esta separación empieza a parecernos importante porque permite mantener dos propiedades que, mezcladas en un único artefacto, resultarían difíciles de conseguir.</p>
+<p>El Journey puede permitirse ser narrativo, incompleto, provisional e incluso estar equivocado desde la perspectiva del futuro.</p>
+<p>Una decisión registrada debe ser inequívoca respecto al estado que representa. Si después cambia, no necesitamos fingir que nunca existió. Registramos el cambio y mantenemos la trazabilidad entre ambas.</p>
+<p>De ahí empieza a surgir una conclusión más amplia para IASI: <strong>toda metodología necesita algún mecanismo explícito para registrar sus decisiones</strong>.</p>
+<p>Puede llamarse ADR, registro de decisiones, log, record o adoptar cualquier otra forma. El nombre y el formato son secundarios. Lo importante es que exista como artefacto reconocible de la metodología y que no dependa únicamente de la memoria de las personas, de una conversación perdida o de interpretar retrospectivamente el código.</p>
+<p>Es una de esas cosas que parecen administrativas hasta que se piensa en su función real.</p>
+<p>Una decisión registrada reduce trabajo futuro.</p>
+<p>Evita discusiones repetidas. Permite incorporar a nuevas personas y nuevos agentes. Conserva el contexto que el código no puede expresar. Hace posible revisar una decisión sin tener que reconstruir primero por qué existe. Y, sobre todo, permite distinguir entre cuestionar conscientemente una decisión y simplemente ignorar que ya fue tomada.</p>
+<p>El propio desarrollo de IASI nos lleva así a identificar dos artefactos diferentes que nacen casi al mismo tiempo.</p>
+<p>Uno existe para que no perdamos <strong>cómo pensamos</strong>.</p>
+<p>El otro existe para que no perdamos <strong>qué decidimos</strong>.</p>
+<p>Ahí empieza a tener sentido el Journey.</p>
+<p>No como un diario en el que anotamos lo que hacemos cada día. Tampoco como una segunda versión de los libros. Y mucho menos como una colección de actas de reuniones.</p>
+<p>El Journey cuenta transformaciones.</p>
+<p>Un capítulo puede empezar con una necesidad aparentemente pequeña y terminar con una idea que modifica una parte importante de IASI. Otro puede contar una solución que creemos correcta durante un tiempo y que después abandonamos. Otro puede no terminar con ninguna respuesta, simplemente con una pregunta que tarda varias etapas del viaje en resolverse.</p>
+<p>Eso implica aceptar algo que no suele resultar cómodo en la documentación técnica: el Journey puede contener cosas que más adelante dejan de ser ciertas.</p>
+<p>Si en un momento creemos que necesitamos una determinada herramienta, eso forma parte del viaje. Si después descubrimos que no la necesitamos, no volvemos al capítulo anterior para corregirlo y hacer que parezca que siempre lo supimos. Continuamos la historia desde el nuevo punto.</p>
+<p>De esa forma cada capítulo conserva no solo información sobre IASI, sino también el estado de nuestra comprensión en ese momento.</p>
+<p>La fecha importa, pero no organiza el relato. No queremos escribir una secuencia de “hoy hicimos esto” y “mañana aquello”. La unidad narrativa es el episodio, el momento en el que una idea se mueve.</p>
+<p>A veces ese episodio ocurre en una tarde. Otras veces atraviesa varias conversaciones o varios proyectos.</p>
+<p>Lo que importa es que entre el principio y el final del capítulo algo haya cambiado.</p>
+<p>Esta forma de conservar el viaje tiene además una utilidad que empieza a resultar evidente mientras IASI crece.</p>
+<p>Las decisiones registradas nos permiten saber qué hemos decidido. Los artefactos nos muestran qué hemos construido. Los libros pueden explicar aquello que ya consideramos conocimiento consolidado.</p>
+<p>El Journey conserva otra cosa.</p>
+<p>Conserva el camino que conecta todo lo anterior.</p>
+<p>Y esa diferencia es especialmente importante si lo que intentamos construir es una metodología.</p>
+<p>No queremos presentar IASI como una colección de reglas que aparecen terminadas de algún sitio. Queremos poder seguir el camino que lleva hasta ellas, ver qué problemas intentan resolver, dónde nos equivocamos y qué ocurre cuando las ponemos delante de un proyecto real.</p>
+<p>Porque la forma en que estamos trabajando también forma parte de lo que estamos intentando aprender.</p>
+<p>Por eso contamos el viaje mientras todavía estamos dentro de él.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -707,13 +760,13 @@ SVG / PNG</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../journey/02-guardar-antes-de-interpretar/index.html" class="pagination-link" aria-label="Guardar antes de interpretar">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Guardar antes de interpretar</span></span>
+      <a href="../../index.html" class="pagination-link" aria-label="Journey">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Journey</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../journey/04-primero-la-especificacion/index.html" class="pagination-link" aria-label="Primero la especificación, después el código">
-        <span class="nav-page-text"><span class="chapter-title">Primero la especificación, después el código</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../journey/01-cuando-el-proceso-empezo-a-importar/index.html" class="pagination-link" aria-label="Cuando el proceso empezó a importar">
+        <span class="nav-page-text"><span class="chapter-title">Cuando el proceso empezó a importar</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
