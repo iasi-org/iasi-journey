@@ -1,3 +1,6 @@
+project:
+  output-dir: _outputs/html
+
 format:
   html:
     toc: true

@@ -1,3 +1,4 @@
 publication:
-  type: book
-  default-format: html
+  strategy: regular
+  content-dir: journey
+  numbered: true
