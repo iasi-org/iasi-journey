@@ -1,0 +1,12 @@
+project:
+  type: book
+
+lang: es
+
+title: "IASI Journey"
+
+book:
+  title: "IASI Journey"
+  chapters:
+    - index.qmd
+    - journey/index.qmd

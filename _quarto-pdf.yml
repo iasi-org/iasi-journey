@@ -1,0 +1,4 @@
+format:
+  pdf:
+    toc: true
+    number-sections: false
