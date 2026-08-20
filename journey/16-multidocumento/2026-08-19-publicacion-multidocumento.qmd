@@ -1,0 +1,427 @@
+---
+title: "Necesidad descubierta: publicación multidocumento"
+date: 2026-08-19
+---
+
+Durante la evolución de `iasi-quarto` apareció una necesidad que no habíamos identificado inicialmente: una publicación no tiene por qué corresponderse con un único documento ni con un único formato de salida.
+
+El punto de partida era mucho más sencillo. IASI trabajaba fundamentalmente con dos formas de publicación:
+
+- HTML, orientado a web.
+- PDF, orientado a documento cerrado, distribución e impresión.
+
+La arquitectura estaba construida alrededor de esa realidad.
+
+Sin embargo, al comenzar a estudiar nuevos formatos de salida fueron apareciendo sucesivamente otras necesidades:
+
+- EPUB para libros electrónicos.
+- ODT para documentos editables y compatibilidad ofimática.
+- GFM para publicación y reutilización directa en GitHub.
+- Typst como alternativa moderna para la generación de PDF.
+
+Lo que inicialmente parecía una simple ampliación de formatos terminó revelando un problema conceptual distinto.
+
+No estábamos añadiendo únicamente nuevos formatos de exportación.
+
+Estábamos descubriendo que **una misma publicación puede necesitar múltiples materializaciones simultáneas**.
+
+## El problema
+
+Una aproximación sencilla habría sido considerar uno de los formatos como principal y convertir desde él al resto.
+
+Por ejemplo:
+
+```text
+HTML
+  ├── PDF
+  ├── EPUB
+  └── ODT
+```
+
+Pero esta estructura introduce una dependencia artificial.
+
+HTML no es necesariamente el origen conceptual de PDF.
+
+PDF tampoco lo es de EPUB.
+
+ODT no debería ser una conversión secundaria de ninguno de ellos.
+
+Cada formato responde a un contexto de uso distinto y puede necesitar configuración, presentación y decisiones específicas.
+
+Por tanto, el modelo más adecuado es:
+
+```text
+contenido / publicación
+        │
+        ├── HTML
+        ├── PDF
+        ├── EPUB
+        ├── DOC / ODT
+        └── Git / GFM
+```
+
+Todos son resultados de una misma fuente y de una misma definición de publicación.
+
+Ninguno necesita ser considerado necesariamente el documento principal.
+
+## La necesidad descubierta
+
+IASI necesita soportar **publicaciones multidocumento**.
+
+Una publicación multidocumento es aquella que puede generar y distribuir varias materializaciones de un mismo contenido, manteniendo cada una:
+
+- su identidad;
+- su configuración;
+- su proceso de generación;
+- su estructura de salida;
+- y su finalidad de uso.
+
+La unidad lógica deja de ser exclusivamente un fichero.
+
+La unidad lógica pasa a ser la **publicación**, formada potencialmente por varios documentos relacionados.
+
+Por ejemplo:
+
+```text
+_outputs/
+├── html/
+├── pdf/
+├── epub/
+├── doc/
+└── git/
+```
+
+Estos directorios no representan cinco publicaciones independientes.
+
+Representan cinco materializaciones de una misma publicación.
+
+## Identidad de publicación frente a implementación
+
+La aparición de varios formatos reveló además la necesidad de separar dos conceptos que inicialmente podían confundirse:
+
+1. La identidad pública del formato.
+2. La tecnología utilizada para producirlo.
+
+Por ejemplo:
+
+```text
+pdf
+```
+
+puede ser la identidad que entiende el usuario, aunque internamente Quarto utilice:
+
+```text
+typst
+```
+
+De la misma forma:
+
+```text
+doc
+```
+
+puede ser una identidad más natural dentro de IASI aunque actualmente su implementación utilice:
+
+```text
+odt
+```
+
+Y:
+
+```text
+git
+```
+
+puede representar una publicación destinada a GitHub mientras actualmente utiliza:
+
+```text
+gfm
+```
+
+Esto conduce a una separación:
+
+```text
+identidad pública    implementación actual
+
+pdf                  typst
+doc                  odt
+git                  gfm
+```
+
+La implementación puede cambiar sin modificar necesariamente la identidad pública.
+
+## Compatibilidad directa con la tecnología subyacente
+
+Al mismo tiempo, IASI no debe impedir que un usuario que conoce Quarto utilice directamente sus nombres nativos.
+
+Por ello pueden coexistir:
+
+```text
+doc
+odt
+
+git
+gfm
+
+pdf
+typst
+```
+
+Cuando el usuario especifica explícitamente un formato, IASI debe respetar esa identidad.
+
+Por ejemplo:
+
+```r
+build(format = c("doc", "odt"))
+```
+
+puede producir ambas materializaciones si ambas están configuradas, incluso aunque actualmente compartan la misma tecnología subyacente.
+
+Esto resulta importante porque una equivalencia actual no implica una equivalencia futura.
+
+`doc` puede utilizar ODT hoy y convertirse más adelante en una publicación Word independiente.
+
+La arquitectura no debería tener que cambiar cuando eso ocurra.
+
+## Perfiles independientes
+
+Esta necesidad llevó también a otra decisión: cada identidad de publicación debe poder disponer de su propio perfil Quarto.
+
+Por ejemplo:
+
+```text
+_quarto-html.yml
+_quarto-pdf.yml
+_quarto-epub.yml
+_quarto-doc.yml
+_quarto-odt.yml
+_quarto-git.yml
+_quarto-gfm.yml
+_quarto-typst.yml
+```
+
+Aunque dos perfiles utilicen actualmente la misma tecnología, siguen siendo configuraciones independientes.
+
+Así:
+
+```text
+doc
+→ _quarto-doc.yml
+→ implementación ODT
+→ _outputs/doc/
+```
+
+mientras:
+
+```text
+odt
+→ _quarto-odt.yml
+→ implementación ODT
+→ _outputs/odt/
+```
+
+La identidad se conserva desde la petición hasta el artefacto generado.
+
+## `all` como selección editorial
+
+La aparición de alias y formatos técnicos mostró también que `all` no debe significar literalmente todos los nombres que el motor conoce.
+
+Por ejemplo, generar simultáneamente:
+
+```text
+doc + odt
+git + gfm
+pdf + typst
+```
+
+no sería una selección especialmente útil por defecto.
+
+`all` representa mejor la colección de formatos que IASI considera adecuada para una publicación general.
+
+Actualmente:
+
+```text
+html
+pdf
+epub
+doc
+git
+```
+
+Los nombres técnicos continúan disponibles cuando se solicitan explícitamente.
+
+Así distinguimos entre:
+
+```text
+all
+→ selección amigable definida por IASI
+```
+
+y:
+
+```text
+format = ...
+→ selección explícita realizada por el usuario
+```
+
+Además, `all` funciona como descubrimiento de las publicaciones configuradas.
+
+Solo se generan aquellas para las que exista su correspondiente perfil `_quarto-xxx.yml`.
+
+La ausencia de un perfil dentro de `all` no constituye un error ni requiere aviso.
+
+Simplemente significa que esa materialización no forma parte de esa publicación.
+
+Cuando un formato se solicita explícitamente y falta su perfil, IASI sí debe indicarlo y omitir esa materialización.
+
+Por ejemplo:
+
+```text
+Ignorando 'odt' porque falta '_quarto-odt.yml'.
+```
+
+## Build y Publish
+
+La publicación multidocumento obligó también a revisar la diferencia entre `build` y `publish`.
+
+`build` genera las distintas materializaciones:
+
+```text
+build()
+    ↓
+_outputs/
+├── html/
+├── pdf/
+├── epub/
+├── doc/
+└── git/
+```
+
+`publish` no debe fusionarlas ni reinterpretarlas.
+
+Su primera responsabilidad es conservar ese conjunto:
+
+```text
+_outputs/
+    ↓
+publish/
+```
+
+manteniendo exactamente la misma estructura.
+
+Por tanto:
+
+> `build` genera las materializaciones.  
+> `publish` prepara el conjunto para su despliegue.
+
+Esto permite que `publish/` sea directamente el artefacto desplegable de la publicación multidocumento.
+
+## HTML como punto de entrada
+
+En una publicación que contiene HTML, este puede actuar como interfaz de acceso al resto de materializaciones.
+
+Inicialmente los formatos descargables aparecían como herramientas independientes en la barra de navegación.
+
+Conforme aumentó el número de formatos, este modelo dejó de resultar adecuado.
+
+PDF, EPUB, documentos editables o versiones GitHub acabarían llenando la navegación de iconos independientes.
+
+Apareció entonces otra consecuencia natural de la publicación multidocumento: disponer de una única entrada:
+
+```text
+Export
+```
+
+que permita acceder a las distintas materializaciones disponibles.
+
+Por ejemplo:
+
+```text
+Export
+├── PDF
+├── EPUB
+├── DOC
+└── GitHub
+```
+
+Este menú no forma parte conceptualmente del contenido fuente.
+
+Es una representación de los artefactos que realmente forman parte de la publicación desplegada.
+
+## Un punto de integración explícito
+
+Para evitar que `publish` tenga que interpretar o modificar arbitrariamente la estructura HTML generada por Quarto, se plantea incluir un punto de integración explícito propiedad de IASI.
+
+Por ejemplo:
+
+```html
+<!-- IASI_EXPORT -->
+...
+<!-- /IASI_EXPORT -->
+```
+
+o un elemento equivalente identificable de forma inequívoca.
+
+Quarto decide dónde se encuentra ese elemento dentro de la interfaz.
+
+IASI controla su contenido durante `publish`.
+
+La separación queda entonces:
+
+```text
+HTML / Quarto
+    → decide dónde aparece Export
+
+IASI publish
+    → decide qué materializaciones aparecen dentro
+```
+
+Esto evita manipular indiscriminadamente la navegación generada por Quarto y proporciona a IASI un espacio explícitamente diseñado para ser modificado durante la publicación.
+
+## Consecuencia metodológica
+
+La necesidad descubierta no pertenece únicamente a `iasi-quarto`.
+
+Es una cuestión más general.
+
+Cuando el coste de producir distintas representaciones de un mismo contenido disminuye, resulta menos necesario elegir anticipadamente un único documento final.
+
+Un mismo conocimiento puede necesitar distintas formas según quién vaya a consumirlo y para qué:
+
+```text
+navegar       → HTML
+leer/imprimir → PDF
+e-reader      → EPUB
+editar        → DOC / ODT
+versionar     → Git / GFM
+```
+
+La decisión deja de ser:
+
+> ¿En qué formato está el documento?
+
+y pasa a ser:
+
+> ¿Qué materializaciones necesita esta publicación?
+
+## Necesidad incorporada
+
+A partir de esta experiencia consideramos necesario que IASI pueda tratar una publicación como un conjunto coherente de materializaciones independientes.
+
+No se trata únicamente de soportar más formatos.
+
+Se trata de reconocer que:
+
+> **Una publicación puede ser multidocumento.**
+
+Y, por tanto:
+
+> **El artefacto lógico no tiene por qué ser un fichero; puede ser el conjunto coherente de sus distintas materializaciones.**
+
+Esta necesidad fue descubierta durante la evolución real de `iasi-quarto`, al intentar ampliar una arquitectura inicialmente HTML/PDF hacia EPUB, documentos editables, GitHub y nuevos motores de generación de PDF.
+
+No fue un requisito definido de antemano.
+
+Apareció como consecuencia del uso y de la evolución del propio sistema.
+
+Precisamente por eso debe formar parte del journey.

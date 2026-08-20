@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-08-19">
+
+<title>Necesidad descubierta: publicación multidocumento – IASI Journey</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../journey/20-labs/index.html" rel="next">
+<link href="../../journey/15-el-journey-empieza-a-escribirse/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-797d27cea1d4e5a7f22cd0c0edd4997e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../journey/16-multidocumento/index.html"><span class="chapter-title">Necesidad descubierta: publicación multidocumento</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">IASI Journey</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Journey</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/00-inicio/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El origen</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/01-cuando-el-proceso-empezo-a-importar/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Cuando el proceso empezó a importar</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/02-guardar-antes-de-interpretar/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guardar antes de interpretar</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/03-un-grafico-que-no-queria-ser-un-diagrama/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Un gráfico que no quería ser un diagrama</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/04-primero-la-especificacion/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primero la especificación, después el código</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/05-iasi-graphics-destapa-la-metodologia/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IASI Graphics destapa la metodología</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/06-todo-se-reduce-a-inputs/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Todo se reduce a inputs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/07-de-metodologia-a-sistema-ejecutable/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">De metodología escrita a sistema ejecutable</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/08-instructions-skills-y-plataformas/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instructions, skills y plataformas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/09-el-lugar-natural-del-cambio/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El lugar natural del cambio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/10-cuando-openspec-dejo-de-ser-necesario/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Cuando OpenSpec dejó de ser necesario</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/11-inputs-no-es-entender/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Inputs no es lo mismo que entender</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/12-define-no-genera-reconcilia/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><code>define</code> no genera: reconcilia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/13-iasi-se-construye-con-iasi/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IASI decide construirse con IASI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/14-nos-perdimos-y-paramos/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nos perdimos y paramos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/15-el-journey-empieza-a-escribirse/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El Journey empieza a escribirse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/16-multidocumento/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Necesidad descubierta: publicación multidocumento</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../journey/20-labs/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Los labs empiezan a tomar forma</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#el-problema" id="toc-el-problema" class="nav-link active" data-scroll-target="#el-problema">El problema</a></li>
+  <li><a href="#la-necesidad-descubierta" id="toc-la-necesidad-descubierta" class="nav-link" data-scroll-target="#la-necesidad-descubierta">La necesidad descubierta</a></li>
+  <li><a href="#identidad-de-publicación-frente-a-implementación" id="toc-identidad-de-publicación-frente-a-implementación" class="nav-link" data-scroll-target="#identidad-de-publicación-frente-a-implementación">Identidad de publicación frente a implementación</a></li>
+  <li><a href="#compatibilidad-directa-con-la-tecnología-subyacente" id="toc-compatibilidad-directa-con-la-tecnología-subyacente" class="nav-link" data-scroll-target="#compatibilidad-directa-con-la-tecnología-subyacente">Compatibilidad directa con la tecnología subyacente</a></li>
+  <li><a href="#perfiles-independientes" id="toc-perfiles-independientes" class="nav-link" data-scroll-target="#perfiles-independientes">Perfiles independientes</a></li>
+  <li><a href="#all-como-selección-editorial" id="toc-all-como-selección-editorial" class="nav-link" data-scroll-target="#all-como-selección-editorial"><code>all</code> como selección editorial</a></li>
+  <li><a href="#build-y-publish" id="toc-build-y-publish" class="nav-link" data-scroll-target="#build-y-publish">Build y Publish</a></li>
+  <li><a href="#html-como-punto-de-entrada" id="toc-html-como-punto-de-entrada" class="nav-link" data-scroll-target="#html-como-punto-de-entrada">HTML como punto de entrada</a></li>
+  <li><a href="#un-punto-de-integración-explícito" id="toc-un-punto-de-integración-explícito" class="nav-link" data-scroll-target="#un-punto-de-integración-explícito">Un punto de integración explícito</a></li>
+  <li><a href="#consecuencia-metodológica" id="toc-consecuencia-metodológica" class="nav-link" data-scroll-target="#consecuencia-metodológica">Consecuencia metodológica</a></li>
+  <li><a href="#necesidad-incorporada" id="toc-necesidad-incorporada" class="nav-link" data-scroll-target="#necesidad-incorporada">Necesidad incorporada</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div class="iasi-ants-banner">
+
+  <img src="../../resources/images/ants.png" alt="">
+
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Necesidad descubierta: publicación multidocumento</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026-08-19</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated by iasi.quarto. Do not edit. -->
+<hr>
+<p>Este capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.</p>
+<p>Durante la evolución de <code>iasi-quarto</code> apareció una necesidad que no habíamos identificado inicialmente: una publicación no tiene por qué corresponderse con un único documento ni con un único formato de salida.</p>
+<p>El punto de partida era mucho más sencillo. IASI trabajaba fundamentalmente con dos formas de publicación:</p>
+<ul>
+<li>HTML, orientado a web.</li>
+<li>PDF, orientado a documento cerrado, distribución e impresión.</li>
+</ul>
+<p>La arquitectura estaba construida alrededor de esa realidad.</p>
+<p>Sin embargo, al comenzar a estudiar nuevos formatos de salida fueron apareciendo sucesivamente otras necesidades:</p>
+<ul>
+<li>EPUB para libros electrónicos.</li>
+<li>ODT para documentos editables y compatibilidad ofimática.</li>
+<li>GFM para publicación y reutilización directa en GitHub.</li>
+<li>Typst como alternativa moderna para la generación de PDF.</li>
+</ul>
+<p>Lo que inicialmente parecía una simple ampliación de formatos terminó revelando un problema conceptual distinto.</p>
+<p>No estábamos añadiendo únicamente nuevos formatos de exportación.</p>
+<p>Estábamos descubriendo que <strong>una misma publicación puede necesitar múltiples materializaciones simultáneas</strong>.</p>
+<section id="el-problema" class="level2">
+<h2 class="anchored" data-anchor-id="el-problema">El problema</h2>
+<p>Una aproximación sencilla habría sido considerar uno de los formatos como principal y convertir desde él al resto.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>HTML
+  ├── PDF
+  ├── EPUB
+  └── ODT</code></pre>
+<p>Pero esta estructura introduce una dependencia artificial.</p>
+<p>HTML no es necesariamente el origen conceptual de PDF.</p>
+<p>PDF tampoco lo es de EPUB.</p>
+<p>ODT no debería ser una conversión secundaria de ninguno de ellos.</p>
+<p>Cada formato responde a un contexto de uso distinto y puede necesitar configuración, presentación y decisiones específicas.</p>
+<p>Por tanto, el modelo más adecuado es:</p>
+<pre class="text"><code>contenido / publicación
+        │
+        ├── HTML
+        ├── PDF
+        ├── EPUB
+        ├── DOC / ODT
+        └── Git / GFM</code></pre>
+<p>Todos son resultados de una misma fuente y de una misma definición de publicación.</p>
+<p>Ninguno necesita ser considerado necesariamente el documento principal.</p>
+</section>
+<section id="la-necesidad-descubierta" class="level2">
+<h2 class="anchored" data-anchor-id="la-necesidad-descubierta">La necesidad descubierta</h2>
+<p>IASI necesita soportar <strong>publicaciones multidocumento</strong>.</p>
+<p>Una publicación multidocumento es aquella que puede generar y distribuir varias materializaciones de un mismo contenido, manteniendo cada una:</p>
+<ul>
+<li>su identidad;</li>
+<li>su configuración;</li>
+<li>su proceso de generación;</li>
+<li>su estructura de salida;</li>
+<li>y su finalidad de uso.</li>
+</ul>
+<p>La unidad lógica deja de ser exclusivamente un fichero.</p>
+<p>La unidad lógica pasa a ser la <strong>publicación</strong>, formada potencialmente por varios documentos relacionados.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>_outputs/
+├── html/
+├── pdf/
+├── epub/
+├── doc/
+└── git/</code></pre>
+<p>Estos directorios no representan cinco publicaciones independientes.</p>
+<p>Representan cinco materializaciones de una misma publicación.</p>
+</section>
+<section id="identidad-de-publicación-frente-a-implementación" class="level2">
+<h2 class="anchored" data-anchor-id="identidad-de-publicación-frente-a-implementación">Identidad de publicación frente a implementación</h2>
+<p>La aparición de varios formatos reveló además la necesidad de separar dos conceptos que inicialmente podían confundirse:</p>
+<ol type="1">
+<li>La identidad pública del formato.</li>
+<li>La tecnología utilizada para producirlo.</li>
+</ol>
+<p>Por ejemplo:</p>
+<pre class="text"><code>pdf</code></pre>
+<p>puede ser la identidad que entiende el usuario, aunque internamente Quarto utilice:</p>
+<pre class="text"><code>typst</code></pre>
+<p>De la misma forma:</p>
+<pre class="text"><code>doc</code></pre>
+<p>puede ser una identidad más natural dentro de IASI aunque actualmente su implementación utilice:</p>
+<pre class="text"><code>odt</code></pre>
+<p>Y:</p>
+<pre class="text"><code>git</code></pre>
+<p>puede representar una publicación destinada a GitHub mientras actualmente utiliza:</p>
+<pre class="text"><code>gfm</code></pre>
+<p>Esto conduce a una separación:</p>
+<pre class="text"><code>identidad pública    implementación actual
+
+pdf                  typst
+doc                  odt
+git                  gfm</code></pre>
+<p>La implementación puede cambiar sin modificar necesariamente la identidad pública.</p>
+</section>
+<section id="compatibilidad-directa-con-la-tecnología-subyacente" class="level2">
+<h2 class="anchored" data-anchor-id="compatibilidad-directa-con-la-tecnología-subyacente">Compatibilidad directa con la tecnología subyacente</h2>
+<p>Al mismo tiempo, IASI no debe impedir que un usuario que conoce Quarto utilice directamente sus nombres nativos.</p>
+<p>Por ello pueden coexistir:</p>
+<pre class="text"><code>doc
+odt
+
+git
+gfm
+
+pdf
+typst</code></pre>
+<p>Cuando el usuario especifica explícitamente un formato, IASI debe respetar esa identidad.</p>
+<p>Por ejemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">build</span>(<span class="at">format =</span> <span class="fu">c</span>(<span class="st">"doc"</span>, <span class="st">"odt"</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>puede producir ambas materializaciones si ambas están configuradas, incluso aunque actualmente compartan la misma tecnología subyacente.</p>
+<p>Esto resulta importante porque una equivalencia actual no implica una equivalencia futura.</p>
+<p><code>doc</code> puede utilizar ODT hoy y convertirse más adelante en una publicación Word independiente.</p>
+<p>La arquitectura no debería tener que cambiar cuando eso ocurra.</p>
+</section>
+<section id="perfiles-independientes" class="level2">
+<h2 class="anchored" data-anchor-id="perfiles-independientes">Perfiles independientes</h2>
+<p>Esta necesidad llevó también a otra decisión: cada identidad de publicación debe poder disponer de su propio perfil Quarto.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>_quarto-html.yml
+_quarto-pdf.yml
+_quarto-epub.yml
+_quarto-doc.yml
+_quarto-odt.yml
+_quarto-git.yml
+_quarto-gfm.yml
+_quarto-typst.yml</code></pre>
+<p>Aunque dos perfiles utilicen actualmente la misma tecnología, siguen siendo configuraciones independientes.</p>
+<p>Así:</p>
+<pre class="text"><code>doc
+→ _quarto-doc.yml
+→ implementación ODT
+→ _outputs/doc/</code></pre>
+<p>mientras:</p>
+<pre class="text"><code>odt
+→ _quarto-odt.yml
+→ implementación ODT
+→ _outputs/odt/</code></pre>
+<p>La identidad se conserva desde la petición hasta el artefacto generado.</p>
+</section>
+<section id="all-como-selección-editorial" class="level2">
+<h2 class="anchored" data-anchor-id="all-como-selección-editorial"><code>all</code> como selección editorial</h2>
+<p>La aparición de alias y formatos técnicos mostró también que <code>all</code> no debe significar literalmente todos los nombres que el motor conoce.</p>
+<p>Por ejemplo, generar simultáneamente:</p>
+<pre class="text"><code>doc + odt
+git + gfm
+pdf + typst</code></pre>
+<p>no sería una selección especialmente útil por defecto.</p>
+<p><code>all</code> representa mejor la colección de formatos que IASI considera adecuada para una publicación general.</p>
+<p>Actualmente:</p>
+<pre class="text"><code>html
+pdf
+epub
+doc
+git</code></pre>
+<p>Los nombres técnicos continúan disponibles cuando se solicitan explícitamente.</p>
+<p>Así distinguimos entre:</p>
+<pre class="text"><code>all
+→ selección amigable definida por IASI</code></pre>
+<p>y:</p>
+<pre class="text"><code>format = ...
+→ selección explícita realizada por el usuario</code></pre>
+<p>Además, <code>all</code> funciona como descubrimiento de las publicaciones configuradas.</p>
+<p>Solo se generan aquellas para las que exista su correspondiente perfil <code>_quarto-xxx.yml</code>.</p>
+<p>La ausencia de un perfil dentro de <code>all</code> no constituye un error ni requiere aviso.</p>
+<p>Simplemente significa que esa materialización no forma parte de esa publicación.</p>
+<p>Cuando un formato se solicita explícitamente y falta su perfil, IASI sí debe indicarlo y omitir esa materialización.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>Ignorando 'odt' porque falta '_quarto-odt.yml'.</code></pre>
+</section>
+<section id="build-y-publish" class="level2">
+<h2 class="anchored" data-anchor-id="build-y-publish">Build y Publish</h2>
+<p>La publicación multidocumento obligó también a revisar la diferencia entre <code>build</code> y <code>publish</code>.</p>
+<p><code>build</code> genera las distintas materializaciones:</p>
+<pre class="text"><code>build()
+    ↓
+_outputs/
+├── html/
+├── pdf/
+├── epub/
+├── doc/
+└── git/</code></pre>
+<p><code>publish</code> no debe fusionarlas ni reinterpretarlas.</p>
+<p>Su primera responsabilidad es conservar ese conjunto:</p>
+<pre class="text"><code>_outputs/
+    ↓
+publish/</code></pre>
+<p>manteniendo exactamente la misma estructura.</p>
+<p>Por tanto:</p>
+<blockquote class="blockquote">
+<p><code>build</code> genera las materializaciones.<br>
+<code>publish</code> prepara el conjunto para su despliegue.</p>
+</blockquote>
+<p>Esto permite que <code>publish/</code> sea directamente el artefacto desplegable de la publicación multidocumento.</p>
+</section>
+<section id="html-como-punto-de-entrada" class="level2">
+<h2 class="anchored" data-anchor-id="html-como-punto-de-entrada">HTML como punto de entrada</h2>
+<p>En una publicación que contiene HTML, este puede actuar como interfaz de acceso al resto de materializaciones.</p>
+<p>Inicialmente los formatos descargables aparecían como herramientas independientes en la barra de navegación.</p>
+<p>Conforme aumentó el número de formatos, este modelo dejó de resultar adecuado.</p>
+<p>PDF, EPUB, documentos editables o versiones GitHub acabarían llenando la navegación de iconos independientes.</p>
+<p>Apareció entonces otra consecuencia natural de la publicación multidocumento: disponer de una única entrada:</p>
+<pre class="text"><code>Export</code></pre>
+<p>que permita acceder a las distintas materializaciones disponibles.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>Export
+├── PDF
+├── EPUB
+├── DOC
+└── GitHub</code></pre>
+<p>Este menú no forma parte conceptualmente del contenido fuente.</p>
+<p>Es una representación de los artefactos que realmente forman parte de la publicación desplegada.</p>
+</section>
+<section id="un-punto-de-integración-explícito" class="level2">
+<h2 class="anchored" data-anchor-id="un-punto-de-integración-explícito">Un punto de integración explícito</h2>
+<p>Para evitar que <code>publish</code> tenga que interpretar o modificar arbitrariamente la estructura HTML generada por Quarto, se plantea incluir un punto de integración explícito propiedad de IASI.</p>
+<p>Por ejemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- IASI_EXPORT --&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /IASI_EXPORT --&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>o un elemento equivalente identificable de forma inequívoca.</p>
+<p>Quarto decide dónde se encuentra ese elemento dentro de la interfaz.</p>
+<p>IASI controla su contenido durante <code>publish</code>.</p>
+<p>La separación queda entonces:</p>
+<pre class="text"><code>HTML / Quarto
+    → decide dónde aparece Export
+
+IASI publish
+    → decide qué materializaciones aparecen dentro</code></pre>
+<p>Esto evita manipular indiscriminadamente la navegación generada por Quarto y proporciona a IASI un espacio explícitamente diseñado para ser modificado durante la publicación.</p>
+</section>
+<section id="consecuencia-metodológica" class="level2">
+<h2 class="anchored" data-anchor-id="consecuencia-metodológica">Consecuencia metodológica</h2>
+<p>La necesidad descubierta no pertenece únicamente a <code>iasi-quarto</code>.</p>
+<p>Es una cuestión más general.</p>
+<p>Cuando el coste de producir distintas representaciones de un mismo contenido disminuye, resulta menos necesario elegir anticipadamente un único documento final.</p>
+<p>Un mismo conocimiento puede necesitar distintas formas según quién vaya a consumirlo y para qué:</p>
+<pre class="text"><code>navegar       → HTML
+leer/imprimir → PDF
+e-reader      → EPUB
+editar        → DOC / ODT
+versionar     → Git / GFM</code></pre>
+<p>La decisión deja de ser:</p>
+<blockquote class="blockquote">
+<p>¿En qué formato está el documento?</p>
+</blockquote>
+<p>y pasa a ser:</p>
+<blockquote class="blockquote">
+<p>¿Qué materializaciones necesita esta publicación?</p>
+</blockquote>
+</section>
+<section id="necesidad-incorporada" class="level2">
+<h2 class="anchored" data-anchor-id="necesidad-incorporada">Necesidad incorporada</h2>
+<p>A partir de esta experiencia consideramos necesario que IASI pueda tratar una publicación como un conjunto coherente de materializaciones independientes.</p>
+<p>No se trata únicamente de soportar más formatos.</p>
+<p>Se trata de reconocer que:</p>
+<blockquote class="blockquote">
+<p><strong>Una publicación puede ser multidocumento.</strong></p>
+</blockquote>
+<p>Y, por tanto:</p>
+<blockquote class="blockquote">
+<p><strong>El artefacto lógico no tiene por qué ser un fichero; puede ser el conjunto coherente de sus distintas materializaciones.</strong></p>
+</blockquote>
+<p>Esta necesidad fue descubierta durante la evolución real de <code>iasi-quarto</code>, al intentar ampliar una arquitectura inicialmente HTML/PDF hacia EPUB, documentos editables, GitHub y nuevos motores de generación de PDF.</p>
+<p>No fue un requisito definido de antemano.</p>
+<p>Apareció como consecuencia del uso y de la evolución del propio sistema.</p>
+<p>Precisamente por eso debe formar parte del journey.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../journey/15-el-journey-empieza-a-escribirse/index.html" class="pagination-link" aria-label="El Journey empieza a escribirse">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">El Journey empieza a escribirse</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../journey/20-labs/index.html" class="pagination-link" aria-label="Los labs empiezan a tomar forma">
+        <span class="nav-page-text"><span class="chapter-title">Los labs empiezan a tomar forma</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
