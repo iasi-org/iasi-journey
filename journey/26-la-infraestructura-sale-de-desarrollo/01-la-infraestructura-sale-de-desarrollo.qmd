@@ -1,0 +1,81 @@
+---
+title: "La infraestructura sale de la máquina de desarrollo"
+date: 2026-08-30
+---
+
+Los labs ya nos habían obligado a separar la máquina donde construimos IASI de la máquina donde se utiliza IASI.
+
+Poco después apareció una separación distinta.
+
+La máquina de desarrollo tampoco tenía por qué ejecutar todos los servicios que el entorno necesita.
+
+Docker, PlantUML, Ollama y Open WebUI podían formar una capa de servicios independiente.
+
+La idea era sencilla sobre el papel:
+
+```text
+iasi-dev
+   ↓ consume
+
+iasi-docker
+├── PlantUML
+├── Ollama
+└── Open WebUI
+```
+
+En la práctica nos obligó a comprobar varias cosas que una instalación «todo en localhost» oculta con mucha facilidad.
+
+Primero, `localhost` no es una propiedad del servicio.
+
+Es una propiedad del consumidor.
+
+Si PlantUML vive en otra máquina, la definición funcional del servicio no cambia. Cambia la dirección desde la que lo consumimos.
+
+```text
+misma máquina
+    → localhost:10xxx
+
+otra máquina
+    → host-servicios:10xxx
+```
+
+Segundo, la red interna de Docker y la red desde la que acceden otros consumidores son cosas diferentes. Open WebUI puede hablar con Ollama mediante `http://ollama:11434` dentro de la red Docker mientras un cliente externo utiliza el puerto publicado por la máquina de servicios.
+
+Tercero, la persistencia debía pertenecer a los servicios y no al ciclo de vida de un contenedor. Los modelos de Ollama y los datos de Open WebUI debían sobrevivir a recreaciones de los contenedores.
+
+Y finalmente apareció la GPU.
+
+La máquina `iasi-docker` terminó utilizando la NVIDIA disponible para acelerar Ollama, mientras el host conservaba su propia capacidad gráfica. Llegar hasta ahí exigió resolver Hyper-V, GPU-P, drivers, NVIDIA Container Toolkit y varios detalles bastante menos elegantes que el diagrama final.
+
+Precisamente por eso la separación merece la pena.
+
+Una vez resuelta, la complejidad queda encapsulada detrás de servicios estables.
+
+La máquina de desarrollo no necesita saber cómo está construido Ollama internamente ni cómo se expone la GPU al contenedor. Necesita una capacidad accesible mediante un contrato conocido.
+
+Esto volvió a repetir un patrón que IASI ya había encontrado en otros sitios:
+
+> **La definición pertenece al sistema. La ubicación física puede cambiar.**
+
+### Lo que quedó
+
+IASI empezó a distinguir con más claridad entre:
+
+```text
+entorno de desarrollo
+capacidad de infraestructura
+proyecto consumidor
+```
+
+No todo tiene que vivir en la misma máquina para formar parte del mismo proceso.
+
+Y una infraestructura bien diseñada debería poder moverse sin obligar a redefinir aquello que proporciona.
+
+---
+
+## Fuentes
+
+- `20-docker.qmd` y versiones previas de la definición Docker de IASI.
+- `iasi-compose.yml` y revisiones del 29–30 de agosto de 2026.
+- Sesiones de configuración de `iasi-docker` con GPU NVIDIA, Ollama, Open WebUI y PlantUML.
+- `iasi-models.md`.

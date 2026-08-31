@@ -1,0 +1,55 @@
+---
+title: "Congelar también es ingeniería"
+date: 2026-08-21
+---
+
+Durante años actualizar tecnología había parecido una decisión casi automática.
+
+Aparece una versión nueva, corrige problemas, incorpora capacidades y, en teoría, mejora la anterior. En un proyecto que trabaja precisamente con tecnologías que cambian a gran velocidad, la tentación de ir siempre detrás de la última versión es todavía mayor.
+
+Pero al revisar el entorno de IASI apareció una pregunta bastante menos vistosa:
+
+> ¿Qué ganamos realmente cambiando ahora?
+
+La respuesta no siempre era suficiente para justificar el movimiento.
+
+Una versión mayor de Java, una nueva versión de Quarto, un cambio importante en una librería o una actualización de una herramienta de agentes pueden parecer decisiones locales. En realidad pueden afectar a compatibilidad, dependencias, arquitectura, pruebas, documentación, despliegue y planificación.
+
+Eso nos llevó a formular una regla que inicialmente parece conservadora y, vista desde ingeniería, resulta bastante razonable:
+
+> **Las versiones críticas de un proyecto deben congelarse mientras no exista una necesidad que justifique cambiarlas.**
+
+Congelar no significa negarse a evolucionar.
+
+Significa que la novedad no constituye por sí sola un requisito.
+
+```text
+versión nueva disponible
+        ↓
+¿resuelve una necesidad real?
+        ↓
+     sí / no
+```
+
+Si la respuesta es no, el valor de la estabilidad puede ser mayor que el valor de actualizar.
+
+La idea encaja con un principio más general de IASI. No empezamos por la herramienta ni por lo que acaba de aparecer. Empezamos por el problema.
+
+La misma lógica que aplicamos a una metodología también debe aplicarse a una versión tecnológica.
+
+Esto adquiere todavía más importancia cuando los Sistemas Inteligentes reducen mucho el coste aparente de modificar software. Que un agente pueda actualizar rápidamente código, configuración o dependencias no significa que el coste global de la decisión haya desaparecido. Sigue existiendo el coste de comprender el impacto y, sobre todo, el riesgo de introducir cambio sin necesidad.
+
+### Lo que quedó
+
+Actualizar es una operación técnica.
+
+**Decidir actualizar es una decisión de ingeniería.**
+
+Y, como cualquier decisión, necesita una razón mejor que «hay una versión nueva».
+
+---
+
+## Fuentes
+
+- Conversación de 2026-08-21 sobre congelación de versiones críticas durante un proyecto.
+- Memoria de trabajo de IASI sobre estabilidad tecnológica y cambios de versiones mayores.

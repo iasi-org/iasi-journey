@@ -458,5 +458,205 @@
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Los labs empiezan a tomar forma</span>"
     ]
+  },
+  {
+    "objectID": "journey/21-congelar-tambien-es-ingenieria/index.html",
+    "href": "journey/21-congelar-tambien-es-ingenieria/index.html",
+    "title": "Congelar también es ingeniería",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nDurante años actualizar tecnología había parecido una decisión casi automática.\nAparece una versión nueva, corrige problemas, incorpora capacidades y, en teoría, mejora la anterior. En un proyecto que trabaja precisamente con tecnologías que cambian a gran velocidad, la tentación de ir siempre detrás de la última versión es todavía mayor.\nPero al revisar el entorno de IASI apareció una pregunta bastante menos vistosa:\nLa respuesta no siempre era suficiente para justificar el movimiento.\nUna versión mayor de Java, una nueva versión de Quarto, un cambio importante en una librería o una actualización de una herramienta de agentes pueden parecer decisiones locales. En realidad pueden afectar a compatibilidad, dependencias, arquitectura, pruebas, documentación, despliegue y planificación.\nEso nos llevó a formular una regla que inicialmente parece conservadora y, vista desde ingeniería, resulta bastante razonable:\nCongelar no significa negarse a evolucionar.\nSignifica que la novedad no constituye por sí sola un requisito.\nSi la respuesta es no, el valor de la estabilidad puede ser mayor que el valor de actualizar.\nLa idea encaja con un principio más general de IASI. No empezamos por la herramienta ni por lo que acaba de aparecer. Empezamos por el problema.\nLa misma lógica que aplicamos a una metodología también debe aplicarse a una versión tecnológica.\nEsto adquiere todavía más importancia cuando los Sistemas Inteligentes reducen mucho el coste aparente de modificar software. Que un agente pueda actualizar rápidamente código, configuración o dependencias no significa que el coste global de la decisión haya desaparecido. Sigue existiendo el coste de comprender el impacto y, sobre todo, el riesgo de introducir cambio sin necesidad.\nActualizar es una operación técnica.\nDecidir actualizar es una decisión de ingeniería.\nY, como cualquier decisión, necesita una razón mejor que «hay una versión nueva».",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Congelar también es ingeniería</span>"
+    ]
+  },
+  {
+    "objectID": "journey/21-congelar-tambien-es-ingenieria/index.html#fuentes",
+    "href": "journey/21-congelar-tambien-es-ingenieria/index.html#fuentes",
+    "title": "Congelar también es ingeniería",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversación de 2026-08-21 sobre congelación de versiones críticas durante un proyecto.\nMemoria de trabajo de IASI sobre estabilidad tecnológica y cambios de versiones mayores.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Congelar también es ingeniería</span>"
+    ]
+  },
+  {
+    "objectID": "journey/22-las-reglas-se-vuelven-artefactos/index.html",
+    "href": "journey/22-las-reglas-se-vuelven-artefactos/index.html",
+    "title": "Las reglas se vuelven artefactos",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nLas instructions habían permitido separar reglas generales de los prompts concretos.\nPero todavía quedaba una pregunta incómoda:\nLa respuesta terminó siendo mucho más literal de lo esperado.\nUna regla debía ser un artefacto propio.\nNo una línea enterrada en un prompt gigantesco. No una convención que solo existe en la cabeza de quien trabaja. No un bloque copiado a distintos agentes.\nUn documento.\nY cada regla tendría una estructura normalizada:\nEl detalle de Examples fue especialmente revelador. No todas las reglas necesitan ejemplos, pero el formato debía permitir añadir casos positivos, negativos o situaciones de aplicación cuando ayudaran a entender la norma.\nLa consecuencia importante no era editorial.\nAl convertir las reglas en documentos independientes podían ser:\nDespués apareció el problema de la especificidad.\nUna regla genérica de código puede decir algo razonable para la mayoría de lenguajes y, sin embargo, ser incorrecta para uno concreto.\nEl ejemplo terminó siendo muy claro.\nLa regla genérica de IASI establecía inicialmente un máximo de 150 caracteres por línea. Python podía imponer 99. Go, en cambio, podía indicar explícitamente que no debía aplicarse un límite fijo y que gofmt y la legibilidad eran la autoridad.\nCuando ambas regulan el mismo aspecto, la específica debe prevalecer.\nEso evita dos extremos igual de malos: duplicar todas las reglas para cada lenguaje o fingir que una regla universal sirve siempre.\nLa biblioteca empezó a crecer con reglas genéricas y reglas específicas para Go, Java, Python, Bash y documentación. Pero el descubrimiento importante no fue la cantidad.\nFue que el comportamiento esperado del agente empezaba a existir como conocimiento estructurado fuera del agente.\nUna regla IASI no es texto auxiliar para mejorar un prompt.\nEs un artefacto canónico de ingeniería.\nY las reglas pueden formar una jerarquía donde el contexto más específico refine, e incluso sustituya, el comportamiento general.",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Las reglas se vuelven artefactos</span>"
+    ]
+  },
+  {
+    "objectID": "journey/22-las-reglas-se-vuelven-artefactos/index.html#fuentes",
+    "href": "journey/22-las-reglas-se-vuelven-artefactos/index.html#fuentes",
+    "title": "Las reglas se vuelven artefactos",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nBiblioteca builtin/rules/ desarrollada durante los días 26–28 de agosto de 2026.\nbuiltin/rules/TEMPLATE.md.\nReglas coding.styles.generic.maximum-line-length, coding.styles.python.maximum-line-length y coding.styles.go.no-fixed-line-length.\nConversaciones sobre normalización de rules y prioridad de reglas específicas sobre genéricas.",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Las reglas se vuelven artefactos</span>"
+    ]
+  },
+  {
+    "objectID": "journey/23-lo-que-iasi-lleva-consigo/index.html",
+    "href": "journey/23-lo-que-iasi-lleva-consigo/index.html",
+    "title": "Lo que IASI lleva consigo",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nCuando empezaron a existir rules, commands, definitions, configuración y plantillas apareció una pregunta muy práctica:\nHasta entonces había sido fácil pensar en esos elementos como ficheros del repositorio con el que estábamos trabajando.\nPero IASI debía poder instalarse en otro proyecto sin depender de tener al lado el repositorio fuente completo.\nLa palabra que terminó ordenando el problema fue:\nbuiltin/ representa aquello que IASI lleva de fábrica.\nNo es el estado de un proyecto concreto. No son inputs recibidos por ese proyecto. Es contenido canónico de la propia distribución: rules, definitions, configuration, templates, commands y otras piezas compartidas que puedan aparecer.\nEso produjo una separación importante entre fuente y distribución.\niasi-core podía conservar la definición canónica. El ejecutable podía llevar una copia sincronizada y embebida durante el build, de manera que instalar IASI no requiriera buscar esos recursos por rutas externas.\nLa idea era exactamente la misma que habíamos aplicado otras veces: la complejidad puede estar dentro, pero no debe trasladarse al usuario.\nEn paralelo las tasks dejaron de ser simples documentos que «alguien ejecutará» y empezaron a adquirir un ciclo de vida explícito.\nAparecieron operaciones como:\ny estados conceptuales como:\nTambién apareció una distinción especialmente útil:\nTerminar una tarea no demuestra automáticamente que el resultado sea correcto.\nOtra pieza que se fue haciendo más concreta fue la frontera entre la parte determinista y la parte agentic. Los agentes pueden interpretar y ejecutar trabajo, pero gates, estado, seguridad de filesystem y otras operaciones mecánicas no deberían reimplementarse de forma distinta para Copilot, Codex o cualquier plataforma futura.\nPor eso la plataforma debía terminar llegando al mismo runtime IASI.\nLo que unas semanas antes era una intención arquitectónica empezaba a tener ficheros, código, comandos y build.\nIASI ya no era únicamente una metodología explicada en documentos.\nEmpezaba a tener un contenido propio que podía transportar, un runtime común y una forma explícita de representar trabajo.\nEl sistema empezaba a parecerse a lo que más tarde llamaríamos con mucha naturalidad el ENGINE.",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Lo que IASI lleva consigo</span>"
+    ]
+  },
+  {
+    "objectID": "journey/23-lo-que-iasi-lleva-consigo/index.html#fuentes",
+    "href": "journey/23-lo-que-iasi-lleva-consigo/index.html#fuentes",
+    "title": "Lo que IASI lleva consigo",
+    "section": "Fuentes",
+    "text": "Fuentes\n\ngo-builtin-build.zip.\niasi-task-commands-v4.zip.\nruntime-interface.md.\nEstructura de iasi-core, iasi-cli e iasi-ai consolidada durante los días 28–29 de agosto de 2026.",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Lo que IASI lleva consigo</span>"
+    ]
+  },
+  {
+    "objectID": "journey/24-el-codigo-es-un-output/index.html",
+    "href": "journey/24-el-codigo-es-un-output/index.html",
+    "title": "El código es un output",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nDurante mucho tiempo, incluso hablando de IASI, resultaba natural imaginar el flujo de ingeniería con el código al final.\nLa costumbre pesa.\nEn ingeniería de software solemos hablar de requisitos, diseño e implementación como una secuencia que desemboca en código. La documentación, los diagramas, los tests, la configuración o la infraestructura aparecen alrededor de ese centro.\nPero mientras intentábamos explicar IASI de la forma más simple posible apareció otra imagen:\nY entonces una observación cambió el dibujo entero:\nNo el output.\nUn output.\nEl mismo ENGINE puede producir, según la necesidad:\nLa idea conecta con algo que ya habíamos descubierto en publicación multidocumento. Una misma fuente podía tener varias materializaciones sin que una de ellas tuviera que ser «la principal».\nAhora el concepto se ampliaba mucho más allá de una publicación.\nEl trabajo de ingeniería transforma conocimiento en artefactos.\nA veces el artefacto adecuado es código.\nA veces no.\nY muchas veces son varios a la vez.\nEsto cambia también el lugar conceptual de la ingeniería dentro de IASI.\nSi el flujo fuera:\nla metodología terminaría inevitablemente orientada a generar software.\nAl introducir el ENGINE aparece otra cosa:\nEl centro ya no es el lenguaje de programación ni la herramienta que genera el resultado.\nEl centro es la transformación: comprender lo que entra, aplicar conocimiento, reglas, decisiones, tareas y capacidades, y producir aquello que la necesidad exige.\nEso permite que un libro, una infraestructura Docker, una presentación HTML o una modificación de código sean tratados como consecuencias distintas del mismo proceso de ingeniería.\nTambién elimina una jerarquía que ya empezaba a resultar artificial.\nLa documentación no es «lo que acompaña al código».\nUn diagrama no es «un extra».\nUna presentación no es «otra cosa que hacemos después».\nTodos pueden ser outputs de primera clase.\nLa fórmula que apareció casi como una slide terminó funcionando como modelo general:\nY con ella el código perdió un privilegio que nunca necesitó.\nIASI no existe para producir código. Existe para hacer ingeniería.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>El código es un output</span>"
+    ]
+  },
+  {
+    "objectID": "journey/24-el-codigo-es-un-output/index.html#fuentes",
+    "href": "journey/24-el-codigo-es-un-output/index.html#fuentes",
+    "title": "El código es un output",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversaciones del 30 de agosto de 2026 durante el diseño de Introducing IASI.\ninputs/externals/001-first.md.\nNecesidad de publicación multidocumento registrada en el Journey.\nMemoria de trabajo de IASI: «el código es un output».",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>El código es un output</span>"
+    ]
+  },
+  {
+    "objectID": "journey/25-el-prompt-deja-de-ser-el-contenedor/index.html",
+    "href": "journey/25-el-prompt-deja-de-ser-el-contenedor/index.html",
+    "title": "El prompt deja de ser el contenedor",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nIASI había empezado, como casi todo el mundo, utilizando prompts para proporcionar instrucciones y contexto.\nDespués empezamos a sacar de ellos las instructions.\nLuego las skills.\nDespués las rules.\nY finalmente apareció una pregunta bastante obvia una vez formulada:\nLa respuesta llevó a un principio mucho más radical de lo que parece.\nEl prompt no debe ser el contenedor principal del conocimiento.\nLa conversación es magnífica para pensar.\nPodemos discutir una posibilidad, llevarla al extremo, descartarla, recuperarla, hacer bromas, detectar contradicciones y terminar tomando una decisión.\nPero la conversación no debería ser el único lugar donde esa decisión existe.\nCuando algo importa, debe persistirse como artefacto.\nIncluso cuando el artefacto parece ridículamente pequeño.\nUna sola línea escrita en un documento puede costar prácticamente lo mismo que escribirla en el chat. Sin embargo, el documento convierte esa línea en algo:\nEl cambio conceptual puede representarse así:\nfrente a:\nEsto no elimina el prompt.\nLo pone en su sitio.\nUn agente puede terminar recibiendo algo tan pequeño como:\nporque el resto ya existe en el workspace.\nEl conocimiento no necesita volver a ser narrado cada vez.\nEste principio también cambia la relación entre humano y agente. La memoria operativa del proyecto deja de depender de que el modelo «recuerde» una conversación anterior. Otro agente puede llegar después, leer los mismos artefactos y continuar desde el mismo estado explícito.\nPor eso la persistencia documental no es simplemente una preferencia de documentación.\nEs una condición para que el ENGINE pueda ser independiente de una conversación concreta y de un proveedor concreto.\nEl chat sirve para pensar.\nLos artefactos sirven para conservar lo que hemos aprendido y decidido.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>El prompt deja de ser el contenedor</span>"
+    ]
+  },
+  {
+    "objectID": "journey/25-el-prompt-deja-de-ser-el-contenedor/index.html#fuentes",
+    "href": "journey/25-el-prompt-deja-de-ser-el-contenedor/index.html#fuentes",
+    "title": "El prompt deja de ser el contenedor",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversación del 30 de agosto de 2026 sobre prompts, documentos y persistencia del conocimiento.\nExperimento introducing-iasi, donde el trabajo pasó de un prompt directo a inputs/ y engine/tasks/.\nPrincipios previos de IASI sobre inputs inmutables, definitions canónicas y trazabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>El prompt deja de ser el contenedor</span>"
+    ]
+  },
+  {
+    "objectID": "journey/26-la-infraestructura-sale-de-desarrollo/index.html",
+    "href": "journey/26-la-infraestructura-sale-de-desarrollo/index.html",
+    "title": "La infraestructura sale de la máquina de desarrollo",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nLos labs ya nos habían obligado a separar la máquina donde construimos IASI de la máquina donde se utiliza IASI.\nPoco después apareció una separación distinta.\nLa máquina de desarrollo tampoco tenía por qué ejecutar todos los servicios que el entorno necesita.\nDocker, PlantUML, Ollama y Open WebUI podían formar una capa de servicios independiente.\nLa idea era sencilla sobre el papel:\nEn la práctica nos obligó a comprobar varias cosas que una instalación «todo en localhost» oculta con mucha facilidad.\nPrimero, localhost no es una propiedad del servicio.\nEs una propiedad del consumidor.\nSi PlantUML vive en otra máquina, la definición funcional del servicio no cambia. Cambia la dirección desde la que lo consumimos.\nSegundo, la red interna de Docker y la red desde la que acceden otros consumidores son cosas diferentes. Open WebUI puede hablar con Ollama mediante http://ollama:11434 dentro de la red Docker mientras un cliente externo utiliza el puerto publicado por la máquina de servicios.\nTercero, la persistencia debía pertenecer a los servicios y no al ciclo de vida de un contenedor. Los modelos de Ollama y los datos de Open WebUI debían sobrevivir a recreaciones de los contenedores.\nY finalmente apareció la GPU.\nLa máquina iasi-docker terminó utilizando la NVIDIA disponible para acelerar Ollama, mientras el host conservaba su propia capacidad gráfica. Llegar hasta ahí exigió resolver Hyper-V, GPU-P, drivers, NVIDIA Container Toolkit y varios detalles bastante menos elegantes que el diagrama final.\nPrecisamente por eso la separación merece la pena.\nUna vez resuelta, la complejidad queda encapsulada detrás de servicios estables.\nLa máquina de desarrollo no necesita saber cómo está construido Ollama internamente ni cómo se expone la GPU al contenedor. Necesita una capacidad accesible mediante un contrato conocido.\nEsto volvió a repetir un patrón que IASI ya había encontrado en otros sitios:\nIASI empezó a distinguir con más claridad entre:\nNo todo tiene que vivir en la misma máquina para formar parte del mismo proceso.\nY una infraestructura bien diseñada debería poder moverse sin obligar a redefinir aquello que proporciona.",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>La infraestructura sale de la máquina de desarrollo</span>"
+    ]
+  },
+  {
+    "objectID": "journey/26-la-infraestructura-sale-de-desarrollo/index.html#fuentes",
+    "href": "journey/26-la-infraestructura-sale-de-desarrollo/index.html#fuentes",
+    "title": "La infraestructura sale de la máquina de desarrollo",
+    "section": "Fuentes",
+    "text": "Fuentes\n\n20-docker.qmd y versiones previas de la definición Docker de IASI.\niasi-compose.yml y revisiones del 29–30 de agosto de 2026.\nSesiones de configuración de iasi-docker con GPU NVIDIA, Ollama, Open WebUI y PlantUML.\niasi-models.md.",
+    "crumbs": [
+      "<span class='chapter-number'>25</span>  <span class='chapter-title'>La infraestructura sale de la máquina de desarrollo</span>"
+    ]
+  },
+  {
+    "objectID": "journey/27-descargamos-modelos-construimos-agentes/index.html",
+    "href": "journey/27-descargamos-modelos-construimos-agentes/index.html",
+    "title": "Descargamos modelos. Construimos agentes.",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nCuando Ollama empezó a funcionar con GPU apareció una satisfacción bastante inmediata: ya teníamos modelos locales.\nQwen, Llama, Phi, Gemma, DeepSeek.\nEra fácil describir aquello como «ya tenemos agentes locales».\nPero no era verdad.\nHabíamos descargado modelos.\nUn modelo proporciona capacidad de inferencia. Puede razonar, escribir, resumir, programar o analizar según sus capacidades. Pero no conoce por sí solo qué significa trabajar dentro de IASI.\nLa distinción terminó formulándose de una manera mucho más útil:\nUn agente IASI necesita algo más parecido a esto:\nEl modelo es una pieza.\nNo la arquitectura completa.\nEsto también modificó la pregunta de selección.\nNo necesitamos encontrar «el mejor modelo» en abstracto.\nNecesitamos elegir el modelo suficiente para la tarea.\nUn modelo pequeño y rápido puede ser mejor para clasificación, transformación o tareas rutinarias. Otro puede ser más adecuado para razonamiento. Uno multimodal puede cubrir imágenes. Los modelos mayores pueden reservarse para trabajo que realmente necesite esa capacidad.\nLa GPU disponible reforzó esta idea. Con 6 GB de VRAM no tenía sentido convertir cada tarea en una competición por ejecutar el modelo más grande posible. Los modelos de 3B–4B proporcionaban un punto especialmente útil entre velocidad, capacidad y memoria; otros más grandes podían utilizarse cuando la tarea lo justificara.\nY entonces apareció otra consecuencia que ese mismo día dejaría de ser teórica.\nSi las tasks, rules, definitions y outputs están fuera del modelo, el ejecutor puede cambiar.\nPodemos utilizar un modelo local para determinado trabajo, Codex para otro, ChatGPT para otro o contrastar varios sistemas sobre la misma tarea.\nEl agente deja de ser una caja indivisible ligada a un proveedor.\nOllama no nos dio «IASI local».\nNos dio una pieza fundamental: capacidad de inferencia local que podemos incorporar al ENGINE.\nEso permite construir agentes sin asumir que todo el proceso depende de una cuota externa o de un único servicio.\nLa unidad de diseño deja de ser «qué IA usamos».\nPasa a ser:",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Descargamos modelos. Construimos agentes.</span>"
+    ]
+  },
+  {
+    "objectID": "journey/27-descargamos-modelos-construimos-agentes/index.html#fuentes",
+    "href": "journey/27-descargamos-modelos-construimos-agentes/index.html#fuentes",
+    "title": "Descargamos modelos. Construimos agentes.",
+    "section": "Fuentes",
+    "text": "Fuentes\n\niasi-models.md.\nStack local de Ollama configurado el 30 de agosto de 2026.\nConversación de 2026-08-30 sobre la diferencia entre modelos y agentes.\nPrincipios previos de IASI sobre trabajo con múltiples Sistemas Inteligentes.",
+    "crumbs": [
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>Descargamos modelos. Construimos agentes.</span>"
+    ]
+  },
+  {
+    "objectID": "journey/28-una-presentacion-nos-obliga-a-aplicar-iasi/index.html",
+    "href": "journey/28-una-presentacion-nos-obliga-a-aplicar-iasi/index.html",
+    "title": "Una presentación nos obliga a aplicar IASI",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nQueríamos presentar IASI.\nLa reacción inicial fue completamente normal.\nPensamos en presentaciones.\nPowerPoint. Gamma. Prezi. HTML. Herramientas capaces de generar slides con ayuda de agentes.\nY durante unos minutos empezamos a comparar soluciones.\nHasta que apareció una objeción bastante incómoda:\nHabíamos empezado por las herramientas disponibles y estábamos intentando encajar el problema dentro de ellas.\nExactamente aquello que llevábamos semanas diciendo que no había que hacer.\nAsí que volvimos atrás.\nLa pregunta dejó de ser:\nY pasó a ser:\nLa respuesta empezó a dibujar una experiencia sencilla, progresiva, visual e interactiva. Algo que pudiera seguir siendo una presentación y, al mismo tiempo, permitiera entrar y salir de conceptos sin quedar limitado por el modelo clásico de diapositiva estática.\nSolo después apareció HTMLSlides como una posibilidad interesante.\nNo porque «tocara usar HTML».\nPorque respondía razonablemente a la necesidad que acabábamos de describir.\nEl primer experimento fue deliberadamente pequeño:\nFuncionó.\nY entonces hicimos algo todavía más importante: dejamos de trabajar mediante un prompt improvisado y empezamos a organizar el propio experimento como IASI.\nEl input externo quedó en:\nLa decisión de ejecución terminó convertida en:\nMantener 001-first en ambos lados resultó útil: la misma unidad de trabajo podía conservar una identidad reconocible mientras cambiaba de papel dentro del proceso.\nY el HTML generado era un output:\nLa propia estructura del repositorio empezó a representar el modelo que queríamos explicar.\nEntonces ocurrió algo que no habíamos planeado.\nCodex alcanzó el límite de uso justo cuando íbamos a ejecutar la task.\nEl proceso se detuvo.\nDurante unos segundos parecía simplemente una incidencia molesta.\nPero la task existía. El input existía. El HTML existente existía. El conocimiento necesario para continuar no estaba encerrado en la sesión de Codex.\nOtro agente pudo leer esos mismos artefactos y ejecutar la misma tarea sobre el HTMLSlides ya generado.\nY funcionó.\nLa anécdota dejó una prueba bastante más valiosa que la slide:\nCodex podía quedarse sin cuota sin que la definición del trabajo desapareciera con él.\nAquello conectó de golpe varias decisiones que habíamos ido tomando por separado: artefactos persistentes, tasks, adapters, runtime común, modelos locales y outputs independientes del ejecutor.\nLa primera presentación de IASI terminó siendo también un pequeño ensayo de IASI.\nEmpezamos incumpliendo nuestro propio principio al pensar primero en herramientas.\nLo detectamos.\nVolvimos a la necesidad.\nElegimos una tecnología después.\nPersistimos input y task.\nUn agente falló por disponibilidad.\nOtro pudo continuar.\nPara una primera slide, no estuvo mal.",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Una presentación nos obliga a aplicar IASI</span>"
+    ]
+  },
+  {
+    "objectID": "journey/28-una-presentacion-nos-obliga-a-aplicar-iasi/index.html#fuentes",
+    "href": "journey/28-una-presentacion-nos-obliga-a-aplicar-iasi/index.html#fuentes",
+    "title": "Una presentación nos obliga a aplicar IASI",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversaciones del 30 de agosto de 2026 sobre el diseño de Introducing IASI.\ninputs/externals/001-first.md.\nengine/tasks/001-first.md.\noutput/introducing-iasi.html y versión de tres slides generada durante el experimento.\nHTMLSlides v0.9.4 utilizado como skill de ejecución.",
+    "crumbs": [
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Una presentación nos obliga a aplicar IASI</span>"
+    ]
+  },
+  {
+    "objectID": "journey/29-un-lenguaje-visual-para-iasi/index.html",
+    "href": "journey/29-un-lenguaje-visual-para-iasi/index.html",
+    "title": "Un lenguaje visual para IASI",
+    "section": "",
+    "text": "Lo que quedó\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nEl primer HTMLSlides salió sorprendentemente bien.\nTambién salió con una estética que había decidido HTMLSlides.\nEso era útil para validar la herramienta, pero introducía un problema distinto.\nSi mañana hacíamos otra presentación con PowerPoint, un diagrama con PlantUML y una página web con Quarto, cada tecnología podía terminar hablando un idioma visual diferente.\nY entonces apareció la pregunta correcta:\nLa respuesta fue inmediata.\nNo debería.\nEl lenguaje visual pertenece a IASI.\nHTMLSlides, PowerPoint, PlantUML, Quarto o cualquier otra tecnología solo deben aprender a expresarlo.\nLa diferencia se parece mucho a la que ya habíamos descubierto con las plataformas agentic.\nNo queremos:\nQueremos:\nEse lenguaje puede incluir:\nAlgunas decisiones serán universales. Otras necesitarán una adaptación específica según las capacidades del medio.\nPlantUML no expresa una composición exactamente igual que PowerPoint. Un documento impreso no utiliza movimiento. Una slide puede necesitar relaciones espaciales que no tienen sentido en una página de documentación.\nPero la identidad no debería reconstruirse desde cero cada vez.\nAquí apareció otra vez el patrón de adapters.\nLa definición canónica está en IASI.\nCada tecnología proyecta esa definición a su propio lenguaje.\nEsto convierte lo visual en algo más que branding.\nPasa a ser otra parte gobernable y reutilizable de la ingeniería de artefactos.\nIntroducing IASI no debe definir la identidad visual de IASI.\nDebe consumirla.\nY lo mismo harán los libros, los diagramas, las presentaciones futuras y los productos que necesiten representación visual.\nLa estética deja de pertenecer a la herramienta que renderiza.\nPasa a ser conocimiento canónico del sistema.",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Un lenguaje visual para IASI</span>"
+    ]
+  },
+  {
+    "objectID": "journey/29-un-lenguaje-visual-para-iasi/index.html#fuentes",
+    "href": "journey/29-un-lenguaje-visual-para-iasi/index.html#fuentes",
+    "title": "Un lenguaje visual para IASI",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversación del 30 de agosto de 2026 tras la primera prueba con HTMLSlides.\nExperiencia previa de estilo compartido en iasi-home y publicaciones Quarto.\nUso de PlantUML e iasi-graphics como consumidores visuales dentro del ecosistema.",
+    "crumbs": [
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Un lenguaje visual para IASI</span>"
+    ]
+  },
+  {
+    "objectID": "journey/30-la-frontera-tambien-se-protege/index.html",
+    "href": "journey/30-la-frontera-tambien-se-protege/index.html",
+    "title": "La frontera también se protege",
+    "section": "",
+    "text": "Una simetría en los extremos\nEste capítulo forma parte del recorrido de IASI. La narración completa continúa en el documento siguiente.\nEstábamos pensando en la siguiente slide de Introducing IASI.\nLa primera mostraba el modelo mínimo:\nLa siguiente debía enseñar algo más interesante: la realimentación.\nLos inputs no nacen únicamente fuera del sistema. El propio trabajo del engine y la observación de los outputs pueden descubrir nueva información, nuevas restricciones o nuevas necesidades que vuelven a alimentar el proceso.\nLa primera representación fue aproximadamente:\nEntonces apareció una corrección importante.\nLos outputs pueden provocar nuevos inputs, pero eso no significa que puedan modificarse.\nUna vez materializados, los outputs son inmutables.\nLa observación de un output puede descubrir algo nuevo:\npero nunca:\nEse matiz nos llevó directamente a revisar el otro extremo del sistema.\nHasta ese momento hablábamos con frecuencia de inputs/externals/ como la zona de material externo de IASI. Pero la slide hizo visible que estábamos mezclando dos conceptos diferentes:\nEl exterior no es una carpeta.\nEstá fuera del sistema.\nLa relación correcta es:\ninputs/externals/ ya vive físicamente dentro del proyecto IASI.\nLo que lo convierte en external no es su ubicación, sino su procedencia.\nEso permitió formular una distinción sencilla:\ninputs/externals/ solo recibe material procedente del exterior.\nINPUTS, en cambio, puede incorporar conocimiento que proceda de distintas fuentes, incluida la actividad del propio sistema.\nLa slide estaba añadiendo otra capa al modelo.\nPero entonces apareció una consecuencia todavía más práctica.\nSi inputs/externals/ existe precisamente para conservar lo que IASI recibió desde fuera, limitarse a decir que sus archivos son “de solo lectura” resulta insuficiente.\nUna copia puede ser sobrescrita accidentalmente.\nY si eso ocurre, la historia cambia.\nUn requisito recibido el lunes podría ser sustituido el martes por una versión corregida y, al mirar el repositorio, parecería que IASI siempre recibió la versión del martes.\nEso destruiría precisamente la evidencia que queríamos conservar.\nLa inmutabilidad necesitaba dejar de ser únicamente una disciplina humana.\nEmpezaba a pedir mecanismo.\nLa incorporación de un external debería poder comportarse como una operación create-only:\nSi el artefacto ya existe, una nueva incorporación no debería sobrescribirlo silenciosamente.\nSi la fuente externa cambia, IASI debería incorporar otra evidencia, no reescribir la anterior.\nLa implementación concreta queda todavía abierta, pero aparecieron posibilidades naturales:\nNo decidimos todavía el mecanismo final.\nLo importante fue descubrir por qué hace falta.\nEl modelo empezó a mostrar una propiedad interesante:\nLos dos extremos conservan evidencia.\nEn un extremo, evidencia de qué recibió IASI.\nEn el otro, evidencia de qué produjo IASI.\nEl trabajo ocurre en medio.\nY cuando algo observado en cualquiera de esos extremos obliga a cambiar el sistema, no corregimos el pasado.\nCreamos nueva información y volvemos a recorrer el proceso.\nEso es especialmente coherente con el Journey.\nLa historia tampoco se limpia.",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>La frontera también se protege</span>"
+    ]
+  },
+  {
+    "objectID": "journey/30-la-frontera-tambien-se-protege/index.html#fuentes",
+    "href": "journey/30-la-frontera-tambien-se-protege/index.html#fuentes",
+    "title": "La frontera también se protege",
+    "section": "Fuentes",
+    "text": "Fuentes\n\nConversación del 30 de agosto de 2026 durante el diseño de las slides de Introducing IASI.\nPrincipio previo de inmutabilidad de inputs/externals/.\nModelo emergente INPUTS → ENGINE → OUTPUTS.",
+    "crumbs": [
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>La frontera también se protege</span>"
+    ]
   }
 ]

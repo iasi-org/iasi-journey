@@ -1,0 +1,108 @@
+---
+title: "El código es un output"
+date: 2026-08-30
+---
+
+Durante mucho tiempo, incluso hablando de IASI, resultaba natural imaginar el flujo de ingeniería con el código al final.
+
+La costumbre pesa.
+
+En ingeniería de software solemos hablar de requisitos, diseño e implementación como una secuencia que desemboca en código. La documentación, los diagramas, los tests, la configuración o la infraestructura aparecen alrededor de ese centro.
+
+Pero mientras intentábamos explicar IASI de la forma más simple posible apareció otra imagen:
+
+```text
+INPUTS → ENGINE → OUTPUTS
+```
+
+Y entonces una observación cambió el dibujo entero:
+
+> **El código es un output.**
+
+No *el* output.
+
+Un output.
+
+El mismo ENGINE puede producir, según la necesidad:
+
+```text
+OUTPUTS
+├── code
+├── tests
+├── documentation
+├── books
+├── presentations
+├── diagrams
+├── configuration
+├── infrastructure
+└── ...
+```
+
+La idea conecta con algo que ya habíamos descubierto en publicación multidocumento. Una misma fuente podía tener varias materializaciones sin que una de ellas tuviera que ser «la principal».
+
+Ahora el concepto se ampliaba mucho más allá de una publicación.
+
+El trabajo de ingeniería transforma conocimiento en artefactos.
+
+A veces el artefacto adecuado es código.
+
+A veces no.
+
+Y muchas veces son varios a la vez.
+
+Esto cambia también el lugar conceptual de la ingeniería dentro de IASI.
+
+Si el flujo fuera:
+
+```text
+inputs → code
+```
+
+la metodología terminaría inevitablemente orientada a generar software.
+
+Al introducir el ENGINE aparece otra cosa:
+
+```text
+INPUTS
+   ↓
+ENGINE
+   ↓
+OUTPUTS
+```
+
+El centro ya no es el lenguaje de programación ni la herramienta que genera el resultado.
+
+El centro es la transformación: comprender lo que entra, aplicar conocimiento, reglas, decisiones, tareas y capacidades, y producir aquello que la necesidad exige.
+
+Eso permite que un libro, una infraestructura Docker, una presentación HTML o una modificación de código sean tratados como consecuencias distintas del mismo proceso de ingeniería.
+
+También elimina una jerarquía que ya empezaba a resultar artificial.
+
+La documentación no es «lo que acompaña al código».
+
+Un diagrama no es «un extra».
+
+Una presentación no es «otra cosa que hacemos después».
+
+Todos pueden ser outputs de primera clase.
+
+### Lo que quedó
+
+La fórmula que apareció casi como una slide terminó funcionando como modelo general:
+
+```text
+INPUTS → ENGINE → OUTPUTS
+```
+
+Y con ella el código perdió un privilegio que nunca necesitó.
+
+**IASI no existe para producir código. Existe para hacer ingeniería.**
+
+---
+
+## Fuentes
+
+- Conversaciones del 30 de agosto de 2026 durante el diseño de `Introducing IASI`.
+- `inputs/externals/001-first.md`.
+- Necesidad de publicación multidocumento registrada en el Journey.
+- Memoria de trabajo de IASI: «el código es un output».

@@ -1,0 +1,207 @@
+---
+title: "La frontera también se protege"
+date: 2026-08-30
+---
+
+Estábamos pensando en la siguiente slide de `Introducing IASI`.
+
+La primera mostraba el modelo mínimo:
+
+```text
+INPUTS → ENGINE → OUTPUTS
+```
+
+La siguiente debía enseñar algo más interesante: la realimentación.
+
+Los inputs no nacen únicamente fuera del sistema. El propio trabajo del engine y la observación de los outputs pueden descubrir nueva información, nuevas restricciones o nuevas necesidades que vuelven a alimentar el proceso.
+
+La primera representación fue aproximadamente:
+
+```text
+INPUTS
+← fuentes externas
+← ENGINE
+← OUTPUTS
+
+ENGINE
+← INPUTS
+← ENGINE
+← OUTPUTS
+
+OUTPUTS
+← ENGINE
+```
+
+Entonces apareció una corrección importante.
+
+Los outputs pueden provocar nuevos inputs, pero eso **no significa que puedan modificarse**.
+
+Una vez materializados, los outputs son inmutables.
+
+La observación de un output puede descubrir algo nuevo:
+
+```text
+OUTPUT
+   ↓ observar
+nuevo conocimiento / problema / necesidad
+   ↓
+INPUT
+   ↓
+ENGINE
+   ↓
+nuevo OUTPUT
+```
+
+pero nunca:
+
+```text
+OUTPUT
+   ↓
+editar el OUTPUT
+```
+
+Ese matiz nos llevó directamente a revisar el otro extremo del sistema.
+
+Hasta ese momento hablábamos con frecuencia de `inputs/externals/` como la zona de material externo de IASI. Pero la slide hizo visible que estábamos mezclando dos conceptos diferentes:
+
+- el exterior;
+- y la copia que IASI conserva de algo que nació en ese exterior.
+
+El exterior no es una carpeta.
+
+Está fuera del sistema.
+
+La relación correcta es:
+
+```text
+OUTSIDE
+   │
+   │ copy / import
+   ▼
+inputs/externals/
+   │
+   ▼
+INPUTS
+```
+
+`inputs/externals/` ya vive físicamente dentro del proyecto IASI.
+
+Lo que lo convierte en *external* no es su ubicación, sino su **procedencia**.
+
+Eso permitió formular una distinción sencilla:
+
+> **Todo external es input, pero no todo input es external.**
+
+`inputs/externals/` solo recibe material procedente del exterior.
+
+`INPUTS`, en cambio, puede incorporar conocimiento que proceda de distintas fuentes, incluida la actividad del propio sistema.
+
+La slide estaba añadiendo otra capa al modelo.
+
+Pero entonces apareció una consecuencia todavía más práctica.
+
+Si `inputs/externals/` existe precisamente para conservar lo que IASI recibió desde fuera, limitarse a decir que sus archivos son "de solo lectura" resulta insuficiente.
+
+Una copia puede ser sobrescrita accidentalmente.
+
+Y si eso ocurre, la historia cambia.
+
+Un requisito recibido el lunes podría ser sustituido el martes por una versión corregida y, al mirar el repositorio, parecería que IASI siempre recibió la versión del martes.
+
+Eso destruiría precisamente la evidencia que queríamos conservar.
+
+La inmutabilidad necesitaba dejar de ser únicamente una disciplina humana.
+
+Empezaba a pedir mecanismo.
+
+La incorporación de un external debería poder comportarse como una operación **create-only**:
+
+```text
+OUTSIDE
+   ↓ import
+inputs/externals/<artifact>
+```
+
+Si el artefacto ya existe, una nueva incorporación no debería sobrescribirlo silenciosamente.
+
+Si la fuente externa cambia, IASI debería incorporar otra evidencia, no reescribir la anterior.
+
+La implementación concreta queda todavía abierta, pero aparecieron posibilidades naturales:
+
+- impedir overwrites durante la importación;
+- registrar una huella o hash del material recibido;
+- detectar cambios posteriores;
+- conservar identidad y procedencia;
+- representar una nueva versión externa como un nuevo artefacto cuando sea necesario.
+
+No decidimos todavía el mecanismo final.
+
+Lo importante fue descubrir por qué hace falta.
+
+### Una simetría en los extremos
+
+El modelo empezó a mostrar una propiedad interesante:
+
+```text
+OUTSIDE
+   │
+   ▼
+inputs/externals/   →   ENGINE   →   outputs/
+   inmutable                         inmutable
+```
+
+Los dos extremos conservan evidencia.
+
+En un extremo, evidencia de **qué recibió IASI**.
+
+En el otro, evidencia de **qué produjo IASI**.
+
+El trabajo ocurre en medio.
+
+Y cuando algo observado en cualquiera de esos extremos obliga a cambiar el sistema, no corregimos el pasado.
+
+Creamos nueva información y volvemos a recorrer el proceso.
+
+Eso es especialmente coherente con el Journey.
+
+La historia tampoco se limpia.
+
+### Lo que apareció
+
+Una conversación sobre una slide terminó refinando varias ideas del modelo:
+
+```text
+OUTSIDE
+   ↓
+inputs/externals/
+   ↓
+INPUTS ⇄ ENGINE → OUTPUTS
+```
+
+con tres distinciones que antes estaban menos visibles:
+
+1. `OUTSIDE` es el origen externo, no una carpeta interna.
+2. `inputs/externals/` es la copia fiel que IASI conserva de algo recibido desde fuera.
+3. Una copia fiel necesita protección contra sobrescrituras si queremos que la inmutabilidad sea una propiedad real y no solo una recomendación.
+
+Todavía no hemos decidido cómo se implementará esa protección.
+
+Pero ya sabemos que la necesitamos.
+
+Y otra vez la secuencia fue la misma:
+
+```text
+idea metodológica
+      ↓
+necesidad descubierta
+      ↓
+ futura capacidad técnica
+```
+
+---
+
+## Fuentes
+
+- Conversación del 30 de agosto de 2026 durante el diseño de las slides de `Introducing IASI`.
+- Principio previo de inmutabilidad de `inputs/externals/`.
+- Modelo emergente `INPUTS → ENGINE → OUTPUTS`.
