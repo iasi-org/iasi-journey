@@ -294,7 +294,7 @@ Incluso aunque eso implique cambiar el sistema que ya tenemos.
 
 ---
 
-### Ingeniería asistida por Sistemas Inteligentes
+### Ingeniería aumentada por Sistemas Inteligentes
 
 Esta es precisamente una de las cuestiones que queremos explorar en IASI.
 

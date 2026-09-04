@@ -3866,7 +3866,7 @@ Voy a ajustar la home para que título y epígrafe pertenezcan al mismo bloque `
 Corregido. El título y el epígrafe usan ahora el mismo bloque `iasi-page-heading`, centrados y consecutivos:
 
 ```text
-Ingeniería Asistida por Sistemas Inteligentes (IASI)
+Ingeniería Aumentada por Sistemas Inteligentes (IASI)
 Si la implementación cada vez cuesta menos...
 ```
 
