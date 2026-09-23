@@ -1,0 +1,102 @@
+---
+title: "Astra se convierte en un caso real para IASI"
+date: 2026-09-07
+---
+
+La idea inicial era sencilla.
+
+Solicitar acceso a Project Astra como Trusted Tester.
+
+Astra resultaba especialmente interesante por las capacidades hacia las que apunta: multimodalidad, memoria, herramientas, interacción continua y actuación sobre el entorno.
+
+Era, en muchos sentidos, una buena ventana a la siguiente generación de Sistemas Inteligentes.
+
+La primera tentación fue tratar la candidatura como cualquier solicitud de acceso a un programa experimental.
+
+Explicar experiencia.
+
+Explicar interés.
+
+Explicar posibles casos de uso.
+
+Pero cuanto más intentábamos describir por qué Astra era relevante para nosotros, más evidente se volvía que la relación podía formularse de otra manera.
+
+Google DeepMind está trabajando en la **tecnología** que permite a un Sistema Inteligente observar, recordar, utilizar herramientas e intervenir sobre un entorno.
+
+IASI está investigando qué ocurre con la **ingeniería** cuando Sistemas Inteligentes con esas capacidades participan activamente en ella.
+
+No eran trabajos equivalentes.
+
+Tampoco competidores.
+
+Eran capas distintas de un problema que empezaban a tocarse.
+
+```text
+Project Astra
+capacidades del SI
+        ↓
+participación real en tareas
+        ↓
+IASI
+cómo ingenierizar esa participación
+```
+
+Eso cambió el papel de Astra dentro de la candidatura.
+
+Dejó de ser simplemente una tecnología interesante que queríamos probar.
+
+Podía convertirse en un **caso real de evolución de IASI**.
+
+No un escenario sintético diseñado para confirmar nuestras ideas.
+
+Un Sistema Inteligente real, cambiante, con capacidades nuevas, utilizado dentro de trabajo real de ingeniería.
+
+La relación empezó a verse de forma bidireccional.
+
+Astra podía ayudar a IASI exponiéndolo a capacidades y problemas que todavía no habíamos experimentado.
+
+IASI podía ofrecer una perspectiva metodológica sobre cuestiones que inevitablemente aparecen cuando esas capacidades entran en un proceso de ingeniería:
+
+- confianza;
+- delegación;
+- autoridad;
+- autonomía;
+- responsabilidad;
+- sesgos;
+- trazabilidad;
+- validación;
+- límites de actuación.
+
+Aquí apareció también una formulación importante.
+
+Cuando el Sistema Inteligente participa activamente en la ingeniería, no «puede convertirse» en parte del proceso.
+
+**Es parte del proceso.**
+
+Y esa participación debe ser engineered and managed.
+
+Eso no significa borrar la diferencia entre humano y SI.
+
+Al contrario.
+
+Podemos pensar en humano y SI operando juntos como una **augmented engineering unit**, manteniendo explícitamente distintas responsabilidades, autoridad y capacidad de respuesta.
+
+### Lo que quedó
+
+La candidatura a Astra dejó de ser únicamente una petición de acceso.
+
+Se convirtió en una prueba de una idea central de IASI:
+
+> Una metodología para Ingeniería Aumentada necesita enfrentarse a Sistemas Inteligentes reales, no solo describirlos desde fuera.
+
+Si Astra evoluciona, IASI tendrá que aprender de esa evolución.
+
+Y si IASI sirve para algo, debería ayudarnos a formular mejor qué significa incorporar esas capacidades a la ingeniería sin perder control, responsabilidad ni trazabilidad.
+
+---
+
+## Fuentes
+
+- Conversaciones del 7 de septiembre de 2026 sobre la candidatura a Project Astra Trusted Tester.
+- Iteraciones V1 y V2 de la candidatura.
+- Definición de IASI como iniciativa independiente que investiga, define y crea un nuevo enfoque de ingeniería para entornos donde los Sistemas Inteligentes participan activamente.

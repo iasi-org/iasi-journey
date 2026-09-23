@@ -1,0 +1,15 @@
+website:
+  title: "IASI Journey"
+  sidebar:
+    style: docked
+    search: true
+    contents: auto
+
+format:
+  html:
+    toc: true
+    number-sections: false
+    include-before-body: resources/html/ants-banner.html
+    theme:
+      - cosmo
+      - resources/css/iasi.scss

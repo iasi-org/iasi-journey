@@ -1,0 +1,171 @@
+---
+title: "La estructura del repositorio también es arquitectura"
+date: 2026-09-09
+---
+
+Queríamos hacer algo aparentemente pequeño con `iasi-quarto`.
+
+Ordenar el repositorio.
+
+Había documentación, software, outputs, configuración y material de publicación. Parte de la estructura procedía de etapas anteriores y empezaba a no representar bien lo que el proyecto era.
+
+La primera corrección parecía casi cosmética:
+
+```text
+src/ → software/
+```
+
+Pero no era solo un cambio de nombre.
+
+`src` sugería que aquello era «el código fuente» del repositorio.
+
+Sin embargo, el repositorio contenía más de un tipo de producto y podía contener más de un proyecto software.
+
+`software/` describía mejor la categoría.
+
+Así apareció una estructura deliberadamente redundante:
+
+```text
+software/
+└── iasi-quarto/
+```
+
+Dentro del repositorio `iasi-quarto`.
+
+La duplicación del nombre dejó de molestar cuando distinguimos los niveles:
+
+```text
+repo / contexto     = iasi-quarto
+categoría           = software
+proyecto software   = iasi-quarto
+```
+
+Algo parecido ocurrió con la documentación.
+
+`docs/01-user-guide/` heredaba una numeración que tenía sentido cuando pensábamos en una secuencia.
+
+Pero aquello no era un capítulo.
+
+Era un proyecto.
+
+Por eso pasó conceptualmente a:
+
+```text
+docs/user-guide/
+```
+
+Y entonces apareció una pregunta mucho más importante.
+
+Si `docs/user-guide/` es un proyecto IASI, ¿qué declara que lo es?
+
+La respuesta ya existía:
+
+```text
+_iasi.yml
+```
+
+No `.iasi/`.
+
+`.iasi/` puede contener estado de trabajo, caché, índices, material temporal o información regenerable.
+
+`_iasi.yml` es otra cosa.
+
+Es la **declaración**.
+
+El proyecto existe como proyecto IASI porque se declara.
+
+Y al mirar hacia arriba descubrimos el hueco.
+
+El propio root del repositorio también necesitaba una declaración.
+
+No porque fuera un «multiproject».
+
+Podía tener uno, varios o ningún hijo de cierto tipo en un momento dado.
+
+La cardinalidad no debía definir su identidad.
+
+Necesitábamos el tipo base:
+
+```yaml
+project:
+  type: project
+```
+
+La idea parecía pequeña pero tenía una consecuencia grande.
+
+`book`, `guide`, `r-package` u otros tipos pueden ser especializaciones de proyecto.
+
+Todo book es un project.
+
+No todo project es un book.
+
+La estructura física empezó a expresar esa jerarquía conceptual.
+
+Después llegó `release` y terminó de separar niveles que todavía estaban mezclados.
+
+El proyecto hijo sabe construir y publicar sus outputs.
+
+Pero no necesita saber que vive dentro de un repositorio Git.
+
+`release`, en cambio, pertenece al ámbito del repositorio porque reúne aquello que el repositorio decide liberar.
+
+```text
+repo
+├── docs/
+│   └── user-guide/      ← proyecto
+├── software/
+│   └── iasi-quarto/     ← proyecto
+└── release/             ← ensamblado del repo
+```
+
+Por eso una operación de release debe localizar el Git root, combinar la configuración raíz con la del proyecto local y reunir material ya construido o publicado.
+
+No reconstruirlo.
+
+Promoverlo.
+
+Y `release/` tampoco tenía por qué reproducir las categorías internas del source tree.
+
+La estructura liberada debía estar orientada a productos:
+
+```text
+release/
+├── index.html
+├── user-guide/
+└── iasi-quarto/
+```
+
+La publicación en GitHub Pages confirmó otra consecuencia interesante.
+
+Un único repositorio podía exponer varios productos web en subrutas y, al mismo tiempo, distribuir archivos no web desde el mismo árbol de release.
+
+### Lo que quedó
+
+Empezamos moviendo carpetas.
+
+Terminamos distinguiendo cuatro conceptos:
+
+```text
+proyecto
+repositorio
+producto
+release
+```
+
+No son sinónimos.
+
+Y cuando los mezclamos, la estructura del disco empieza a mentir sobre la arquitectura.
+
+> **La estructura del repositorio también comunica el modelo del sistema.**
+
+Ordenarla no era una operación estética.
+
+Era hacer explícita una arquitectura que ya estaba apareciendo.
+
+---
+
+## Fuentes
+
+- Conversaciones del 9 de septiembre de 2026 durante la reestructuración de `iasi-quarto`.
+- Estructura publicada del repositorio `iasi-quarto`.
+- Discusión sobre `_iasi.yml`, `.iasi/`, Git root y responsabilidad de `release`.

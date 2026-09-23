@@ -1,0 +1,112 @@
+---
+title: "El SI aumenta al ingeniero, no al equipo"
+date: 2026-09-02
+---
+
+Hablar de «equipos aumentados» parecía suficientemente claro hasta que intentamos dibujar quién estaba aumentando realmente a quién.
+
+La imagen fácil era algo parecido a esto:
+
+```text
+equipo humano
+     +
+IA compartida
+     ↓
+equipo aumentado
+```
+
+Pero no describía bien lo que estaba ocurriendo en la práctica.
+
+El Sistema Inteligente no se relaciona con «el equipo» como una entidad abstracta.
+
+Se relaciona con personas concretas.
+
+Cada ingeniero trabaja con su propio contexto, conversaciones, documentos, herramientas, hábitos, preferencias y formas de delegar.
+
+Incluso dos personas utilizando el mismo modelo no tienen funcionalmente «la misma IA».
+
+La relación diverge.
+
+```text
+Javier + SI de Javier
+Pepe   + SI de Pepe
+Ana    + SI de Ana
+```
+
+El equipo está compuesto por **ingenieros aumentados**.
+
+Eso conserva además algo importante: la coordinación organizativa sigue ocurriendo entre personas.
+
+Javier puede decir a Pepe:
+
+> Averigua cómo se hace esto en Maven, que yo estoy liado.
+
+Pepe decide después cómo utilizar su SI para resolverlo.
+
+La delegación entre compañeros no necesita convertirse en una red de agentes hablando por encima de las personas.
+
+El SI aumenta la capacidad de Pepe para cumplir la tarea.
+
+No sustituye la relación profesional entre Javier y Pepe.
+
+Entonces apareció una consecuencia menos cómoda.
+
+Si el SI se adapta a la persona, no solo puede amplificar sus capacidades.
+
+También puede aprender, reforzar o amplificar sus defectos de trabajo.
+
+Una persona desordenada puede producir más deprisa un desorden mayor.
+
+Una mala costumbre puede materializarse con enorme eficiencia.
+
+Un sesgo puede adquirir capacidad industrial.
+
+Eso llevó a una formulación que parecía casi una advertencia de seguridad:
+
+> **La Ingeniería Aumentada amplifica capacidades, pero también puede amplificar defectos.**
+
+La especialización tampoco desaparece.
+
+El hecho de que un ingeniero pueda ejecutar con ayuda tareas que antes requerían conocer una tecnología en profundidad no elimina la necesidad del experto.
+
+Cambia su papel.
+
+Podemos necesitar menos tiempo de ejecución manual de un especialista y más capacidad experta de validación.
+
+Un SI puede ayudar a producir código Java.
+
+Pero cuando importan rendimiento, concurrencia, seguridad, comportamiento de la JVM o decisiones de arquitectura, sigue haciendo falta alguien capaz de decir si aquello está bien.
+
+El experto deja de ser únicamente quien sabe ejecutar cada paso.
+
+Puede convertirse todavía más claramente en quien sabe **juzgar los límites de lo construido**.
+
+### Lo que quedó
+
+La unidad organizativa no es «equipo + IA».
+
+Es más útil pensar:
+
+```text
+ingeniero + SI
+      ↓
+ingeniero aumentado
+
+varios ingenieros aumentados
+      ↓
+equipo
+```
+
+Las responsabilidades siguen perteneciendo a las personas y a la organización.
+
+El SI aumenta capacidad.
+
+No absorbe automáticamente rol, autoridad ni responsabilidad.
+
+---
+
+## Fuentes
+
+- Conversaciones del 2 de septiembre de 2026 sobre equipos aumentados y especialización.
+- Ejemplo de delegación entre compañeros utilizando Maven.
+- Discusión sobre el cambio de papel de los expertos técnicos.

@@ -1,0 +1,335 @@
+---
+title: "OpenCode: el camino feliz no basta"
+date: 2026-08-31
+tags:
+  - iasi-agent
+  - opencode
+  - ollama
+  - agentes
+  - tools
+  - mvp
+  - engineering
+related:
+  - EDR-10007
+  - EDR-20014
+  - EDR-20015
+---
+
+# OpenCode: el camino feliz no basta
+
+La necesidad parecía clara.
+
+Teníamos Ollama funcionando, modelos locales disponibles y una API accesible desde la máquina de desarrollo. Pero Ollama seguía siendo un runtime de modelos. Podíamos conversar con un modelo, enviarle prompts y recibir respuestas, pero eso no lo convertía en un agente capaz de trabajar sobre un proyecto real.
+
+De ahí había nacido `iasi-agent`.
+
+El objetivo era sencillo de expresar y bastante más difícil de materializar:
+
+```text
+MODEL
+  ↓
+AGENT
+  ↓
+WORKSPACE
+```
+
+El agente debía poder ver el workspace, leer archivos, ejecutar herramientas, modificar aquello que estuviera permitido y materializar resultados.
+
+Después de evaluar varias alternativas se había elegido OpenCode como base inicial. No porque IASI quisiera convertirse en una configuración de OpenCode, sino precisamente por lo contrario: parecía proporcionar bastante infraestructura agentic sin obligarnos a construirla desde cero y sin ligar el agente a un IDE o a un único proveedor de modelos.
+
+Había que probarlo.
+
+## La primera impresión
+
+La instalación fue sencilla, aunque apareció inmediatamente una pequeña fricción: npm instalaba el ejecutable global en una ubicación que no queríamos utilizar.
+
+La solución fue coherente con el entorno de desarrollo existente:
+
+```text
+C:\SDK\OpenCode
+```
+
+Una herramienta de desarrollo debía vivir con las demás herramientas de desarrollo.
+
+Una vez instalado correctamente, OpenCode arrancó.
+
+La reacción fue inmediata:
+
+> **“¡Pedazo de página!”**
+
+La interfaz de terminal era espectacular.
+
+No parecía un pequeño wrapper alrededor de un modelo. Parecía una aplicación seria, cuidada y construida específicamente para trabajar durante horas desde una terminal.
+
+También apareció enseguida otra observación:
+
+> **“No es que sea muy rápido, pero es gratis.”**
+
+Y eso tenía importancia.
+
+El objetivo de `iasi-agent` no era sustituir obligatoriamente a Codex ni competir con los mejores modelos cloud en velocidad o capacidad. Tener un ejecutor local, sin cuota y disponible mientras la infraestructura propia estuviera funcionando, ya constituía una capacidad valiosa.
+
+Hasta aquí, todo encajaba.
+
+## OpenCode veía Ollama
+
+Ollama no estaba instalado en la misma máquina.
+
+La topología real era:
+
+```text
+Máquina de desarrollo
+│
+├── workspace
+├── OpenCode
+│
+└──────── HTTP ───────────────┐
+                              │
+iasi-docker                   │
+│                             │
+└─ Docker                     │
+   └─ Ollama :10434 ◀─────────┘
+```
+
+OpenCode se configuró mediante el endpoint compatible con OpenAI publicado por Ollama:
+
+```text
+http://iasi-docker:10434/v1
+```
+
+Los modelos disponibles eran:
+
+```text
+qwen3:8b
+deepseek-r1:7b
+gemma3:4b
+phi4-mini:latest
+llama3.2:3b
+qwen3:4b
+```
+
+OpenCode los veía.
+
+El circuito básico funcionaba.
+
+## El modelo que piensa y se calla
+
+La primera prueba se hizo con `qwen3:8b`.
+
+El modelo pensó.
+
+Y después no respondió.
+
+OpenCode mostraba que había habido razonamiento, pero no aparecía una respuesta final útil.
+
+Se cambió de modelo.
+
+`llama3.2:3b` sí respondía.
+
+La primera alegría duró poco.
+
+Cuando la tarea requería utilizar una herramienta, en lugar de ejecutar la operación empezó a aparecer JSON en pantalla.
+
+La conversación funcionaba.
+
+El agente, no necesariamente.
+
+## Leer no es hacer
+
+Se probó `phi4-mini`.
+
+El modelo fue capaz de leer el README y devolver información sobre el proyecto. De hecho, devolvió bastante más información de la necesaria.
+
+Parecía que la integración empezaba a funcionar.
+
+La siguiente prueba fue deliberadamente trivial:
+
+```text
+Usa la herramienta de escritura de archivos para crear `prueba.txt`
+en la raíz del proyecto.
+
+El archivo debe contener exactamente:
+
+IASI Agent funciona.
+
+No expliques nada.
+No devuelvas JSON.
+No modifiques ningún otro archivo.
+```
+
+Phi-4 respondió explicando cómo podía hacerse con Python.
+
+Incluso produjo un script completo para crear el archivo.
+
+Pero no creó el archivo.
+
+Aquello hizo visible una diferencia fundamental:
+
+> **Saber qué hacer no es hacer.**
+
+El modelo había comprendido perfectamente la tarea. Sabía producir código que la resolviera. Pero no había actuado como agente.
+
+Para `iasi-agent`, eso no era suficiente.
+
+## Qwen3 4B casi lo consigue
+
+Se probó entonces `qwen3:4b`.
+
+Esta vez la salida fue distinta:
+
+```text
+prueba.txt
+IASI Agent funciona.
+```
+
+Y OpenCode mostraba:
+
+```text
+Build · Qwen3 4B
+```
+
+Parecía que por fin se había ejecutado la herramienta.
+
+Pero el archivo no estaba allí.
+
+Se lo dijimos:
+
+> **“No lo has escrito.”**
+
+Después de volver a pensar, el modelo respondió:
+
+> “I don't have enough information to write a file. Please specify the file path and content you want me to write.”
+
+La ruta y el contenido estaban literalmente en el mensaje anterior.
+
+La prueba dejó de parecer un simple problema de prompt.
+
+Había inconsistencia en la relación entre el modelo, las tools y OpenCode.
+
+## ¿Y la terminal?
+
+OpenCode dispone conceptualmente de herramientas de shell.
+
+Se pidió al modelo que utilizara la terminal para crear el archivo evitando la herramienta de escritura.
+
+La respuesta fue todavía más significativa:
+
+> “No se puede ejecutar comandos en terminal usando las herramientas disponibles.”
+
+El modelo afirmaba que no existía una herramienta de terminal en el contexto que había recibido.
+
+Se intentó verificar la situación con permisos explícitos en la configuración.
+
+Eso abrió otro pequeño desvío: al modificar el JSON se llegó incluso a perder temporalmente la visibilidad de Ollama, hubo que volver a la configuración conocida y aislar de nuevo el problema.
+
+Finalmente se dejó de perseguir permisos.
+
+No había evidencia de que el problema fuera simplemente que OpenCode tuviera prohibido escribir o ejecutar shell.
+
+El comportamiento era más profundo y, sobre todo, menos determinista de lo que parecía desde la documentación o desde la primera impresión del producto.
+
+## La grieta entre la feature y el sistema
+
+En ese punto apareció una reflexión que iba más allá de OpenCode.
+
+Sobre el papel podían enumerarse capacidades:
+
+```text
+Ollama       ✓
+modelos      ✓
+tools        ✓
+write        ✓
+shell        ✓
+Windows      ✓
+```
+
+Pero de esa lista no se deduce:
+
+```text
+OpenCode
++ Windows
++ Ollama remoto
++ endpoint OpenAI-compatible
++ modelo local
++ tool calling
+= sistema fiable
+```
+
+Las features existían.
+
+La combinación real no estaba demostrando el mismo nivel de madurez.
+
+Y ahí apareció una reacción mucho más importante que el propio bug:
+
+> **“Esas cosas son las que me joden de cómo se hace software ahora.  
+> Sacan software inmaduro, con errores, un MVP y no me parece profesional.”**
+
+El problema no era simplemente encontrar un fallo.
+
+Todo software tiene fallos.
+
+Tampoco era negar el valor de construir un MVP.
+
+El problema era la distancia entre **una capacidad declarada** y **una capacidad validada en un contexto real**.
+
+Una herramienta puede decir que soporta Ollama.
+
+Puede decir que soporta tools.
+
+Puede decir que soporta escritura.
+
+Puede decir que soporta shell.
+
+Cada afirmación puede incluso ser cierta de forma aislada.
+
+Pero ingeniería no es marcar casillas de features.
+
+Ingeniería es comprobar que el sistema completo satisface de forma fiable la necesidad para la que se pretende utilizar.
+
+De esta sesión apareció una formulación que merece conservarse:
+
+> **Una capacidad no existe porque esté implementada. Existe cuando funciona de forma verificable en el contexto en el que se necesita.**
+
+## Lo que aprendimos
+
+OpenCode no quedó descartado.
+
+De hecho, muchas de las razones por las que fue elegido siguen siendo válidas: la interfaz es excelente, el modelo conceptual encaja bien con `iasi-agent`, puede trabajar sobre un workspace, es abierto y permite desacoplar el agente del proveedor de inferencia.
+
+Pero la prueba real añadió una condición que la evaluación inicial no podía aportar:
+
+**la combinación concreta que necesitamos debe validarse, no suponerse a partir de la lista de capacidades del producto.**
+
+Eso afecta directamente a `iasi-agent`.
+
+No basta con elegir una plataforma que declare las capacidades correctas.
+
+Hay que construir acceptance tests del agente.
+
+Por ejemplo:
+
+```text
+¿puede leer un archivo?           → verificar
+¿puede crear un archivo?          → verificar
+¿puede modificarlo?               → verificar
+¿puede ejecutar shell?            → verificar
+¿respeta permisos?                → verificar
+¿mantiene contexto entre turnos?  → verificar
+¿la operación ocurrió realmente?  → verificar
+```
+
+Y quizá lo más importante:
+
+```text
+el agente dice que lo hizo
+              ≠
+el sistema lo hizo
+```
+
+La implementación puede ser barata.
+
+La demostración puede ser espectacular.
+
+La interfaz puede ser preciosa.
+
+Pero el trabajo de ingeniería empieza precisamente donde termina el camino feliz.

@@ -1,0 +1,101 @@
+---
+title: "Todo se reduce a inputs"
+date: 2026-08-14
+---
+
+La palabra `inputs` parecía demasiado sencilla para sostener una parte importante de una metodología.
+
+Precisamente por eso funcionó.
+
+Habíamos empezado distinguiendo documentos externos de aclaraciones internas:
+
+```text
+inputs/
+├── externals/
+└── internals/
+```
+
+La regla era clara: los externos no se modificaban desde IASI. Si un documento externo estaba incompleto, no se “arreglaba” para facilitar el trabajo. Se añadía un input interno que aclaraba lo necesario.
+
+Esto permitía conservar la diferencia entre:
+
+> lo que recibimos
+
+y
+
+> lo que añadimos para poder trabajar con ello.
+
+Pero los `internals/` tenían un problema distinto.
+
+Estaban vivos.
+
+Una aclaración podía ser necesaria durante una iteración y dejar de ser válida en la siguiente. Borrarla destruía historia. Mantenerla activa contaminaba el estado actual.
+
+La solución apareció con una palabra:
+
+```text
+archived/
+```
+
+No hacía falta una carpeta `active/`. Lo activo era simplemente lo que estaba en el lugar normal. Lo que dejaba de participar en la interpretación pasaba al histórico.
+
+Después apareció `obtained/`.
+
+Había conocimiento que no venía de fuera ni era una decisión añadida manualmente. Podía surgir de ingeniería inversa, análisis del código existente, inspección de infraestructura o trabajo del propio proceso.
+
+También era entrada para fases posteriores.
+
+Así la estructura quedó:
+
+```text
+inputs/
+├── externals/
+├── internals/
+└── obtained/
+```
+
+con históricos asociados cuando fueran necesarios.
+
+La simplificación produjo una frase reveladora:
+
+> Con lo que todo se reduce a un directorio: `inputs`.
+
+No significaba que todo conocimiento fuera igual.
+
+Significaba que, para IASI, todo lo que alimenta el razonamiento entra por un mismo concepto.
+
+El formato tampoco debía imponerse demasiado pronto.
+
+Un input podía ser Markdown, una especificación funcional, un documento de negocio, información obtenida de un sistema o cualquier artefacto que aportara conocimiento.
+
+La metodología no debía exigir que el mundo exterior se adaptara a ella antes de poder empezar a pensar.
+
+Entonces apareció la primera etapa formal:
+
+> **Valida. ¿Es suficiente?**
+
+La pregunta de validación no era si los documentos estaban perfectos.
+
+Era si existía suficiente conocimiento para avanzar sin inventar decisiones importantes.
+
+Y apareció una regla de gate que después crecería mucho:
+
+```text
+si validate falla
+    ↓
+no se avanza
+```
+
+Incluso un input interno deliberadamente parcial podía permitir avanzar si decía, por ejemplo:
+
+> por ahora créame un proyecto Quarto.
+
+La suficiencia dependía de la siguiente fase, no de una fantasía de documentación completa.
+
+Ahí IASI empezó a parecerse menos a una colección de buenas prácticas y más a una máquina de trabajo.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260814084622-iasi-graphics-metodologia.md`.

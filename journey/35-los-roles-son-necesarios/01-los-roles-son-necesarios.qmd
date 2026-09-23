@@ -1,0 +1,97 @@
+---
+title: "Los roles son necesarios; los puestos y los recursos son contingentes"
+date: 2026-09-05
+---
+
+Mientras intentábamos describir la organización de la Ingeniería Aumentada apareció una confusión muy fácil de cometer.
+
+Hablar de roles llevaba casi automáticamente a imaginar personas distintas.
+
+Un rol funcional.
+
+Otro metodológico.
+
+Otro técnico.
+
+Y, sin darnos cuenta, el dibujo empezaba a parecer un organigrama.
+
+Pero un rol no es una persona.
+
+Tampoco es un puesto.
+
+Ni implica necesariamente dedicar un recurso completo.
+
+La distinción se volvió mucho más fácil de explicar al recordar los Six Thinking Hats de Edward de Bono.
+
+No porque los sombreros de De Bono correspondan a los roles de IASI.
+
+No existe esa equivalencia.
+
+La idea útil era más sencilla: **una misma persona puede ponerse distintos sombreros**.
+
+Cuando actúa desde un rol, debe saber desde qué rol está decidiendo.
+
+```text
+misma persona
+├── sombrero / rol A
+├── sombrero / rol B
+└── sombrero / rol C
+```
+
+Y hay otro detalle importante.
+
+No llevamos dos sombreros a la vez.
+
+Una persona puede desempeñar varios roles, pero ante una decisión concreta conviene saber cuál está ejerciendo.
+
+Eso ayuda a separar preguntas que de otro modo se mezclan:
+
+- ¿qué necesita el producto?;
+- ¿qué exige la metodología?;
+- ¿qué permite técnicamente el sistema?;
+- ¿quién tiene autoridad para aceptar una excepción?;
+- ¿quién valida el resultado desde cada perspectiva?
+
+En una organización grande esos roles pueden terminar asignados a personas o equipos diferentes.
+
+En un proyecto pequeño una misma persona puede ejercer varios.
+
+En algunos momentos uno de esos roles puede apoyarse intensamente en un Sistema Inteligente.
+
+Nada de eso cambia la necesidad de que la **función exista**.
+
+La estructura organizativa debe distinguir lo necesario de la forma concreta en que se materializa.
+
+Y de ahí salió una frase que terminó condensando toda la discusión:
+
+> **Los roles son necesarios; los puestos y los recursos son contingentes.**
+
+La metodología necesita determinadas responsabilidades.
+
+No necesita imponer un organigrama universal.
+
+### Lo que quedó
+
+IASI puede especificar roles sin prescribir cuántas personas debe tener una organización.
+
+```text
+rol necesario
+     ↓
+puede materializarse como
+     ↓
+persona / varias personas / parte de un puesto / equipo
+```
+
+Esto resulta especialmente importante en Ingeniería Aumentada, porque la capacidad disponible puede cambiar mucho según las personas y los Sistemas Inteligentes que las aumentan.
+
+La metodología debe fijar **qué funciones no pueden desaparecer**.
+
+La organización decidirá después cómo las cubre.
+
+---
+
+## Fuentes
+
+- Conversaciones del 5 de septiembre de 2026 sobre estructuras organizativas de IASI.
+- Six Thinking Hats de Edward de Bono utilizado únicamente como recurso pedagógico para distinguir persona, puesto y rol.
+- Formulación consolidada durante la discusión: «Los roles son necesarios; los puestos y los recursos son contingentes.»

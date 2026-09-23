@@ -1,0 +1,98 @@
+---
+title: "Un lenguaje visual para IASI"
+date: 2026-08-30
+---
+
+El primer HTMLSlides salió sorprendentemente bien.
+
+También salió con una estética que había decidido HTMLSlides.
+
+Eso era útil para validar la herramienta, pero introducía un problema distinto.
+
+Si mañana hacíamos otra presentación con PowerPoint, un diagrama con PlantUML y una página web con Quarto, cada tecnología podía terminar hablando un idioma visual diferente.
+
+Y entonces apareció la pregunta correcta:
+
+> ¿Por qué debería ser HTMLSlides quien decida cómo se ve IASI?
+
+La respuesta fue inmediata.
+
+No debería.
+
+El lenguaje visual pertenece a IASI.
+
+HTMLSlides, PowerPoint, PlantUML, Quarto o cualquier otra tecnología solo deben aprender a expresarlo.
+
+La diferencia se parece mucho a la que ya habíamos descubierto con las plataformas agentic.
+
+No queremos:
+
+```text
+HTMLSlides → define estilo
+PowerPoint  → define otro
+PlantUML    → define otro
+```
+
+Queremos:
+
+```text
+IASI Visual Language
+        ↓
+   implementaciones
+   ├── HTMLSlides
+   ├── PowerPoint
+   ├── PlantUML
+   ├── Quarto / web
+   └── ...
+```
+
+Ese lenguaje puede incluir:
+
+- tipografía;
+- paleta;
+- jerarquía;
+- formas;
+- líneas;
+- cajas;
+- iconografía;
+- espaciado;
+- composición;
+- tratamiento de diagramas;
+- movimiento cuando exista;
+- y reglas de uso de todos esos elementos.
+
+Algunas decisiones serán universales. Otras necesitarán una adaptación específica según las capacidades del medio.
+
+PlantUML no expresa una composición exactamente igual que PowerPoint. Un documento impreso no utiliza movimiento. Una slide puede necesitar relaciones espaciales que no tienen sentido en una página de documentación.
+
+Pero la identidad no debería reconstruirse desde cero cada vez.
+
+Aquí apareció otra vez el patrón de adapters.
+
+La definición canónica está en IASI.
+
+Cada tecnología proyecta esa definición a su propio lenguaje.
+
+Esto convierte lo visual en algo más que branding.
+
+Pasa a ser otra parte gobernable y reutilizable de la ingeniería de artefactos.
+
+### Lo que quedó
+
+`Introducing IASI` no debe definir la identidad visual de IASI.
+
+Debe **consumirla**.
+
+Y lo mismo harán los libros, los diagramas, las presentaciones futuras y los productos que necesiten representación visual.
+
+La estética deja de pertenecer a la herramienta que renderiza.
+
+**Pasa a ser conocimiento canónico del sistema.**
+
+---
+
+## Fuentes
+
+- Conversación del 30 de agosto de 2026 tras la primera prueba con HTMLSlides.
+- Experiencia previa de estilo compartido en `iasi-home` y publicaciones Quarto.
+- Uso de PlantUML e `iasi-graphics` como consumidores visuales dentro del ecosistema.

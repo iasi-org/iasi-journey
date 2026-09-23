@@ -1,0 +1,116 @@
+---
+title: "El punto de inflexión depende de la escala"
+date: 2026-09-06
+---
+
+A veces mirar IASI desde demasiado lejos produce una sensación extraña.
+
+Queremos construir una metodología completa para Ingeniería Aumentada.
+
+Comparado con ese objetivo, cualquier avance concreto parece pequeño.
+
+Un modelo de inputs.
+
+Una política de artefactos.
+
+Una estructura organizativa.
+
+Un mecanismo de publicación.
+
+Una decisión sobre roles.
+
+Todo puede parecer apenas el comienzo de una curva todavía pegada al suelo.
+
+La función sigmoidal apareció inicialmente como una forma intuitiva de pensar ese progreso.
+
+```text
+inicio lento
+   ↓
+aceleración
+   ↓
+punto de inflexión
+   ↓
+maduración
+```
+
+Pero entonces hicimos zoom sobre la parte aparentemente plana.
+
+Y allí también había cambios importantes.
+
+Dentro del desarrollo del modelo conceptual podía aparecer otra dinámica de aceleración.
+
+Dentro de una estructura organizativa, otra.
+
+Dentro de una única decisión de ingeniería, otra.
+
+Eso llevó a una formulación más cuidadosa que decir simplemente «la sigmoide es fractal», porque matemáticamente esa afirmación sería demasiado fuerte.
+
+La idea útil era otra:
+
+> **El proceso observado puede presentar autosimilitud sigmoidal a distintas escalas.**
+
+```text
+IASI completo
+└── modelo conceptual
+    └── estructura organizativa
+        └── decisión concreta
+```
+
+En cada escala podemos encontrar una fase inicial, una aceleración, un cambio de régimen y una estabilización relativa.
+
+Por eso dos afirmaciones aparentemente contradictorias pueden ser simultáneamente ciertas:
+
+> Hemos avanzado muy poco.
+
+Y:
+
+> Hemos avanzado una barbaridad.
+
+Desde la escala de la metodología completa seguimos al principio.
+
+Desde la escala de algunos problemas concretos ya hemos atravesado varios puntos de inflexión.
+
+Esto también introdujo una advertencia epistemológica.
+
+Observar únicamente un tramo local puede engañarnos sobre la dinámica global.
+
+Una zona casi horizontal puede ser el comienzo de una curva mayor.
+
+Una aceleración espectacular local puede seguir siendo pequeña dentro del sistema completo.
+
+El punto de inflexión, por tanto, no es una propiedad narrativa absoluta del proyecto.
+
+**Depende de la escala desde la que lo observamos.**
+
+### Lo que quedó
+
+La sigmoidal no se convirtió en una ley de IASI.
+
+Se convirtió en un instrumento conceptual para pensar cambio, madurez y perspectiva.
+
+Nos permite decir con más precisión algo que el trabajo diario llevaba tiempo mostrando:
+
+```text
+avance local enorme
+≠
+metodología global terminada
+```
+
+Y también lo contrario:
+
+```text
+metodología global todavía inicial
+≠
+no hemos progresado
+```
+
+Cambiar la escala cambia lo que vemos.
+
+No necesariamente lo que ha ocurrido.
+
+---
+
+## Fuentes
+
+- Conversación del 6 de septiembre de 2026 sobre la función sigmoidal y el progreso de IASI.
+- Discusión sobre autosimilitud por escala y dependencia del punto de inflexión respecto del nivel de observación.

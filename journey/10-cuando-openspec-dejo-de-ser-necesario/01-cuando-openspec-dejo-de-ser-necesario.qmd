@@ -1,0 +1,86 @@
+---
+title: "Cuando OpenSpec dejó de ser necesario"
+date: 2026-08-17
+---
+
+OpenSpec llevaba un tiempo formando parte del paisaje mental de IASI.
+
+No necesariamente como dependencia definitiva, pero sí como una pieza razonable entre los documentos de entrada y la implementación.
+
+Hasta que apareció una pregunta muy pequeña:
+
+> Tenemos nuestros inputs. ¿Para qué necesitamos OpenSpec, al menos por ahora?
+
+La pregunta hizo algo muy IASI: obligó a justificar una pieza que ya habíamos dado por incorporada.
+
+El dibujo inicial podía expresarse así:
+
+```text
+conocimiento
+   ↓
+inputs
+   ↓
+OpenSpec
+   ↓
+agente
+   ↓
+implementación
+```
+
+Pero IASI había evolucionado.
+
+Los `inputs/` ya eran legibles por humanos y agentes, versionables, independientes de plataforma y suficientemente flexibles para recibir conocimiento sin obligar a convertirlo primero a otro formato.
+
+Así que la pregunta correcta pasó a ser:
+
+> ¿Qué problema real resuelve hoy OpenSpec que IASI no pueda resolver sin él?
+
+La respuesta fue incómodamente sencilla:
+
+ninguno imprescindible.
+
+Eso no convirtió OpenSpec en una mala herramienta.
+
+Simplemente convirtió su incorporación actual en arquitectura anticipada.
+
+```text
+inputs → OpenSpec → agente
+```
+
+añadía una transformación que todavía no necesitábamos.
+
+Podía volver a tener sentido más adelante: cientos de documentos, trazabilidad formal compleja, cobertura, gestión estricta de cambios, interoperabilidad con un ecosistema que justificara el coste.
+
+Pero IASI no debía construir esa infraestructura por si acaso.
+
+Esta decisión fue importante por una razón que trascendía OpenSpec.
+
+Estábamos empezando a aplicar a IASI su propio principio:
+
+> **Todo se debe cuestionar.**
+
+No preguntar:
+
+> ¿Cómo integramos OpenSpec?
+
+sino:
+
+> ¿Qué necesitamos para resolver el problema?
+
+Y solo después comprobar si una herramienta existente satisface esa necesidad.
+
+La retirada provisional de OpenSpec simplificó el flujo y dejó al descubierto el siguiente problema real.
+
+Si los inputs alimentaban directamente a IASI, necesitábamos saber si eran suficientes y coherentes para avanzar.
+
+Así apareció con claridad `/validate`.
+
+La eliminación de una pieza no dejó un hueco.
+
+Reveló la pieza que realmente necesitábamos.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260817130542-iasi-workflow-inputs-definitions.md`.

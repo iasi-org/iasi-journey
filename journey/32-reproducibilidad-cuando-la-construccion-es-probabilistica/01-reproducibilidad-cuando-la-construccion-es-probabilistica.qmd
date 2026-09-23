@@ -1,0 +1,101 @@
+---
+title: "Reproducibilidad cuando la construcción es probabilística"
+date: 2026-09-01
+---
+
+Uno de los contrastes más incómodos de IASI apareció al comparar dos cosas que la ingeniería suele querer mantener unidas:
+
+- reproducibilidad;
+- y construcción con Sistemas Inteligentes generativos.
+
+En la mayor parte de los sistemas tradicionales esperamos que, bajo las mismas condiciones, estado y entradas, el comportamiento observable sea reproducible.
+
+La implementación puede haber sido difícil.
+
+Dos ingenieros pueden haber llegado a ella por caminos distintos.
+
+Pero una vez fijado el sistema, esperamos que las mismas condiciones produzcan el mismo resultado que especificamos.
+
+Con un Sistema Inteligente generativo aparece una segunda fuente de variabilidad.
+
+No solo puede variar el comportamiento del sistema final si ese sistema es probabilístico.
+
+Puede variar **el propio proceso de construcción**.
+
+Ante la misma necesidad, dos ejecuciones pueden proponer:
+
+```text
+solución A
+solución B
+solución C
+```
+
+con estructuras, estrategias o decisiones intermedias diferentes y, aun así, todas potencialmente válidas.
+
+Al principio esto parecía chocar con la idea clásica de reproducibilidad.
+
+Después recordamos que la ciencia y la ingeniería llevan mucho tiempo trabajando con procedimientos probabilísticos sin renunciar al rigor.
+
+La aguja de Buffon ofreció un ejemplo especialmente limpio.
+
+Podemos lanzar agujas al azar sobre un plano con líneas paralelas y utilizar la frecuencia de cruces para estimar π.
+
+Repetimos el mismo procedimiento.
+
+Obtenemos valores distintos.
+
+Y no por ello el experimento carece de método.
+
+Lo importante es que existen reglas, condiciones, medidas, tolerancias y una forma de decidir si el resultado es aceptable.
+
+La lección para IASI no era «todo puede variar».
+
+Era casi la contraria.
+
+> Cuando la construcción puede variar, la ingeniería debe especificar qué variabilidad admite y cómo valida sus resultados.
+
+Eso desplaza parte del control.
+
+En un proceso puramente determinista podemos intentar controlar exactamente el camino.
+
+En uno probabilístico puede resultar más útil controlar:
+
+- las entradas;
+- las restricciones;
+- las propiedades exigidas;
+- las evidencias;
+- los criterios de aceptación;
+- los límites de variación;
+- y la validación del resultado.
+
+La reproducibilidad deja de significar necesariamente «obtener exactamente el mismo artefacto byte a byte».
+
+Puede significar que distintas materializaciones satisfacen de forma verificable la misma especificación.
+
+### Lo que quedó
+
+La ingeniería tradicional busca reproducibilidad del resultado.
+
+La Ingeniería Aumentada debe gestionar además la variabilidad controlada de la construcción y la materialización.
+
+```text
+misma necesidad
+     ↓
+construcciones diferentes
+     ↓
+criterios comunes
+     ↓
+resultados válidos dentro de tolerancia
+```
+
+La aleatoriedad no elimina la ingeniería.
+
+**La obliga a hacer explícito qué significa aceptar un resultado.**
+
+---
+
+## Fuentes
+
+- Conversaciones del 1 de septiembre de 2026 sobre determinismo y probabilidad.
+- Ejemplo pedagógico de la aguja de Buffon.
+- Discusión sobre reproducibilidad del resultado frente a variabilidad de la construcción.

@@ -1,0 +1,171 @@
+---
+title: "Congelar la web no significa terminar IASI"
+date: 2026-09-09
+---
+
+Llevábamos varios días intentando «congelar» distintas partes de IASI.
+
+La palabra tenía un peligro.
+
+Podía interpretarse como terminar.
+
+Si congelar la web significaba completar todos los manuales, productos, subproductos, páginas conceptuales y documentación pendiente, entonces la web no se congelaría hasta que IASI estuviera prácticamente terminado.
+
+Una condición bastante absurda para una iniciativa que precisamente está evolucionando.
+
+El cambio apareció al formular mejor qué queríamos congelar.
+
+No el contenido final.
+
+**La representación pública del sistema.**
+
+La web ya tenía dos destinos preparados para reconocer explícitamente que algo todavía no está hecho:
+
+```text
+status/to-be-done
+status/under-construction
+```
+
+Eso cambiaba completamente el criterio.
+
+Una página podía estar vacía o en construcción y, aun así, ocupar correctamente su lugar en el mapa.
+
+Un menú podía mostrar una capacidad prevista aunque su desarrollo todavía no hubiera empezado.
+
+Lo importante era que la web cumpliera otra función:
+
+> Dar una imagen global, coherente y suficientemente completa de qué es IASI, qué contiene y hacia dónde se está construyendo.
+
+Entonces el trabajo dejó de parecer «rellenar páginas».
+
+Se convirtió en arquitectura de información.
+
+Empezamos a revisar el menú principal.
+
+Algunas etiquetas ya no representaban bien lo que contenían.
+
+`Artefactos`, por ejemplo, agrupaba `IASI Tools Dev` e `IASI RStudio`.
+
+Pero esas cosas podían entenderse mejor como **Productos**.
+
+La definición empezó a afinarse:
+
+```text
+Subproductos
+= cosas que IASI necesitó y creó durante su construcción
+
+Productos
+= cosas creadas inicialmente para IASI que,
+  con ajustes, pueden tener vida propia fuera de IASI
+```
+
+La frontera no dependía por tanto de quién fuera el usuario original.
+
+Ambos podían nacer de una necesidad interna.
+
+La diferencia era su capacidad de **emanciparse**.
+
+Un filtro específico, una utilidad interna o un servidor MCP podían aparecer como subproductos del trabajo.
+
+IASI Quarto, IASI Lua, IASI Tools Dev o IASI RStudio podían presentarse como productos cuando adquirían suficiente autonomía para ser útiles fuera del propio proyecto.
+
+El orden del menú también empezó a importar.
+
+Productos antes que Subproductos resultaba más natural para alguien que llega desde fuera.
+
+Primero ve aquello que puede reconocer como una unidad utilizable.
+
+Después puede descubrir las piezas que fueron apareciendo durante la construcción.
+
+Otro problema apareció con `Metodología`.
+
+El menú solo contenía:
+
+```text
+Agentics
+Adapters
+```
+
+La etiqueta hacía una afirmación involuntaria: parecía decir que la metodología IASI **era** Agentics + Adapters.
+
+Y eso ya sabíamos que era falso.
+
+La metodología es mucho más amplia.
+
+Agentics y Adapters son enfoques, mecanismos o piezas dentro de ella.
+
+Cambiar el nombre del menú a `Enfoques` resolvía el problema sin inventar todavía una taxonomía definitiva.
+
+```text
+Enfoques
+├── Agentics
+└── Adapters
+```
+
+También vimos que `Intro`, `Sobre IASI`, `Principios`, `Manifiesto` y `The Challenge` estaban repartiendo por el navbar algo que conceptualmente pertenecía a una misma zona de presentación de IASI.
+
+La revisión del menú dejó de ser decoración.
+
+Era una prueba de coherencia conceptual.
+
+Si no sabíamos dónde colocar una cosa, probablemente todavía no habíamos decidido bien qué era.
+
+### Congelar sin fingir
+
+El criterio final empezó a parecer mucho más sano:
+
+La web puede contener andamios.
+
+Lo que no puede contener son **agujeros conceptuales involuntarios**.
+
+Puede decir:
+
+```text
+Under construction
+```
+
+Lo que no debe hacer es ocultar una parte importante de IASI simplemente porque todavía no está terminada.
+
+Puede mostrar una ruta hacia algo pendiente.
+
+Lo que no debe hacer es enviar al usuario a un enlace roto.
+
+Puede tener profundidad desigual.
+
+Lo que debe ofrecer es una imagen global suficientemente completa.
+
+```text
+estructura estable
++ navegación válida
++ mapa completo
++ estado explícito
+= web congelable
+```
+
+### Lo que quedó
+
+Congelar la web no significa congelar el desarrollo de IASI.
+
+Tampoco significa declarar terminado lo que sigue en construcción.
+
+Significa algo mucho más concreto:
+
+> **Congelamos la representación del sistema, no el estado de desarrollo del sistema.**
+
+A partir de ese momento, `to-be-done` y `under-construction` dejaron de parecer defectos temporales de la web.
+
+Se convirtieron en parte legítima de una representación honesta del estado de IASI.
+
+Y la navegación empezó a cumplir una segunda función.
+
+No solo permite llegar a páginas.
+
+**Cuenta qué creemos que IASI es.**
+
+---
+
+## Fuentes
+
+- Conversaciones del 9 de septiembre de 2026 durante la congelación de `iasi-home`.
+- Páginas existentes `status/to-be-done` y `status/under-construction`.
+- Revisión del navbar de `iasi-home` y discusión sobre Productos, Subproductos, Enfoques y estructura pública del proyecto.

@@ -1,0 +1,19 @@
+project:
+  type: book
+  output-dir: _outputs
+  resources:
+    - resources/**
+
+profile:
+  default: html
+  group:
+    - [html, pdf]
+    
+metadata-files:
+  - _book-structure.yml
+
+lang: es
+
+book:
+  title: "IASI Journey"
+  author: "Javier G. Grandez"

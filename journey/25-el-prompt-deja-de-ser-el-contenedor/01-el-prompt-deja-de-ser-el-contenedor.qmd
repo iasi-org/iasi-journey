@@ -1,0 +1,93 @@
+---
+title: "El prompt deja de ser el contenedor"
+date: 2026-08-30
+---
+
+IASI había empezado, como casi todo el mundo, utilizando prompts para proporcionar instrucciones y contexto.
+
+Después empezamos a sacar de ellos las instructions.
+
+Luego las skills.
+
+Después las rules.
+
+Y finalmente apareció una pregunta bastante obvia una vez formulada:
+
+> Si una decisión ya existe, ¿por qué seguimos confiando en que permanezca dentro de una conversación o de un prompt?
+
+La respuesta llevó a un principio mucho más radical de lo que parece.
+
+El prompt no debe ser el contenedor principal del conocimiento.
+
+La conversación es magnífica para pensar.
+
+Podemos discutir una posibilidad, llevarla al extremo, descartarla, recuperarla, hacer bromas, detectar contradicciones y terminar tomando una decisión.
+
+Pero la conversación no debería ser el único lugar donde esa decisión existe.
+
+Cuando algo importa, debe persistirse como artefacto.
+
+Incluso cuando el artefacto parece ridículamente pequeño.
+
+Una sola línea escrita en un documento puede costar prácticamente lo mismo que escribirla en el chat. Sin embargo, el documento convierte esa línea en algo:
+
+- persistente;
+- versionable;
+- trazable;
+- revisable;
+- reutilizable;
+- direccionable;
+- y procesable por otros agentes.
+
+El cambio conceptual puede representarse así:
+
+```text
+antes
+
+prompt = petición + reglas + conocimiento + decisiones + contexto
+```
+
+frente a:
+
+```text
+después
+
+artefactos = conocimiento persistente
+prompt     = activación / petición mínima
+```
+
+Esto no elimina el prompt.
+
+Lo pone en su sitio.
+
+Un agente puede terminar recibiendo algo tan pequeño como:
+
+```text
+Execute engine/tasks/001-first.md
+```
+
+porque el resto ya existe en el workspace.
+
+El conocimiento no necesita volver a ser narrado cada vez.
+
+Este principio también cambia la relación entre humano y agente. La memoria operativa del proyecto deja de depender de que el modelo «recuerde» una conversación anterior. Otro agente puede llegar después, leer los mismos artefactos y continuar desde el mismo estado explícito.
+
+Por eso la persistencia documental no es simplemente una preferencia de documentación.
+
+Es una condición para que el ENGINE pueda ser independiente de una conversación concreta y de un proveedor concreto.
+
+### Lo que quedó
+
+El chat sirve para pensar.
+
+Los artefactos sirven para conservar lo que hemos aprendido y decidido.
+
+> **Pensar puede ser conversacional. El conocimiento operativo debe poder sobrevivir a la conversación.**
+
+---
+
+## Fuentes
+
+- Conversación del 30 de agosto de 2026 sobre prompts, documentos y persistencia del conocimiento.
+- Experimento `introducing-iasi`, donde el trabajo pasó de un prompt directo a `inputs/` y `engine/tasks/`.
+- Principios previos de IASI sobre inputs inmutables, definitions canónicas y trazabilidad.

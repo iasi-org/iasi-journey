@@ -1,0 +1,72 @@
+---
+title: "Los labs empiezan a tomar forma"
+---
+
+Hasta este momento habíamos hablado de laboratorios como una forma práctica de experimentar con IASI, pero sin definir todavía con precisión qué papel debían ocupar dentro del proyecto. Al trabajar sobre el **Volumen II**, la estructura empezó a aclararse: los labs no serían un complemento del libro, sino el propio contenido del volumen. Dicho de otra manera, **los labs son el Volumen II**.
+
+Esto cambia bastante la forma de pensar el contenido. Cada laboratorio pasa a ser una unidad de trabajo completa y, editorialmente, un capítulo del libro. Un lab puede estar compuesto internamente por varios documentos, pero para quien recorre el volumen representa una experiencia única.
+
+```text
+Lab 01
+Lab 02
+Lab 03
+...
+```
+
+Los primeros laboratorios tienen además una característica importante: no necesitan una infraestructura específica. Su objetivo es comenzar a trabajar con Sistemas Inteligentes, experimentar con prompts, contexto, instrucciones y otros conceptos básicos, y pueden realizarse prácticamente desde cualquier entorno.
+
+Pero esto deja de ser cierto en algún momento. A medida que los laboratorios avanzan empiezan a necesitar herramientas, servicios, runtimes, contenedores y productos propios de IASI. Aparece entonces una frontera bastante natural dentro del volumen.
+
+```text
+Labs 01–09
+    ↓
+pueden ejecutarse en un entorno cualquiera
+
+Lab 10
+    ↓
+construye el entorno de laboratorios
+
+Labs 11+
+    ↓
+pueden asumir ese entorno
+```
+
+Así nace **Lab 10: Montando la infraestructura**. Y con él aparece una cuestión que hasta ahora no habíamos tenido que resolver: ¿dónde viven realmente los labs?
+
+Podríamos ejecutarlos sobre la misma máquina utilizada para desarrollar IASI, pero eso mezclaría dos mundos diferentes. La máquina de desarrollo contiene repositorios, herramientas internas, configuraciones y dependencias que existen precisamente porque estamos construyendo IASI. Un usuario de los labs no debería necesitar todo eso.
+
+Queremos que utilice IASI como producto, no que un laboratorio funcione porque casualmente tiene al lado el código fuente de `iasi.quarto`, `iasi-lua` o cualquier otro componente. Esto nos lleva a separar claramente los dos entornos.
+
+```text
+iasi-dev
+    ↓
+entorno donde construimos IASI
+
+iasi-labs
+    ↓
+entorno donde usamos IASI
+```
+
+La separación no es solamente técnica. También es una forma de comprobar que nuestros propios productos son realmente utilizables fuera del entorno en el que fueron creados. Si algo solo funciona en `iasi-dev`, probablemente todavía no sea un producto.
+
+A partir de aquí empiezan a aparecer nuevas decisiones. Necesitamos una máquina específica para los laboratorios y queremos que ese entorno sea reproducible, esté aislado del entorno de desarrollo y sea suficientemente parecido a lo que podría encontrar una persona que llega a IASI desde fuera. La opción natural es utilizar una **máquina virtual dedicada a los labs**.
+
+La máquina virtual nos permite construir el entorno desde cero, repetir el proceso cuando sea necesario y conservar determinados estados mediante checkpoints. También nos permite experimentar sin convertir la máquina de desarrollo en un ecosistema de dependencias acumuladas que termine haciendo funcionar cosas por motivos que ya no somos capaces de explicar.
+
+Aparece entonces otra decisión: cuál debe ser el sistema operativo de referencia. IASI no pretende depender de un único sistema operativo, pero los laboratorios necesitan una referencia concreta sobre la que podamos escribir instrucciones reproducibles y comprobar que funcionan. Por ahora, esa referencia será **Windows**.
+
+No significa que IASI sea un proyecto Windows ni que los laboratorios solo puedan ejecutarse allí. Significa simplemente que necesitamos un camino por defecto. Si intentamos documentar desde el principio cada operación para Windows, Linux, macOS y cualquier otra combinación posible, el laboratorio termina explicando sistemas operativos en lugar de explicar aquello que queremos experimentar.
+
+Con todo esto empieza a tomar forma algo bastante mayor que una simple colección de ejercicios. Porque no basta con escribir laboratorios. También tenemos que decidir **cómo gestionar los labs**.
+
+Un laboratorio puede necesitar determinado software instalado, mientras que otro puede depender del resultado de un laboratorio anterior. Algunos deberían poder ejecutarse de manera independiente y otros podrían necesitar un estado concreto de la máquina. Puede ser necesario volver a un checkpoint, comprobar que determinadas dependencias están disponibles antes de empezar o validar que el entorno ha quedado en el estado esperado al terminar.
+
+También tendremos que decidir qué ocurre con los artefactos generados durante cada ejercicio. Un lab puede crear código, repositorios, configuraciones, contenedores o servicios que sobrevivan al propio ejercicio. Eso obliga a preguntarnos qué puede asumir un lab al comenzar, qué dependencias puede tener respecto a otros, qué estado debe dejar al terminar y cómo podemos repetirlo sin depender accidentalmente de todo lo que ocurrió antes.
+
+La cuestión de los checkpoints forma parte del mismo problema. Tenemos que decidir cuándo representan un estado estable de la infraestructura, cuándo son simplemente una ayuda para repetir un ejercicio y hasta qué punto deben formar parte del diseño formal de los laboratorios. Lo mismo ocurre con la instalación y actualización de los productos IASI: un usuario de los labs debería consumirlos como productos, no trabajar con sus repositorios fuente.
+
+Todavía no tenemos respuesta para todas estas cuestiones, y precisamente por eso merece la pena registrarlas ahora. El Journey no existe únicamente para documentar decisiones terminadas. También debe conservar el momento en el que descubrimos un problema y todavía estamos intentando entender qué forma tiene.
+
+Empezamos pensando en escribir algunos laboratorios. Después descubrimos que los labs constituían un volumen completo. Al avanzar apareció la necesidad de construir una infraestructura específica para ejecutarlos y, al intentar hacerlo de forma reproducible, apareció una nueva capa que no habíamos previsto inicialmente: la gestión de los propios laboratorios.
+
+En otras palabras, empezamos escribiendo labs y hemos terminado descubriendo que también necesitamos hacer **ingeniería de laboratorios**.

@@ -1,0 +1,95 @@
+---
+title: "De metodología escrita a sistema ejecutable"
+date: 2026-08-14
+---
+
+Hubo un momento en que la distinción se volvió inevitable:
+
+el Volumen III podía **explicar** IASI, pero no podía **ser** IASI.
+
+Una metodología descrita en un libro todavía obliga a cada persona o agente a interpretar cómo aplicarla. Si queríamos que distintos agentes trabajaran de manera consistente, había que materializarla.
+
+La idea apareció alrededor de los comandos.
+
+No comandos de Codex.
+
+No prompts particulares de Copilot.
+
+Comandos de IASI.
+
+```text
+/validate
+/status
+/work
+/archive
+/obtain
+```
+
+Los nombres todavía podían cambiar. Lo importante era quién era dueño de su significado.
+
+IASI.
+
+Eso llevó a separar el sistema conceptual de sus plataformas de ejecución.
+
+```text
+IASI
+├── commands/
+├── skills/
+├── mcp/
+├── core/
+├── schemas/
+└── adapters/
+    ├── codex/
+    ├── copilot/
+    └── ...
+```
+
+Codex podía soportar una forma de comando. Copilot otra. Mañana aparecería otra herramienta.
+
+La metodología no debía convertirse en una colección de instrucciones escritas para el producto de moda de ese mes.
+
+La dirección correcta de dependencia era la contraria:
+
+```text
+plataforma
+   ↓
+adaptador
+   ↓
+IASI
+```
+
+Esta decisión cambió también la función del repositorio `iasi`.
+
+Hasta entonces los libros explicaban la metodología y varios artefactos la apoyaban. Ahora hacía falta un lugar que contuviera **su materialización operativa**.
+
+El repositorio `iasi` debía convertirse en eso.
+
+No necesariamente un único ejecutable monolítico, ni una arquitectura completamente decidida desde el primer día. Pero sí la fuente canónica de:
+
+- comandos;
+- skills;
+- instrucciones;
+- validaciones;
+- estructura de conocimiento;
+- integración agentic;
+- runtime cuando fuera necesario.
+
+La diferencia empezó a formularse así:
+
+> El Volumen III explica y define la metodología.  
+> `iasi` la implementa.
+
+Y `iasi-graphics` seguía desempeñando un papel crucial.
+
+Era el proyecto que obligaba a comprobar si esa materialización servía para algo.
+
+La metodología no iba a escribirse en una torre de marfil y después aplicarse.
+
+Iba a ser descubierta bajo carga.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260814084622-iasi-graphics-metodologia.md`.
+- `chatgpt-20260814104100-iasi-comandos-skills-mcp.md`.

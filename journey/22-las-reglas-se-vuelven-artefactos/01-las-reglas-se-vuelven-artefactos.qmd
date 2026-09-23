@@ -1,0 +1,97 @@
+---
+title: "Las reglas se vuelven artefactos"
+date: 2026-08-26
+---
+
+Las instructions habían permitido separar reglas generales de los prompts concretos.
+
+Pero todavía quedaba una pregunta incómoda:
+
+> ¿qué aspecto tiene una regla cuando deja de ser una frase perdida dentro de una instruction?
+
+La respuesta terminó siendo mucho más literal de lo esperado.
+
+Una regla debía ser un artefacto propio.
+
+No una línea enterrada en un prompt gigantesco. No una convención que solo existe en la cabeza de quien trabaja. No un bloque copiado a distintos agentes.
+
+Un documento.
+
+```text
+builtin/
+└── rules/
+    ├── coding/
+    └── docs/
+```
+
+Y cada regla tendría una estructura normalizada:
+
+```text
+Title
+Metadata
+Rule
+Exceptions
+Rationale
+Sources
+Examples
+```
+
+El detalle de `Examples` fue especialmente revelador. No todas las reglas necesitan ejemplos, pero el formato debía permitir añadir casos positivos, negativos o situaciones de aplicación cuando ayudaran a entender la norma.
+
+La consecuencia importante no era editorial.
+
+Al convertir las reglas en documentos independientes podían ser:
+
+- versionadas;
+- revisadas;
+- trazadas;
+- seleccionadas;
+- combinadas;
+- instaladas;
+- procesadas por agentes;
+- y discutidas una a una.
+
+Después apareció el problema de la especificidad.
+
+Una regla genérica de código puede decir algo razonable para la mayoría de lenguajes y, sin embargo, ser incorrecta para uno concreto.
+
+El ejemplo terminó siendo muy claro.
+
+La regla genérica de IASI establecía inicialmente un máximo de 150 caracteres por línea. Python podía imponer 99. Go, en cambio, podía indicar explícitamente que no debía aplicarse un límite fijo y que `gofmt` y la legibilidad eran la autoridad.
+
+```text
+coding/styles/generic/*
+          ↓
+   regla general
+
+coding/styles/python/*
+          ↓
+   regla específica
+```
+
+Cuando ambas regulan el mismo aspecto, la específica debe prevalecer.
+
+> **La regla más específica tiene prioridad sobre la genérica.**
+
+Eso evita dos extremos igual de malos: duplicar todas las reglas para cada lenguaje o fingir que una regla universal sirve siempre.
+
+La biblioteca empezó a crecer con reglas genéricas y reglas específicas para Go, Java, Python, Bash y documentación. Pero el descubrimiento importante no fue la cantidad.
+
+Fue que el comportamiento esperado del agente empezaba a existir como conocimiento estructurado fuera del agente.
+
+### Lo que quedó
+
+Una regla IASI no es texto auxiliar para mejorar un prompt.
+
+**Es un artefacto canónico de ingeniería.**
+
+Y las reglas pueden formar una jerarquía donde el contexto más específico refine, e incluso sustituya, el comportamiento general.
+
+---
+
+## Fuentes
+
+- Biblioteca `builtin/rules/` desarrollada durante los días 26–28 de agosto de 2026.
+- `builtin/rules/TEMPLATE.md`.
+- Reglas `coding.styles.generic.maximum-line-length`, `coding.styles.python.maximum-line-length` y `coding.styles.go.no-fixed-line-length`.
+- Conversaciones sobre normalización de rules y prioridad de reglas específicas sobre genéricas.

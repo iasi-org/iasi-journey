@@ -1,0 +1,77 @@
+---
+title: "Descargamos modelos. Construimos agentes."
+date: 2026-08-30
+---
+
+Cuando Ollama empezó a funcionar con GPU apareció una satisfacción bastante inmediata: ya teníamos modelos locales.
+
+Qwen, Llama, Phi, Gemma, DeepSeek.
+
+Era fácil describir aquello como «ya tenemos agentes locales».
+
+Pero no era verdad.
+
+Habíamos descargado modelos.
+
+Un modelo proporciona capacidad de inferencia. Puede razonar, escribir, resumir, programar o analizar según sus capacidades. Pero no conoce por sí solo qué significa trabajar dentro de IASI.
+
+La distinción terminó formulándose de una manera mucho más útil:
+
+> **Descargamos modelos. Construimos agentes.**
+
+Un agente IASI necesita algo más parecido a esto:
+
+```text
+agente
+├── modelo
+├── rules
+├── definitions
+├── tools
+├── context
+└── workflow
+```
+
+El modelo es una pieza.
+
+No la arquitectura completa.
+
+Esto también modificó la pregunta de selección.
+
+No necesitamos encontrar «el mejor modelo» en abstracto.
+
+Necesitamos elegir **el modelo suficiente para la tarea**.
+
+Un modelo pequeño y rápido puede ser mejor para clasificación, transformación o tareas rutinarias. Otro puede ser más adecuado para razonamiento. Uno multimodal puede cubrir imágenes. Los modelos mayores pueden reservarse para trabajo que realmente necesite esa capacidad.
+
+La GPU disponible reforzó esta idea. Con 6 GB de VRAM no tenía sentido convertir cada tarea en una competición por ejecutar el modelo más grande posible. Los modelos de 3B–4B proporcionaban un punto especialmente útil entre velocidad, capacidad y memoria; otros más grandes podían utilizarse cuando la tarea lo justificara.
+
+Y entonces apareció otra consecuencia que ese mismo día dejaría de ser teórica.
+
+Si las tasks, rules, definitions y outputs están fuera del modelo, **el ejecutor puede cambiar**.
+
+Podemos utilizar un modelo local para determinado trabajo, Codex para otro, ChatGPT para otro o contrastar varios sistemas sobre la misma tarea.
+
+El agente deja de ser una caja indivisible ligada a un proveedor.
+
+### Lo que quedó
+
+Ollama no nos dio «IASI local».
+
+Nos dio una pieza fundamental: capacidad de inferencia local que podemos incorporar al ENGINE.
+
+Eso permite construir agentes sin asumir que todo el proceso depende de una cuota externa o de un único servicio.
+
+La unidad de diseño deja de ser «qué IA usamos».
+
+Pasa a ser:
+
+> **qué capacidad necesita esta tarea y con qué combinación de modelo, contexto, reglas, herramientas y workflow la proporcionamos.**
+
+---
+
+## Fuentes
+
+- `iasi-models.md`.
+- Stack local de Ollama configurado el 30 de agosto de 2026.
+- Conversación de 2026-08-30 sobre la diferencia entre modelos y agentes.
+- Principios previos de IASI sobre trabajo con múltiples Sistemas Inteligentes.

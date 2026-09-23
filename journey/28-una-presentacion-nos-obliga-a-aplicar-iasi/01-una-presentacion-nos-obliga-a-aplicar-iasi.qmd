@@ -1,0 +1,135 @@
+---
+title: "Una presentación nos obliga a aplicar IASI"
+date: 2026-08-30
+---
+
+Queríamos presentar IASI.
+
+La reacción inicial fue completamente normal.
+
+Pensamos en presentaciones.
+
+PowerPoint. Gamma. Prezi. HTML. Herramientas capaces de generar slides con ayuda de agentes.
+
+Y durante unos minutos empezamos a comparar soluciones.
+
+Hasta que apareció una objeción bastante incómoda:
+
+> Estamos rompiendo el primer principio de IASI.
+
+Habíamos empezado por las herramientas disponibles y estábamos intentando encajar el problema dentro de ellas.
+
+Exactamente aquello que llevábamos semanas diciendo que no había que hacer.
+
+Así que volvimos atrás.
+
+La pregunta dejó de ser:
+
+> ¿Con qué hacemos la presentación?
+
+Y pasó a ser:
+
+> ¿Qué necesitamos que sea esta presentación?
+
+La respuesta empezó a dibujar una experiencia sencilla, progresiva, visual e interactiva. Algo que pudiera seguir siendo una presentación y, al mismo tiempo, permitiera entrar y salir de conceptos sin quedar limitado por el modelo clásico de diapositiva estática.
+
+Solo después apareció HTMLSlides como una posibilidad interesante.
+
+No porque «tocara usar HTML».
+
+Porque respondía razonablemente a la necesidad que acabábamos de describir.
+
+El primer experimento fue deliberadamente pequeño:
+
+```text
+Introducing IASI
+Intelligent Assisted Software Engineering
+```
+
+Funcionó.
+
+Y entonces hicimos algo todavía más importante: dejamos de trabajar mediante un prompt improvisado y empezamos a organizar el propio experimento como IASI.
+
+```text
+inputs/
+engine/
+output/
+```
+
+El input externo quedó en:
+
+```text
+inputs/externals/001-first.md
+```
+
+La decisión de ejecución terminó convertida en:
+
+```text
+engine/tasks/001-first.md
+```
+
+Mantener `001-first` en ambos lados resultó útil: la misma unidad de trabajo podía conservar una identidad reconocible mientras cambiaba de papel dentro del proceso.
+
+Y el HTML generado era un output:
+
+```text
+output/introducing-iasi.html
+```
+
+La propia estructura del repositorio empezó a representar el modelo que queríamos explicar.
+
+```text
+INPUTS → ENGINE → OUTPUTS
+```
+
+Entonces ocurrió algo que no habíamos planeado.
+
+Codex alcanzó el límite de uso justo cuando íbamos a ejecutar la task.
+
+El proceso se detuvo.
+
+Durante unos segundos parecía simplemente una incidencia molesta.
+
+Pero la task existía. El input existía. El HTML existente existía. El conocimiento necesario para continuar no estaba encerrado en la sesión de Codex.
+
+Otro agente pudo leer esos mismos artefactos y ejecutar la misma tarea sobre el HTMLSlides ya generado.
+
+Y funcionó.
+
+La anécdota dejó una prueba bastante más valiosa que la slide:
+
+> **La task describe el trabajo. El agente es un posible ejecutor.**
+
+Codex podía quedarse sin cuota sin que la definición del trabajo desapareciera con él.
+
+Aquello conectó de golpe varias decisiones que habíamos ido tomando por separado: artefactos persistentes, tasks, adapters, runtime común, modelos locales y outputs independientes del ejecutor.
+
+### Lo que quedó
+
+La primera presentación de IASI terminó siendo también un pequeño ensayo de IASI.
+
+Empezamos incumpliendo nuestro propio principio al pensar primero en herramientas.
+
+Lo detectamos.
+
+Volvimos a la necesidad.
+
+Elegimos una tecnología después.
+
+Persistimos input y task.
+
+Un agente falló por disponibilidad.
+
+Otro pudo continuar.
+
+Para una primera slide, no estuvo mal.
+
+---
+
+## Fuentes
+
+- Conversaciones del 30 de agosto de 2026 sobre el diseño de `Introducing IASI`.
+- `inputs/externals/001-first.md`.
+- `engine/tasks/001-first.md`.
+- `output/introducing-iasi.html` y versión de tres slides generada durante el experimento.
+- HTMLSlides v0.9.4 utilizado como skill de ejecución.

@@ -1,0 +1,90 @@
+---
+title: "Primero la especificación, después el código"
+date: 2026-08-13
+---
+
+Cuando nació `iasi-graphics`, el repositorio estaba prácticamente vacío.
+
+Había una carpeta:
+
+```text
+inputs/
+```
+
+y dentro, documentos que describían lo que queríamos construir.
+
+Eso produjo una escena bastante reveladora.
+
+La conversación empezó a deslizarse hacia comandos de compilación, tests y estructura Go antes de que existiera código. La reacción fue inmediata:
+
+> ¿Qué coño va a construir en un directorio vacío?
+
+La corrección parecía trivial, pero fijó una manera de trabajar.
+
+No había que darle a Codex una estructura inventada para que empezara a picar código. Había que darle los documentos y pedirle que reconstruyera la intención.
+
+Así surgió el primer experimento serio:
+
+```text
+inputs/
+   ↓
+Codex lee
+   ↓
+explica qué cree que hay que construir
+   ↓
+identifica arquitectura, vertical slice y ambigüedades
+```
+
+Con una condición importante:
+
+**no implementar nada todavía**.
+
+Queríamos comprobar si la especificación era suficiente para que otro agente entendiera el producto sin que nosotros le sopláramos la respuesta en el prompt.
+
+Eso convertía a Codex en algo más interesante que un generador de código. Se convertía en una prueba de nuestra propia claridad.
+
+Si interpretaba mal el producto, el primer sospechoso no debía ser Codex.
+
+Debían ser los inputs.
+
+La pregunta cambió de:
+
+> ¿Puede Codex programar esto?
+
+a:
+
+> ¿Nuestros documentos contienen suficiente información para que alguien distinto de nosotros reconstruya correctamente lo que queremos?
+
+Codex respondió identificando capacidades, arquitectura, un vertical slice y, sobre todo, ambigüedades.
+
+Y ahí ocurrió algo importante.
+
+Las ambigüedades no se corrigieron editando los documentos originales.
+
+Se añadió nueva información.
+
+Los inputs originales eran evidencia de entrada. Las aclaraciones también eran inputs, pero de otra naturaleza.
+
+Todavía no habíamos llegado a `externals/` e `internals/`, pero la necesidad ya estaba ahí.
+
+Esta pequeña prueba introdujo varios principios que después aparecerían formalmente en IASI:
+
+- la implementación no debe comenzar si falta información esencial;
+- un agente no debe inventar decisiones para rellenar huecos;
+- las ambigüedades detectadas son información útil;
+- la fuente original no se modifica para hacer que parezca más completa de lo que era;
+- el conocimiento puede crecer por capas.
+
+Y, quizá lo más importante:
+
+> La especificación no es un documento que acompaña al software. Debe ser capaz de **producir** software.
+
+No de forma mágica ni determinista. Pero sí con suficiente precisión para que un agente diferente pueda pasar de intención a implementación sin depender de una conversación privada que nadie más puede reconstruir.
+
+`iasi-graphics` fue la primera vez que intentamos comprobarlo en serio.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260813215000-iasi-graphics-codex.md`.

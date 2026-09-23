@@ -1,0 +1,104 @@
+---
+title: "Inputs no es lo mismo que entender"
+date: 2026-08-17
+---
+
+Durante varios días `inputs/` había demostrado ser una abstracción sorprendentemente resistente.
+
+Todo lo que alimentaba al proceso podía entrar allí.
+
+Pero precisamente esa flexibilidad creó el siguiente problema.
+
+Un input humano no tiene por qué venir estructurado como necesita la ingeniería.
+
+Puede mezclar intención, requisito, restricción, decisión, preguntas abiertas y contexto en una sola página. Dos documentos pueden hablar de la misma cosa con nombres distintos. Una conversación puede contener tres conceptos que deberían evolucionar por separado.
+
+IASI necesitaba una representación intermedia.
+
+No un formato impuesto a quien entrega los documentos.
+
+Una representación de **lo que IASI ha entendido**.
+
+La idea ya había aparecido días antes como un posible adaptador entre inputs y OpenSpec. Al desaparecer la necesidad inmediata de OpenSpec, la representación intermedia dejó de ser un adaptador para otra herramienta y adquirió sentido propio.
+
+Probamos mentalmente varios nombres.
+
+`specs/` era tentador, pero acercaba demasiado el concepto a OpenSpec y a la idea de especificación formal.
+
+Terminamos, por ahora, en:
+
+```text
+definitions/
+```
+
+La semántica quedó extraordinariamente sencilla:
+
+```text
+inputs/       → lo que entra en IASI
+definitions/  → lo que IASI ha entendido
+```
+
+Esa distinción cambió varias cosas.
+
+Primero, desapareció la idea de una transformación uno a uno.
+
+```text
+inputs/a.md ─┐
+inputs/b.md ─┼──→ definitions/authentication.md
+inputs/c.md ─┘
+```
+
+Varias fuentes pueden describir un mismo concepto.
+
+Y al revés:
+
+```text
+inputs/request.md
+      ├──→ definitions/intent.md
+      └──→ definitions/scope.md
+```
+
+Un solo input puede contener varias unidades semánticas independientes.
+
+Segundo, las definitions debían mantener trazabilidad.
+
+No bastaba con producir una versión bonita y olvidar de dónde había salido.
+
+Tercero, IASI no podía utilizar esa fase para inventar lo que faltaba.
+
+Podía reformular, ordenar, consolidar y hacer explícito aquello que estuviera soportado por las fuentes.
+
+Pero una contradicción seguía siendo una contradicción.
+
+Y una ausencia importante seguía siendo una ausencia.
+
+En vez de ocultarlas, `definitions/` debía poder representarlas.
+
+Ahí empezaron a aparecer cinco naturalezas de conocimiento:
+
+```text
+definition
+requirement
+constraint
+decision
+question
+```
+
+No como tipos de input.
+
+Como tipos de conocimiento extraído.
+
+La diferencia es esencial.
+
+IASI no clasifica documentos.
+
+Entiende conceptos.
+
+Y después les da forma.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260817130542-iasi-workflow-inputs-definitions.md`.
+- `chatgpt-20260817135400-skill-define.md`.

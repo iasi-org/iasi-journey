@@ -1,0 +1,89 @@
+---
+title: "IASI Graphics destapa la metodología"
+date: 2026-08-14
+---
+
+Al día siguiente, `iasi-graphics` dejó de ser solo un proyecto gráfico.
+
+La conversación empezó con una idea técnica: montarlo de forma parecida a PlantUML. Enviar una descripción a un servidor y recibir el resultado.
+
+Eso permitía empujar toda la complejidad al servidor:
+
+```text
+cliente ligero
+     ↓
+descripción
+     ↓
+servidor iasi-graphics
+     ↓
+SVG o PNG
+```
+
+El servidor podía usar Go y cualquier otra herramienta que necesitara. Quarto podía integrarse mediante un filtro Lua. Un agente podía utilizarlo mediante MCP. Incluso un motor de generación de imágenes podría incorporarse detrás sin cambiar el contrato del consumidor.
+
+Era una buena arquitectura de producto.
+
+Pero entonces apareció una observación más importante:
+
+> Estamos construyendo en base a especificaciones.
+
+Y casi inmediatamente:
+
+> `iasi-graphics` hay que documentarlo en paralelo como lab o como decidamos llamarlo.
+
+La palabra *lab* era provisional. La idea no.
+
+Había tres cosas ocurriendo al mismo tiempo:
+
+```text
+1. Estamos construyendo iasi-graphics.
+2. Estamos descubriendo una metodología mientras lo hacemos.
+3. Necesitamos conservar el viaje que explica ese descubrimiento.
+```
+
+`iasi-graphics` se convirtió así en la PoC de algo que todavía no tenía repositorio completo.
+
+No queríamos escribir primero una metodología teórica y luego buscar un ejemplo que la demostrara. Queríamos que el caso real obligara a la metodología a responder preguntas de verdad.
+
+El primer golpe llegó con `inputs`.
+
+Al principio podía parecer que `inputs/` era simplemente la carpeta donde habíamos puesto nuestras especificaciones.
+
+Pero Javier hizo una precisión decisiva:
+
+> Los inputs son los documentos que ya existen, en el formato que sea: caso de negocio, funcional, etc. Son entradas externas.
+
+Eso impedía diseñar IASI suponiendo que la información llegaría ya limpia, estructurada y escrita para la metodología.
+
+Luego apareció una segunda clase de entrada.
+
+Codex había analizado los documentos y había detectado ambigüedades. Nosotros respondíamos con aclaraciones. Esas aclaraciones también alimentaban el proyecto, pero no eran documentos externos.
+
+Así nacieron conceptualmente:
+
+```text
+inputs/
+├── externals/
+└── internals/
+```
+
+Y poco después apareció una tercera fuente: información obtenida por ingeniería inversa, análisis o trabajo del propio sistema.
+
+```text
+inputs/
+├── externals/
+├── internals/
+└── obtained/
+```
+
+La metodología empezaba a materializarse porque un proyecto real la estaba obligando a distinguir clases de conocimiento.
+
+`iasi-graphics` había dejado de ser solo el primer consumidor.
+
+Se había convertido en el instrumento con el que estábamos descubriendo IASI.
+
+---
+
+## Fuentes
+
+- `chatgpt-20260814084622-iasi-graphics-metodologia.md`.

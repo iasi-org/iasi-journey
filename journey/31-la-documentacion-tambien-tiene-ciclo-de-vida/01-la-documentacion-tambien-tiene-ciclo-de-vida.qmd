@@ -1,0 +1,105 @@
+---
+title: "La documentación también tiene ciclo de vida"
+date: 2026-09-01
+---
+
+Durante mucho tiempo habíamos tratado la documentación como un output más del sistema.
+
+Eso ya era un avance importante.
+
+Un User Guide, un Technical Guide o una referencia no eran materiales secundarios que aparecían después del software. Podían ser artefactos de primera clase, construidos a partir del mismo conocimiento del proyecto.
+
+Pero al revisar cómo debía mantenerse un User Guide apareció un problema nuevo.
+
+No todo el documento tiene el mismo origen.
+
+Hay partes que IASI puede reconstruir con bastante precisión porque dependen de información explícita del proyecto:
+
+```text
+producto
+  ↓
+comandos
+configuración
+estructura
+capacidades
+interfaces
+  ↓
+contenido derivable
+```
+
+Y hay otras partes que existen porque un autor decide explicar algo de una determinada manera:
+
+- una introducción;
+- una explicación pedagógica;
+- una advertencia basada en experiencia;
+- una comparación;
+- una recomendación;
+- un ejemplo especialmente útil;
+- un apartado de Tips & Tricks.
+
+Intentar regenerar ambos tipos de contenido con la misma política era peligroso.
+
+Si IASI trataba todo el manual como derivable, podía destruir trabajo editorial valioso.
+
+Si trataba todo el manual como manual, perdía la capacidad de mantener automáticamente aquello que sí conoce.
+
+La solución empezó a aparecer al pensar el documento como un artefacto con **zonas de distinto origen y distinto ciclo de vida**.
+
+```text
+User Guide
+├── contenido derivable
+│   └── puede regenerarse
+└── contenido de autor
+    └── debe preservarse
+```
+
+Quarto encajaba bien con esta idea mediante front matter, includes y fragmentos protegidos.
+
+IASI podía construir una base y el autor podía enriquecerla sin perder el trabajo cuando llegara una nueva materialización.
+
+Entonces apareció un tercer estado todavía más interesante.
+
+¿Qué ocurre si cambia algo de lo que depende un fragmento escrito por el autor?
+
+IASI no debería reescribirlo.
+
+Pero tampoco debería fingir que nada ha ocurrido.
+
+Podría marcarlo como `affected` y pedir revisión.
+
+```text
+dependencia cambia
+      ↓
+contenido derivable  → regenerar
+contenido de autor   → preservar + marcar affected
+```
+
+Eso convirtió una necesidad documental en una idea mucho más general.
+
+Los artefactos no solo tienen contenido.
+
+Tienen **procedencia**, **dependencias** y **políticas de actualización**.
+
+Un documento puede ser parcialmente derivable sin ser completamente regenerable.
+
+Y esa distinción puede aparecer también en configuraciones, especificaciones, código, modelos o cualquier otro artefacto donde convivan conocimiento materializable y decisiones humanas.
+
+### Lo que quedó
+
+El User Guide dejó de ser simplemente «documentación que podemos generar».
+
+Pasó a ser un ejemplo de artefacto con ciclo de vida mixto.
+
+> **Derivar lo derivable. Preservar lo autoral. Señalar lo afectado.**
+
+La automatización deja de consistir en sobrescribir.
+
+Empieza a consistir en saber **qué puede cambiar, qué no debe cambiar y qué necesita volver a ser revisado**.
+
+---
+
+## Fuentes
+
+- Conversaciones del 1 de septiembre de 2026 sobre User Guides y documentación derivable.
+- Diseño de publicaciones Quarto con front matter e includes.
+- Discusión sobre contenido `author` y estado `affected`.

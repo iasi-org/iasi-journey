@@ -1,0 +1,106 @@
+---
+title: "Lo que IASI lleva consigo"
+date: 2026-08-29
+---
+
+Cuando empezaron a existir rules, commands, definitions, configuración y plantillas apareció una pregunta muy práctica:
+
+> ¿dónde vive todo eso cuando instalamos IASI?
+
+Hasta entonces había sido fácil pensar en esos elementos como ficheros del repositorio con el que estábamos trabajando.
+
+Pero IASI debía poder instalarse en otro proyecto sin depender de tener al lado el repositorio fuente completo.
+
+La palabra que terminó ordenando el problema fue:
+
+```text
+builtin/
+```
+
+`builtin/` representa aquello que IASI lleva **de fábrica**.
+
+No es el estado de un proyecto concreto. No son inputs recibidos por ese proyecto. Es contenido canónico de la propia distribución: rules, definitions, configuration, templates, commands y otras piezas compartidas que puedan aparecer.
+
+Eso produjo una separación importante entre fuente y distribución.
+
+```text
+iasi-core
+   ↓
+builtin/
+   ↓
+construcción
+   ↓
+iasi-cli
+   ↓
+ejecutable Go con builtin embebido
+```
+
+`iasi-core` podía conservar la definición canónica. El ejecutable podía llevar una copia sincronizada y embebida durante el build, de manera que instalar IASI no requiriera buscar esos recursos por rutas externas.
+
+La idea era exactamente la misma que habíamos aplicado otras veces: la complejidad puede estar dentro, pero no debe trasladarse al usuario.
+
+En paralelo las tasks dejaron de ser simples documentos que «alguien ejecutará» y empezaron a adquirir un ciclo de vida explícito.
+
+Aparecieron operaciones como:
+
+```text
+task.start
+task.run
+task.done
+task.rerun
+task.reopen
+```
+
+y estados conceptuales como:
+
+```text
+pending
+   ↓
+active
+   ↓
+done/success
+done/failed
+done/partial
+done/cancelled
+```
+
+También apareció una distinción especialmente útil:
+
+```text
+done != validated
+```
+
+Terminar una tarea no demuestra automáticamente que el resultado sea correcto.
+
+Otra pieza que se fue haciendo más concreta fue la frontera entre la parte determinista y la parte agentic. Los agentes pueden interpretar y ejecutar trabajo, pero gates, estado, seguridad de filesystem y otras operaciones mecánicas no deberían reimplementarse de forma distinta para Copilot, Codex o cualquier plataforma futura.
+
+Por eso la plataforma debía terminar llegando al mismo runtime IASI.
+
+```text
+Copilot / Codex / otra plataforma
+              ↓
+           adapter
+              ↓
+      comando canónico IASI
+              ↓
+        runtime compartido
+```
+
+Lo que unas semanas antes era una intención arquitectónica empezaba a tener ficheros, código, comandos y build.
+
+### Lo que quedó
+
+IASI ya no era únicamente una metodología explicada en documentos.
+
+Empezaba a tener un **contenido propio que podía transportar**, un runtime común y una forma explícita de representar trabajo.
+
+El sistema empezaba a parecerse a lo que más tarde llamaríamos con mucha naturalidad el **ENGINE**.
+
+---
+
+## Fuentes
+
+- `go-builtin-build.zip`.
+- `iasi-task-commands-v4.zip`.
+- `runtime-interface.md`.
+- Estructura de `iasi-core`, `iasi-cli` e `iasi-ai` consolidada durante los días 28–29 de agosto de 2026.
